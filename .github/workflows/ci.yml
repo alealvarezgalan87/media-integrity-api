@@ -1,0 +1,65 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+
+    env:
+      DJANGO_SETTINGS_MODULE: config.settings.development
+      SECRET_KEY: ci-test-secret-key-not-for-production
+      CELERY_BROKER_URL: redis://localhost:6379/0
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev libcairo2
+
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade pip
+          pip install .[dev]
+
+      - name: Run migrations
+        run: python manage.py migrate --no-input
+
+      - name: Seed rules
+        run: python manage.py seed_rules
+
+      - name: Run checks
+        run: python manage.py check --deploy --fail-level WARNING
+
+      - name: Verify imports
+        run: |
+          python -c "from engine.orchestrator.audit_runner import run_audit; print('Engine OK')"
+          python -c "from tasks.audit_tasks import run_audit_task; print('Tasks OK')"
+          python -c "from api.v1.urls import urlpatterns; print(f'API OK: {len(urlpatterns)} routes')"
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install ruff
+      - run: ruff check .
