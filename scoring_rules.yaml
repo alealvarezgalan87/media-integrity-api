@@ -1,0 +1,129 @@
+# Red Flag Detection Rules
+# Each rule is declarative: ID, severity, domain, condition, title, description, recommendation
+# New rules can be added without changing code.
+
+rules:
+  # DEMAND CAPTURE
+  - id: DC-BUDGET-CONSTRAINED
+    severity: high
+    domain: demand_capture_integrity
+    condition: "avg_budget_lost_impression_share > 0.20"
+    title: "Budget-Constrained Demand Loss"
+    description: "More than 20% of eligible impressions lost due to budget constraints."
+    recommendation: "Increase budget for constrained campaigns or reallocate from underperforming campaigns."
+
+  - id: DC-LOW-IMPRESSION-SHARE
+    severity: high
+    domain: demand_capture_integrity
+    condition: "avg_search_impression_share < 0.30"
+    title: "Low Search Impression Share"
+    description: "Capturing less than 30% of available search impressions."
+    recommendation: "Review bid strategy and quality scores. Consider budget increases for high-ROAS campaigns."
+
+  - id: DC-RANK-LOSS-HIGH
+    severity: medium
+    domain: demand_capture_integrity
+    condition: "avg_rank_lost_impression_share > 0.30"
+    title: "Significant Rank-Based Impression Loss"
+    description: "More than 30% of impressions lost due to ad rank (quality/bid)."
+    recommendation: "Improve Quality Scores or increase bids on high-value keywords."
+
+  # AUTOMATION EXPOSURE
+  - id: AE-OVER-AUTOMATED
+    severity: medium
+    domain: automation_exposure
+    condition: "pct_spend_automated > 0.90"
+    title: "Over-Reliance on Automation"
+    description: "More than 90% of spend on automated bidding strategies."
+    recommendation: "Maintain manual control on at least one campaign for benchmarking."
+
+  - id: AE-PMAX-DOMINANT
+    severity: high
+    domain: automation_exposure
+    condition: "pct_spend_pmax > 0.60"
+    title: "PMax Budget Dominance"
+    description: "Performance Max consuming more than 60% of total budget."
+    recommendation: "Diversify spend across campaign types. PMax should complement, not replace, Search."
+
+  - id: AE-PMAX-CHANNEL-CONCENTRATED
+    severity: medium
+    domain: automation_exposure
+    condition: "pmax_channel_hhi > 0.50"
+    title: "PMax Channel Concentration"
+    description: "PMax spend heavily concentrated in one channel."
+    recommendation: "Review PMax asset group strategy to encourage distribution across channels."
+
+  # MEASUREMENT INTEGRITY
+  - id: MI-ATTR-MODEL-INCONSISTENCY
+    severity: critical
+    domain: measurement_integrity
+    condition: "attribution_model_count > 2"
+    title: "Attribution Model Inconsistency"
+    description: "Multiple attribution models detected across conversion actions."
+    recommendation: "Standardize all conversion actions to Data-Driven Attribution."
+
+  - id: MI-NO-DDA
+    severity: high
+    domain: measurement_integrity
+    condition: "dda_adoption_rate < 0.50"
+    title: "Low Data-Driven Attribution Adoption"
+    description: "Less than 50% of conversion actions using Data-Driven Attribution."
+    recommendation: "Migrate eligible conversion actions to DDA for more accurate measurement."
+
+  - id: MI-TOO-MANY-CONVERSIONS
+    severity: medium
+    domain: measurement_integrity
+    condition: "conversion_action_count > 15"
+    title: "Conversion Action Bloat"
+    description: "More than 15 active conversion actions. Signal-to-noise ratio degraded."
+    recommendation: "Audit conversion actions. Remove duplicates and low-value actions."
+
+  - id: MI-LOOKBACK-MISMATCH
+    severity: medium
+    domain: measurement_integrity
+    condition: "lookback_window_consistency == false"
+    title: "Inconsistent Lookback Windows"
+    description: "Conversion actions have different lookback windows."
+    recommendation: "Standardize lookback windows across all conversion actions."
+
+  # CAPITAL ALLOCATION
+  - id: CA-ZERO-CONV-SPEND
+    severity: critical
+    domain: capital_allocation_discipline
+    condition: "zero_conversion_spend_pct > 0.20"
+    title: "Significant Spend on Zero-Conversion Campaigns"
+    description: "More than 20% of total spend going to campaigns with zero conversions."
+    recommendation: "Pause or restructure zero-conversion campaigns immediately."
+
+  - id: CA-BUDGET-UNDERUTILIZED
+    severity: medium
+    domain: capital_allocation_discipline
+    condition: "avg_budget_utilization < 0.50"
+    title: "Severe Budget Underutilization"
+    description: "Less than 50% of allocated budget being spent."
+    recommendation: "Reduce budgets to match actual spend or investigate delivery issues."
+
+  - id: CA-ROAS-EXTREME-VARIANCE
+    severity: high
+    domain: capital_allocation_discipline
+    condition: "roas_variance_coefficient > 1.5"
+    title: "Extreme ROAS Variance Across Campaigns"
+    description: "Massive performance disparity between campaigns."
+    recommendation: "Shift budget from low-ROAS to high-ROAS campaigns."
+
+  # CREATIVE VELOCITY
+  - id: CV-LOW-ASSET-COUNT
+    severity: medium
+    domain: creative_velocity
+    condition: "avg_assets_per_group < 5"
+    title: "Insufficient Creative Assets"
+    description: "Asset groups have fewer than 5 assets on average."
+    recommendation: "Add more creative assets. Google recommends 15+ per asset group."
+
+  - id: CV-HIGH-DISAPPROVAL
+    severity: high
+    domain: creative_velocity
+    condition: "pct_disapproved > 0.10"
+    title: "High Asset Disapproval Rate"
+    description: "More than 10% of assets disapproved by Google."
+    recommendation: "Review and fix disapproved assets. Check policy compliance."

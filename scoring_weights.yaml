@@ -1,0 +1,43 @@
+# Domain Score Weights for Composite Integrity Score
+# Weights must sum to 1.0
+
+domain_weights:
+  demand_capture_integrity: 0.25
+  automation_exposure: 0.20
+  measurement_integrity: 0.25
+  capital_allocation_discipline: 0.20
+  creative_velocity: 0.10
+
+# Sub-score weights within each domain
+
+demand_capture_integrity:
+  impression_share_health: 0.40
+  budget_constraint_penalty: 0.25
+  rank_competitiveness: 0.20
+  competitive_position: 0.15
+
+automation_exposure:
+  automation_dependency: 0.30
+  pmax_concentration: 0.25
+  pmax_channel_diversity: 0.25
+  strategy_diversity: 0.20
+
+measurement_integrity:
+  attribution_model_consistency: 0.30
+  dda_adoption: 0.20
+  lookback_window_consistency: 0.15
+  conversion_action_hygiene: 0.15
+  cross_platform_discrepancy: 0.20
+
+capital_allocation_discipline:
+  budget_utilization: 0.25
+  spend_concentration: 0.25
+  roas_variance: 0.25
+  wasted_spend: 0.25
+
+creative_velocity:
+  asset_volume: 0.20
+  performance_distribution: 0.30
+  low_performer_penalty: 0.20
+  disapproval_penalty: 0.15
+  format_diversity: 0.15

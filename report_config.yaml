@@ -1,0 +1,67 @@
+# Report Configuration
+# PDF layout, branding, page config
+
+branding:
+  company_name: "Force of Nature Holdings"
+  product_name: "Growth Signal Media Integrity Engine™"
+  copyright_year: 2026
+  confidential: true
+
+layout:
+  page_size: "A4"
+  margins:
+    top: "0"
+    right: "0"
+    bottom: "0"
+    left: "0"
+  accent_bar_height: "4px"
+
+design_system:
+  colors:
+    background: "#060E1A"
+    card_background: "#0A1628"
+    card_border: "#1A2E4A"
+    primary_text: "#F0F6FF"
+    secondary_text: "#8CABC8"
+    label_text: "#4A6480"
+    accent: "#1B6CF7"
+    score_excellent: "#22C55E"
+    score_sound: "#4ADE80"
+    score_moderate: "#F59E0B"
+    score_high_exposure: "#F97316"
+    score_critical: "#EF4444"
+
+  typography:
+    font_family: "Inter"
+    page_title:
+      weight: 800
+      size: "21px"
+    section_title:
+      weight: 700
+      size: "11px"
+    body:
+      weight: 400
+      size: "10px"
+    labels:
+      weight: 400
+      size: "8px"
+    score_large:
+      weight: 900
+      size: "44px"
+    score_medium:
+      weight: 900
+      size: "22px"
+    methodology:
+      weight: 300
+      size: "9px"
+
+  cards:
+    border_radius: "10px"
+    border_width: "1px"
+    padding: "18px"
+    gap: "10px"
+
+pages:
+  max_pages: 9
+  red_flags_max_display: 8
+  red_flags_min_severity: "high"  # Only show Critical and High in PDF

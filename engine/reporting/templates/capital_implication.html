@@ -1,0 +1,48 @@
+<!-- Page 4: Capital Implication & Recommendation -->
+<div class="page">
+  <div class="page-title">CAPITAL IMPLICATION</div>
+
+  <div class="card" style="text-align: center; padding: 24px;">
+    <div class="label">RECOMMENDATION</div>
+    <div class="score-large accent" style="letter-spacing: 8px; margin: 12px 0;">
+      {{ scorecard.composite_score.capital_implication }}
+    </div>
+    <div class="secondary-text" style="font-style: italic;">
+      {% if scorecard.composite_score.capital_implication == 'REDUCE' %}
+      "Decrease total media spend until structural issues are resolved."
+      {% elif scorecard.composite_score.capital_implication == 'REWEIGHT' %}
+      "Total spend level may be appropriate but allocation requires restructuring."
+      {% elif scorecard.composite_score.capital_implication == 'TEST' %}
+      "Structure is mostly sound but specific hypotheses need validation before scaling."
+      {% else %}
+      "Media structure is healthy. Maintain current trajectory with incremental optimization."
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="section-title">WHY THIS RECOMMENDATION</div>
+  <div class="card">
+    <p class="secondary-text">
+      The account scores {{ scorecard.composite_score.value }}/100
+      ({{ scorecard.composite_score.risk_band }}) with
+      {{ scorecard.red_flags | selectattr('severity', 'equalto', 'critical') | list | length }} critical red flag(s).
+    </p>
+  </div>
+
+  <div class="section-title">RECOMMENDED ACTIONS</div>
+  <div class="card">
+    {% for flag in scorecard.red_flags %}
+    {% if flag.severity in ['critical', 'high'] %}
+    <div style="margin-bottom: 8px;">
+      <span class="accent" style="font-weight: 600;">{{ loop.index }}.</span>
+      {{ flag.recommendation }}
+      <span class="secondary-text">(resolves {{ flag.id }})</span>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="confidential">
+    CONFIDENTIAL — Force of Nature Holdings © 2026
+  </div>
+</div>

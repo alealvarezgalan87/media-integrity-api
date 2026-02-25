@@ -1,0 +1,29 @@
+<!-- Page 3: Red Flags -->
+<div class="page">
+  <div class="page-title">RED FLAGS</div>
+  <p class="secondary-text" style="margin-bottom: 16px;">
+    {{ scorecard.red_flags | length }} structural issues detected.
+  </p>
+
+  {% for flag in scorecard.red_flags %}
+  {% if flag.severity in ['critical', 'high'] %}
+  <div class="card">
+    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+      {% if flag.severity == 'critical' %}
+      <span class="critical" style="font-weight: 700;">CRITICAL</span>
+      {% else %}
+      <span class="high-exposure" style="font-weight: 700;">HIGH</span>
+      {% endif %}
+      <span class="section-title" style="margin-bottom: 0;">{{ flag.id }}: {{ flag.title }}</span>
+    </div>
+    <div class="label">Domain: {{ flag.domain | replace('_', ' ') | title }}</div>
+    <div class="secondary-text" style="margin: 4px 0;">{{ flag.description }}</div>
+    <div class="accent" style="font-weight: 500;">→ {{ flag.recommendation }}</div>
+  </div>
+  {% endif %}
+  {% endfor %}
+
+  <p class="secondary-text" style="margin-top: 12px; font-size: 8px;">
+    Medium and Low severity flags are included in the evidence pack (red_flags.json).
+  </p>
+</div>

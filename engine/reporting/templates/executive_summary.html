@@ -1,0 +1,48 @@
+<!-- Page 1: Cover + Executive Summary -->
+<div class="page">
+  <div style="text-align: right; margin-bottom: 40px;">
+    <span class="label">GROWTH SIGNAL</span><br>
+    <span class="section-title">MEDIA INTEGRITY ENGINE™</span>
+  </div>
+
+  <hr class="divider">
+
+  <div class="page-title">MEDIA OPERATIONS<br>INTEGRITY REPORT</div>
+
+  <div class="card">
+    <div class="label">CLIENT</div>
+    <div style="font-size: 14px; font-weight: 600;">{{ scorecard.account_name }}</div>
+    <div class="secondary-text" style="margin-top: 4px;">
+      Account ID: {{ scorecard.account_id }}<br>
+      Period: {{ scorecard.date_range.start }} — {{ scorecard.date_range.end }}<br>
+      Generated: {{ scorecard.generated_at }}<br>
+      Run ID: {{ scorecard.run_id }}
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-title">EXECUTIVE SUMMARY</div>
+
+  <div class="card">
+    <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+      <div>
+        <div class="label">COMPOSITE INTEGRITY SCORE</div>
+        <div class="score-large">{{ scorecard.composite_score.value }}<span class="secondary-text" style="font-size: 18px;">/100</span></div>
+      </div>
+      <div style="text-align: right;">
+        <div class="label">RISK BAND</div>
+        <div class="score-medium">{{ scorecard.composite_score.risk_band }}</div>
+        <div class="label" style="margin-top: 4px;">CONFIDENCE: {{ scorecard.composite_score.confidence }}</div>
+      </div>
+    </div>
+
+    <div class="label">CAPITAL IMPLICATION</div>
+    <div class="score-medium accent">{{ scorecard.composite_score.capital_implication }}</div>
+  </div>
+
+  <div class="confidential">
+    CONFIDENTIAL — Prepared for {{ scorecard.account_name }}<br>
+    Force of Nature Holdings © 2026
+  </div>
+</div>

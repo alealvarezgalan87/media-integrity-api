@@ -1,0 +1,48 @@
+# Risk Band Classification
+# Based on composite integrity score (0-100)
+
+risk_bands:
+  - name: "Critical Structural Failure"
+    min_score: 0
+    max_score: 40
+    color: "#EF4444"
+    label: "CRITICAL"
+
+  - name: "High Structural Exposure"
+    min_score: 41
+    max_score: 60
+    color: "#F97316"
+    label: "HIGH"
+
+  - name: "Moderate Structural Exposure"
+    min_score: 61
+    max_score: 75
+    color: "#F59E0B"
+    label: "MODERATE"
+
+  - name: "Sound — Minor Adjustments Recommended"
+    min_score: 76
+    max_score: 90
+    color: "#4ADE80"
+    label: "SOUND"
+
+  - name: "Excellent Structural Integrity"
+    min_score: 91
+    max_score: 100
+    color: "#22C55E"
+    label: "EXCELLENT"
+
+# Capital Implication Thresholds
+capital_implication:
+  reduce:
+    composite_max: 40
+    critical_flags_min: 3
+    measurement_integrity_max: 30
+  reweight:
+    composite_range: [41, 60]
+    capital_allocation_max: 40
+  test:
+    composite_range: [61, 75]
+    critical_flags_min: 1
+  hold:
+    composite_min: 76

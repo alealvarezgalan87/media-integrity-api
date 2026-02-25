@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Media Integrity Report — {{ scorecard.account_name }}</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+    @page { size: A4; margin: 0; }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #060E1A;
+      color: #F0F6FF;
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 36px 40px;
+      page-break-after: always;
+      position: relative;
+      background: #060E1A;
+    }
+
+    .page::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #1B6CF7, #4A9EFF);
+    }
+
+    .card {
+      background: #0A1628;
+      border: 1px solid #1A2E4A;
+      border-radius: 10px;
+      padding: 18px;
+      margin-bottom: 10px;
+    }
+
+    .page-title {
+      font-weight: 800;
+      font-size: 21px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .label {
+      font-weight: 400;
+      font-size: 8px;
+      color: #4A6480;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .secondary-text {
+      color: #8CABC8;
+    }
+
+    .score-large {
+      font-weight: 900;
+      font-size: 44px;
+    }
+
+    .score-medium {
+      font-weight: 900;
+      font-size: 22px;
+    }
+
+    .accent { color: #1B6CF7; }
+    .excellent { color: #22C55E; }
+    .sound { color: #4ADE80; }
+    .moderate { color: #F59E0B; }
+    .high-exposure { color: #F97316; }
+    .critical { color: #EF4444; }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #1A2E4A;
+      margin: 16px 0;
+    }
+
+    .confidential {
+      font-size: 8px;
+      color: #4A6480;
+      text-align: center;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Page 1: Cover + Executive Summary -->
+  {% include 'executive_summary.html' %}
+
+  <!-- Page 2: Composite Score + Risk Band -->
+  {% include 'score_breakdown.html' %}
+
+  <!-- Page 3: Red Flags -->
+  {% include 'red_flags.html' %}
+
+  <!-- Page 4: Capital Implication -->
+  {% include 'capital_implication.html' %}
+</body>
+</html>

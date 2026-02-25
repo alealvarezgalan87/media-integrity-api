@@ -1,0 +1,46 @@
+{
+  "run_id": "aaf67bd4-db32-4905-96fc-66b70b3c1a49",
+  "account_id": "000-000-0000",
+  "account_name": "StyleHaus E-Commerce",
+  "date_range": {
+    "start": "2025-07-01",
+    "end": "2025-12-31"
+  },
+  "engine_version": "1.0.0",
+  "api_versions": {
+    "google_ads": "v23",
+    "ga4_data_api": "v1beta",
+    "bigquery": "v2"
+  },
+  "execution": {
+    "started_at": "2026-02-25T16:07:45.886924+00:00",
+    "completed_at": "2026-02-25T16:07:49.097335+00:00",
+    "duration_seconds": 3.210411,
+    "status": "SUCCESS"
+  },
+  "extraction_stats": {
+    "campaigns_daily": "complete",
+    "conversions_snapshot": "complete",
+    "pmax_breakdown": "complete",
+    "auction_density": "complete",
+    "creative_velocity": "complete",
+    "attribution_config": "partial",
+    "ga4_channel_performance": "skipped"
+  },
+  "scoring": {
+    "composite_score": 63,
+    "risk_band": "Moderate Structural Exposure",
+    "risk_band_label": "MODERATE",
+    "confidence": "Medium",
+    "capital_implication": "TEST",
+    "red_flags_count": 2
+  },
+  "outputs": {
+    "scorecard": "output\\aaf67bd4-db32-4905-96fc-66b70b3c1a49\\scorecard.json",
+    "html_report": "output\\aaf67bd4-db32-4905-96fc-66b70b3c1a49\\report.html",
+    "pdf_report": "./output\\aaf67bd4-db32-4905-96fc-66b70b3c1a49\\report.pdf",
+    "evidence_pack": "./output\\aaf67bd4-db32-4905-96fc-66b70b3c1a49\\evidence_pack.zip",
+    "run_directory": "./output\\aaf67bd4-db32-4905-96fc-66b70b3c1a49"
+  },
+  "errors": []
+}
