@@ -159,6 +159,14 @@ CORS_ALLOWED_ORIGINS = os.getenv(
     "ALLOWED_ORIGINS", "http://localhost:3000"
 ).split(",")
 CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "authorization",
+    "content-type",
+    "origin",
+    "x-api-key",
+    "x-requested-with",
+]
 
 # ---------------------------------------------------------------------------
 # Celery

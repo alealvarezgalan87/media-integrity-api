@@ -25,20 +25,23 @@ class ApiKeyAuthentication(authentication.BaseAuthentication):
 
         try:
             key_obj = ApiKey.objects.select_related(
-                "organization"
+                "organization", "created_by"
             ).get(key_hash=key_hash, is_active=True)
         except ApiKey.DoesNotExist:
             raise exceptions.AuthenticationFailed("Invalid API key.")
 
         if key_obj.expires_at and key_obj.expires_at < timezone.now():
-            raise exceptions.AuthenticationFailed("API key expired.")
+            key_obj.delete()  # Destroy expired session key
+            raise exceptions.AuthenticationFailed("Session expired.")
 
         # Update last_used_at
         ApiKey.objects.filter(pk=key_obj.pk).update(last_used_at=timezone.now())
 
-        # Return the first admin user of the organization, or create a system user
-        user = key_obj.organization.users.filter(is_active=True).first()
-        if not user:
-            raise exceptions.AuthenticationFailed("No active users in organization.")
+        # Return the user who created this key (session auth) or first org user (legacy keys)
+        user = key_obj.created_by if key_obj.created_by else (
+            key_obj.organization.users.filter(is_active=True).first()
+        )
+        if not user or not user.is_active:
+            raise exceptions.AuthenticationFailed("No active user for this API key.")
 
         return (user, key_obj)

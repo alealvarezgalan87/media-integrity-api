@@ -4,7 +4,7 @@ Audit ViewSet — CRUD, run, status, download.
 
 from datetime import date
 
-from django.http import FileResponse
+from django.http import FileResponse, HttpResponse
 from rest_framework import status, viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
@@ -24,11 +24,11 @@ class AuditViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         user = self.request.user
-        if user.is_superuser:
+        if user.is_superuser or getattr(user, "role", "") == "admin":
+            if user.organization:
+                return Audit.objects.filter(organization=user.organization)
             return Audit.objects.all()
-        if user.organization:
-            return Audit.objects.filter(organization=user.organization)
-        return Audit.objects.none()
+        return Audit.objects.filter(created_by=user)
 
     def get_serializer_class(self):
         if self.action == "retrieve":
@@ -113,8 +113,12 @@ class AuditViewSet(viewsets.ModelViewSet):
         url_path="download/(?P<file_type>[a-z]+)",
     )
     def download(self, request, pk=None, file_type=None):
-        """Download a report file by type."""
+        """Download a report file by type. XLSX is generated on-the-fly."""
         audit = self.get_object()
+
+        # XLSX — generate on-the-fly from ORM data
+        if file_type == "xlsx":
+            return self._generate_xlsx(audit)
 
         report = (
             Report.objects.filter(audit=audit, report_type=file_type)
@@ -132,6 +136,64 @@ class AuditViewSet(viewsets.ModelViewSet):
             report.file.open("rb"),
             as_attachment=True,
             filename=report.file_name,
+        )
+
+    def _generate_xlsx(self, audit):
+        """Build Excel evaluation report from audit ORM data."""
+        from engine.reporting.excel_export import generate_audit_excel
+
+        domain_scores = {}
+        for ds in audit.domain_scores.all():
+            domain_scores[ds.domain] = {
+                "value": ds.value,
+                "weight": ds.weight,
+                "weighted_contribution": ds.weighted_contribution,
+                "data_completeness": ds.data_completeness,
+                "key_findings": ds.key_findings or [],
+                "sub_scores": ds.sub_scores or {},
+            }
+
+        red_flags = list(
+            audit.red_flags.all().values(
+                "rule_id_raw", "severity", "domain",
+                "title", "description", "recommendation",
+            )
+        )
+        for rf in red_flags:
+            rf["id"] = rf.pop("rule_id_raw", "")
+
+        audit_data = {
+            "run_id": str(audit.run_id),
+            "account_id": audit.account_id_raw,
+            "account_name": audit.account_name,
+            "date_range": {
+                "start": str(audit.date_range_start),
+                "end": str(audit.date_range_end),
+            },
+            "scoring": {
+                "composite_score": audit.composite_score,
+                "risk_band": audit.risk_band,
+                "capital_implication": audit.capital_implication,
+                "confidence": audit.confidence,
+                "red_flags_count": audit.red_flags.count(),
+            },
+            "domain_scores": domain_scores,
+            "red_flags": red_flags,
+            "execution": {
+                "source": audit.source,
+                "duration_seconds": audit.duration_seconds,
+                "timestamp": str(audit.created_at) if audit.created_at else "",
+            },
+        }
+
+        excel_bytes = generate_audit_excel(audit_data)
+        safe_name = audit.account_name.replace(" ", "_").replace("/", "_")
+        filename = f"MIE_Evaluation_{safe_name}_{str(audit.run_id)[:8]}.xlsx"
+
+        return HttpResponse(
+            excel_bytes,
+            content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            headers={"Content-Disposition": f'attachment; filename="{filename}"'},
         )
 
     def perform_destroy(self, instance):

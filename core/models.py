@@ -37,10 +37,9 @@ class User(AbstractUser):
 
     class Role(models.TextChoices):
         ADMIN = "admin", "Admin"
-        ANALYST = "analyst", "Analyst"
-        VIEWER = "viewer", "Viewer"
+        USER = "user", "User"
 
-    role = models.CharField(max_length=20, choices=Role.choices, default=Role.ANALYST)
+    role = models.CharField(max_length=20, choices=Role.choices, default=Role.USER)
 
     class Meta:
         db_table = "auth_user"
@@ -186,6 +185,25 @@ class ScoringConfig(models.Model):
 
     def __str__(self):
         return f"ScoringConfig — {self.organization.name}"
+
+
+class ReportConfig(models.Model):
+    """Configuración de reporte por usuario."""
+
+    user = models.OneToOneField(
+        User, on_delete=models.CASCADE, related_name="report_config"
+    )
+    company_name = models.CharField(max_length=200, default="")
+    report_title = models.CharField(
+        max_length=200, default="Media Operations Integrity Report"
+    )
+    footer_text = models.CharField(max_length=500, default="CONFIDENTIAL")
+    page_size = models.CharField(max_length=10, default="A4")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"ReportConfig — {self.user.username}"
 
 
 class RedFlagRule(models.Model):

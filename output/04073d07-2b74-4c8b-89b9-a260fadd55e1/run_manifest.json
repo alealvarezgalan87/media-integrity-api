@@ -1,0 +1,46 @@
+{
+  "run_id": "04073d07-2b74-4c8b-89b9-a260fadd55e1",
+  "account_id": "000-000-0000",
+  "account_name": "Pinnacle Performance Fitness",
+  "date_range": {
+    "start": "2025-07-01",
+    "end": "2025-12-31"
+  },
+  "engine_version": "1.0.0",
+  "api_versions": {
+    "google_ads": "v23",
+    "ga4_data_api": "v1beta",
+    "bigquery": "v2"
+  },
+  "execution": {
+    "started_at": "2026-02-25T18:05:52.782775+00:00",
+    "completed_at": "2026-02-25T18:05:56.387687+00:00",
+    "duration_seconds": 3.604912,
+    "status": "SUCCESS"
+  },
+  "extraction_stats": {
+    "campaigns_daily": "complete",
+    "conversions_snapshot": "complete",
+    "pmax_breakdown": "complete",
+    "auction_density": "complete",
+    "creative_velocity": "complete",
+    "attribution_config": "partial",
+    "ga4_channel_performance": "skipped"
+  },
+  "scoring": {
+    "composite_score": 92,
+    "risk_band": "Excellent Structural Integrity",
+    "risk_band_label": "EXCELLENT",
+    "confidence": "Medium",
+    "capital_implication": "HOLD",
+    "red_flags_count": 0
+  },
+  "outputs": {
+    "scorecard": "output\\04073d07-2b74-4c8b-89b9-a260fadd55e1\\scorecard.json",
+    "html_report": "output\\04073d07-2b74-4c8b-89b9-a260fadd55e1\\report.html",
+    "pdf_report": "./output\\04073d07-2b74-4c8b-89b9-a260fadd55e1\\report.pdf",
+    "evidence_pack": "./output\\04073d07-2b74-4c8b-89b9-a260fadd55e1\\evidence_pack.zip",
+    "run_directory": "./output\\04073d07-2b74-4c8b-89b9-a260fadd55e1"
+  },
+  "errors": []
+}

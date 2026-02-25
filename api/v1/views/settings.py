@@ -12,7 +12,7 @@ from api.v1.serializers import (
     ReportOptionsSerializer,
     ScoringConfigSerializer,
 )
-from core.models import GoogleAdsCredential, ScoringConfig
+from core.models import GoogleAdsCredential, ReportConfig, ScoringConfig
 
 
 class GoogleConfigView(APIView):
@@ -154,11 +154,7 @@ class ReportConfigView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        org = request.user.organization
-        if not org:
-            return Response({})
-
-        config, _ = ScoringConfig.objects.get_or_create(organization=org)
+        config, _ = ReportConfig.objects.get_or_create(user=request.user)
         return Response({
             "company_name": config.company_name,
             "report_title": config.report_title,
@@ -167,18 +163,11 @@ class ReportConfigView(APIView):
         })
 
     def post(self, request):
-        org = request.user.organization
-        if not org:
-            return Response(
-                {"error": "No organization assigned."},
-                status=status.HTTP_400_BAD_REQUEST,
-            )
-
         serializer = ReportOptionsSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         data = serializer.validated_data
 
-        config, _ = ScoringConfig.objects.get_or_create(organization=org)
+        config, _ = ReportConfig.objects.get_or_create(user=request.user)
         for field, value in data.items():
             if value is not None:
                 setattr(config, field, value)

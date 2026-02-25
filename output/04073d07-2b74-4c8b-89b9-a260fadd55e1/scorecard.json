@@ -1,0 +1,105 @@
+{
+  "run_id": "04073d07-2b74-4c8b-89b9-a260fadd55e1",
+  "account_id": "000-000-0000",
+  "account_name": "Pinnacle Performance Fitness",
+  "date_range": {
+    "start": "2025-07-01",
+    "end": "2025-12-31"
+  },
+  "generated_at": "2026-02-25T18:05:52.803484+00:00",
+  "engine_version": "1.0.0",
+  "composite_score": {
+    "value": 92,
+    "risk_band": "Excellent Structural Integrity",
+    "confidence": "Medium",
+    "capital_implication": "HOLD"
+  },
+  "domain_scores": {
+    "demand_capture_integrity": {
+      "value": 84,
+      "weight": 0.25,
+      "weighted_contribution": 21.0,
+      "key_findings": [
+        "Competitive outranking: 72%"
+      ],
+      "data_completeness": 1.0
+    },
+    "automation_exposure": {
+      "value": 95,
+      "weight": 0.2,
+      "weighted_contribution": 19.0,
+      "key_findings": [
+        "55% spend on automated bidding",
+        "PMax: 25% of total budget",
+        "PMax channel HHI: 0.20",
+        "4 bidding strategy types in use"
+      ],
+      "data_completeness": 1.0
+    },
+    "measurement_integrity": {
+      "value": 89,
+      "weight": 0.25,
+      "weighted_contribution": 22.25,
+      "key_findings": [
+        "DDA adoption: 95%"
+      ],
+      "data_completeness": 0.7
+    },
+    "capital_allocation_discipline": {
+      "value": 100,
+      "weight": 0.2,
+      "weighted_contribution": 20.0,
+      "key_findings": [
+        "Budget utilization: 88%",
+        "ROAS variance CV: 0.25",
+        "Zero-conversion spend: 3%"
+      ],
+      "data_completeness": 1.0
+    },
+    "creative_velocity": {
+      "value": 96,
+      "weight": 0.1,
+      "weighted_contribution": 9.6,
+      "key_findings": [
+        "72 assets across 4 asset groups",
+        "1% disapproved",
+        "7 format types"
+      ],
+      "data_completeness": 0.95
+    }
+  },
+  "red_flags": [],
+  "confidence_report": {
+    "level": "Medium",
+    "tables": [
+      {
+        "table": "campaigns_daily",
+        "status": "complete"
+      },
+      {
+        "table": "conversions_snapshot",
+        "status": "complete"
+      },
+      {
+        "table": "pmax_breakdown",
+        "status": "complete"
+      },
+      {
+        "table": "auction_density",
+        "status": "complete"
+      },
+      {
+        "table": "creative_velocity",
+        "status": "complete"
+      },
+      {
+        "table": "attribution_config",
+        "status": "partial"
+      },
+      {
+        "table": "ga4_channel_performance",
+        "status": "skipped"
+      }
+    ]
+  }
+}

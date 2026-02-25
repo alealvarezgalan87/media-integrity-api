@@ -1,0 +1,163 @@
+{
+  "run_id": "25cc58ff-5d13-4a1c-a93a-00409e0782f1",
+  "account_id": "000-000-0000",
+  "account_name": "StyleHaus E-Commerce",
+  "date_range": {
+    "start": "2025-07-01",
+    "end": "2025-12-31"
+  },
+  "generated_at": "2026-02-25T18:01:09.030994+00:00",
+  "engine_version": "1.0.0",
+  "composite_score": {
+    "value": 63,
+    "risk_band": "Moderate Structural Exposure",
+    "confidence": "Medium",
+    "capital_implication": "TEST"
+  },
+  "domain_scores": {
+    "demand_capture_integrity": {
+      "value": 57,
+      "weight": 0.25,
+      "weighted_contribution": 14.25,
+      "key_findings": [
+        "Search impression share averaging 42% \u2014 significant demand uncaptured",
+        "Budget-lost IS at 25% \u2014 budget constraint is primary limiter",
+        "Competitive outranking: 35%"
+      ],
+      "data_completeness": 1.0
+    },
+    "automation_exposure": {
+      "value": 76,
+      "weight": 0.2,
+      "weighted_contribution": 15.2,
+      "key_findings": [
+        "75% spend on automated bidding",
+        "PMax: 45% of total budget",
+        "PMax channel HHI: 0.38",
+        "2 bidding strategy types in use"
+      ],
+      "data_completeness": 1.0
+    },
+    "measurement_integrity": {
+      "value": 51,
+      "weight": 0.25,
+      "weighted_contribution": 12.75,
+      "key_findings": [
+        "3 attribution models across conversion actions",
+        "DDA adoption: 40%",
+        "Inconsistent lookback windows across conversion actions",
+        "12 active conversion actions (high noise)"
+      ],
+      "data_completeness": 0.7
+    },
+    "capital_allocation_discipline": {
+      "value": 70,
+      "weight": 0.2,
+      "weighted_contribution": 14.0,
+      "key_findings": [
+        "Budget utilization: 72%",
+        "ROAS variance CV: 0.80",
+        "Zero-conversion spend: 18%"
+      ],
+      "data_completeness": 1.0
+    },
+    "creative_velocity": {
+      "value": 64,
+      "weight": 0.1,
+      "weighted_contribution": 6.4,
+      "key_findings": [
+        "24 assets across 4 asset groups",
+        "3% disapproved",
+        "4 format types"
+      ],
+      "data_completeness": 0.9
+    }
+  },
+  "red_flags": [
+    {
+      "id": "DC-BUDGET-CONSTRAINED",
+      "severity": "high",
+      "domain": "demand_capture_integrity",
+      "title": "Budget-Constrained Demand Loss",
+      "description": "More than 20% of eligible impressions lost due to budget constraints.",
+      "evidence": {
+        "metric": "avg_budget_lost_impression_share",
+        "actual_value": 0.25,
+        "condition": "avg_budget_lost_impression_share > 0.20"
+      },
+      "recommendation": "Increase budget for constrained campaigns or reallocate from underperforming campaigns."
+    },
+    {
+      "id": "MI-ATTR-MODEL-INCONSISTENCY",
+      "severity": "critical",
+      "domain": "measurement_integrity",
+      "title": "Attribution Model Inconsistency",
+      "description": "Multiple attribution models detected across conversion actions.",
+      "evidence": {
+        "metric": "attribution_model_count",
+        "actual_value": 3,
+        "condition": "attribution_model_count > 2"
+      },
+      "recommendation": "Standardize all conversion actions to Data-Driven Attribution."
+    },
+    {
+      "id": "MI-NO-DDA",
+      "severity": "high",
+      "domain": "measurement_integrity",
+      "title": "Low Data-Driven Attribution Adoption",
+      "description": "Less than 50% of conversion actions using Data-Driven Attribution.",
+      "evidence": {
+        "metric": "dda_adoption_rate",
+        "actual_value": 0.4,
+        "condition": "dda_adoption_rate < 0.50"
+      },
+      "recommendation": "Migrate eligible conversion actions to DDA for more accurate measurement."
+    },
+    {
+      "id": "MI-LOOKBACK-MISMATCH",
+      "severity": "medium",
+      "domain": "measurement_integrity",
+      "title": "Inconsistent Lookback Windows",
+      "description": "Conversion actions have different lookback windows.",
+      "evidence": {
+        "metric": "lookback_window_consistency",
+        "actual_value": false,
+        "condition": "lookback_window_consistency == false"
+      },
+      "recommendation": "Standardize lookback windows across all conversion actions."
+    }
+  ],
+  "confidence_report": {
+    "level": "Medium",
+    "tables": [
+      {
+        "table": "campaigns_daily",
+        "status": "complete"
+      },
+      {
+        "table": "conversions_snapshot",
+        "status": "complete"
+      },
+      {
+        "table": "pmax_breakdown",
+        "status": "complete"
+      },
+      {
+        "table": "auction_density",
+        "status": "complete"
+      },
+      {
+        "table": "creative_velocity",
+        "status": "complete"
+      },
+      {
+        "table": "attribution_config",
+        "status": "partial"
+      },
+      {
+        "table": "ga4_channel_performance",
+        "status": "skipped"
+      }
+    ]
+  }
+}

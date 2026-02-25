@@ -10,8 +10,10 @@ from rest_framework_simplejwt.views import (
 )
 
 from api.v1.views.audits import AuditViewSet
+from api.v1.views.auth import ChangePasswordView, SessionLoginView, SessionLogoutView
 from api.v1.views.health import HealthView
 from api.v1.views.red_flags import RedFlagRuleViewSet
+from api.v1.views.users import UserViewSet
 from api.v1.views.settings import (
     GoogleConfigView,
     ReportConfigView,
@@ -22,11 +24,17 @@ from api.v1.views.settings import (
 router = DefaultRouter()
 router.register(r"audits", AuditViewSet, basename="audit")
 router.register(r"red-flags", RedFlagRuleViewSet, basename="red-flag")
+router.register(r"users", UserViewSet, basename="user")
 
 urlpatterns = [
     path("", include(router.urls)),
 
-    # JWT auth
+    # Session auth (API key per session)
+    path("auth/login/", SessionLoginView.as_view(), name="session-login"),
+    path("auth/logout/", SessionLogoutView.as_view(), name="session-logout"),
+    path("auth/change-password/", ChangePasswordView.as_view(), name="change-password"),
+
+    # JWT auth (alternative)
     path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
 
