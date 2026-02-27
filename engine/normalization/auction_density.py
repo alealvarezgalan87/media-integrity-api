@@ -10,6 +10,23 @@ import structlog
 logger = structlog.get_logger(__name__)
 
 
+def _to_num(value, default=0.0):
+    """Convert a value to a number. Proto MessageToDict returns int64 as strings."""
+    if value is None:
+        return default
+    if isinstance(value, (int, float)):
+        return value
+    if isinstance(value, str):
+        try:
+            return int(value)
+        except ValueError:
+            try:
+                return float(value)
+            except ValueError:
+                return default
+    return default
+
+
 def _flatten_auction_row(row: dict) -> dict:
     """Flatten a nested Google Ads auction insight row."""
     campaign = row.get("campaign", {})
@@ -21,18 +38,18 @@ def _flatten_auction_row(row: dict) -> dict:
         "date": segments.get("date"),
         "display_domain": row.get("auction_insight", {}).get("display_domain",
                           row.get("display_domain")),
-        "impression_share": metrics.get("auction_insight_search_impression_share",
-                           row.get("impression_share", 0.0)),
-        "overlap_rate": metrics.get("auction_insight_search_overlap_rate",
-                       row.get("overlap_rate", 0.0)),
-        "position_above_rate": metrics.get("auction_insight_search_position_above_rate",
-                              row.get("position_above_rate", 0.0)),
-        "top_of_page_rate": metrics.get("auction_insight_search_top_of_page_rate",
-                           row.get("top_of_page_rate", 0.0)),
-        "absolute_top_of_page_rate": metrics.get("auction_insight_search_absolute_top_of_page_rate",
-                                    row.get("absolute_top_of_page_rate", 0.0)),
-        "outranking_share": metrics.get("auction_insight_search_outranking_share",
-                           row.get("outranking_share", 0.0)),
+        "impression_share": _to_num(metrics.get("auction_insight_search_impression_share",
+                           row.get("impression_share", 0.0))),
+        "overlap_rate": _to_num(metrics.get("auction_insight_search_overlap_rate",
+                       row.get("overlap_rate", 0.0))),
+        "position_above_rate": _to_num(metrics.get("auction_insight_search_position_above_rate",
+                              row.get("position_above_rate", 0.0))),
+        "top_of_page_rate": _to_num(metrics.get("auction_insight_search_top_impression_percentage",
+                           row.get("top_of_page_rate", 0.0))),
+        "absolute_top_of_page_rate": _to_num(metrics.get("auction_insight_search_absolute_top_impression_percentage",
+                                    row.get("absolute_top_of_page_rate", 0.0))),
+        "outranking_share": _to_num(metrics.get("auction_insight_search_outranking_share",
+                           row.get("outranking_share", 0.0))),
     }
 
 

@@ -95,7 +95,14 @@ class BaseConnector(ABC):
             except GoogleAdsException as ex:
                 last_error = ex
                 error_code = self._classify_google_ads_error(ex)
-                if error_code == "RESOURCE_EXHAUSTED" and attempt < max_retries:
+                if error_code in ("QUERY_ERROR", "PERMISSION_DENIED", "REQUEST_ERROR", "UNKNOWN"):
+                    self.logger.error(
+                        "google_ads_error",
+                        error_code=error_code,
+                        message=str(ex),
+                    )
+                    raise
+                elif error_code == "RESOURCE_EXHAUSTED" and attempt < max_retries:
                     wait = BASE_BACKOFF_SECONDS * (2 ** attempt)
                     self.logger.warning(
                         "rate_limited_retrying",
@@ -147,19 +154,46 @@ class BaseConnector(ABC):
         raise RuntimeError("Retry loop exhausted without result")
 
     def _classify_google_ads_error(self, ex: GoogleAdsException) -> str:
-        """Classify a GoogleAdsException into an error category."""
+        """Classify a GoogleAdsException into an error category.
+
+        Proto-plus error_code is a oneof — hasattr always returns True for all
+        fields, so we must check for non-zero (non-default) values instead.
+        """
+        NON_RETRYABLE = {"PERMISSION_DENIED", "QUERY_ERROR", "REQUEST_ERROR"}
+
         for error in ex.failure.errors:
-            error_code = error.error_code
-            if hasattr(error_code, "quota_error"):
-                return "RESOURCE_EXHAUSTED"
-            if hasattr(error_code, "authentication_error"):
-                return "UNAUTHENTICATED"
-            if hasattr(error_code, "authorization_error"):
-                return "PERMISSION_DENIED"
-            if hasattr(error_code, "query_error"):
-                return "QUERY_ERROR"
-            if hasattr(error_code, "internal_error"):
-                return "INTERNAL"
+            ec = error.error_code
+            # Check each field for a non-default (non-zero) value
+            try:
+                if ec.quota_error and ec.quota_error != 0:
+                    return "RESOURCE_EXHAUSTED"
+            except (AttributeError, ValueError):
+                pass
+            try:
+                if ec.authentication_error and ec.authentication_error != 0:
+                    return "UNAUTHENTICATED"
+            except (AttributeError, ValueError):
+                pass
+            try:
+                if ec.authorization_error and ec.authorization_error != 0:
+                    return "PERMISSION_DENIED"
+            except (AttributeError, ValueError):
+                pass
+            try:
+                if ec.query_error and ec.query_error != 0:
+                    return "QUERY_ERROR"
+            except (AttributeError, ValueError):
+                pass
+            try:
+                if ec.request_error and ec.request_error != 0:
+                    return "REQUEST_ERROR"
+            except (AttributeError, ValueError):
+                pass
+            try:
+                if ec.internal_error and ec.internal_error != 0:
+                    return "INTERNAL"
+            except (AttributeError, ValueError):
+                pass
         return "UNKNOWN"
 
     def _parse_rows(self, rows: list) -> list[dict[str, Any]]:

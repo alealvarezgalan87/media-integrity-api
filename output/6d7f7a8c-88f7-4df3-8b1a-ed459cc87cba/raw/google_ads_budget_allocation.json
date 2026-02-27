@@ -1,0 +1,2470 @@
+[
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/1215974066",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "1215974066",
+      "name": "DE_1_Search_Product Terms_1",
+      "amount_micros": "10000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/1239440304",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "1239440304",
+      "name": "Generic [search]",
+      "amount_micros": "20000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/1241830790",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "1241830790",
+      "name": "DE_1_Shopping_All Products_1",
+      "amount_micros": "20000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/1294645170",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "1294645170",
+      "name": "Generic Healthy Shoes [Search]",
+      "amount_micros": "10000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/1370826190",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "1370826190",
+      "name": "Recovery [search]",
+      "amount_micros": "5000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/1373169527",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "1373169527",
+      "name": "sports [search]",
+      "amount_micros": "10000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/1463919732",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "1463919732",
+      "name": "Footbed (search)",
+      "amount_micros": "5000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/1658787521",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "1658787521",
+      "name": "Plantar Fasciitis [Search]",
+      "amount_micros": "15000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/6678861798",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "6678861798",
+      "name": "DE_1_Search_Brand_1",
+      "amount_micros": "10000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/7099446676",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "7099446676",
+      "name": "DE_1_Search_Brand + Market_1",
+      "amount_micros": "5000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/7099678460",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "7099678460",
+      "name": "DE_1_Search_Brand + Gender_1",
+      "amount_micros": "10000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/7370962204",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "7370962204",
+      "name": "DE_1_Search_Brand + Style_1",
+      "amount_micros": "10000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/7370969938",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "7370969938",
+      "name": "DE_1_Search_Recovery + Type_1",
+      "amount_micros": "5000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/7373060586",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "7373060586",
+      "name": "DE_Brand",
+      "amount_micros": "10000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/7373546085",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "7373546085",
+      "name": "DE_1_Search_Plantar Fasciitis + Type_1",
+      "amount_micros": "5000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/8710870979",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "8710870979",
+      "name": "DE_Sport, Outdoor & Fun [Search]",
+      "amount_micros": "5000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/8713545576",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "8713545576",
+      "name": "DE_Berufe [Search]",
+      "amount_micros": "5000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/8718571675",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "8718571675",
+      "name": "Gesundheitsschuhe",
+      "amount_micros": "7000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/9319217650",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "9319217650",
+      "name": "DE_Damen",
+      "amount_micros": "5000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/10472069988",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "10472069988",
+      "name": "DE_1_Search_Brand + Type_1",
+      "amount_micros": "10000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/11581170224",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "11581170224",
+      "name": "PMax: Smart Shopping",
+      "amount_micros": "20000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/11581170695",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "11581170695",
+      "name": "PMax: Campaign for 23361",
+      "amount_micros": "5000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13354406636",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "13354406636",
+      "name": "DE_Shopping_TG_OOFOS",
+      "amount_micros": "10000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13358700920",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "13358700920",
+      "name": "PMax: DACH_Shooping_All Products_FEB",
+      "amount_micros": "15000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13372164652",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "13372164652",
+      "name": "DACH_Sales-Performance Max_All Products",
+      "amount_micros": "15000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13403284763",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "13403284763",
+      "name": "OOFOS_DE_Performance Max - Website-Traffic _ March 05",
+      "amount_micros": "30000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13456593241",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "13456593241",
+      "name": "Leads-Fersensporn 22.03",
+      "amount_micros": "40000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "13608776330",
+      "name": "PF_Fokus_Fersensporn",
+      "amount_micros": "15000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13638601392",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "13638601392",
+      "name": "PF MAX_Recovery_Juni",
+      "amount_micros": "60000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13639642780",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "13639642780",
+      "name": "PF_Fersensporn_Juni",
+      "amount_micros": "30000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14232860798",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "14232860798",
+      "name": "Kampagne_25_Neu",
+      "amount_micros": "30000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "status": "ENABLED",
+      "delivery_method": "STANDARD",
+      "period": "DAILY",
+      "id": "14330776049",
+      "name": "Performance Max_Sales_25",
+      "amount_micros": "15000000",
+      "explicitly_shared": false,
+      "reference_count": "1"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "26814750"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-01"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "21672819"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-02"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "30198612"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-03"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "25048869"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-04"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "23485017"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-05"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "22565874"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-06"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "23921500"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-07"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "19352148"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-08"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "34047020"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-09"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "28448066"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-10"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "14236396"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-11"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "25144146"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-12"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "36978351"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-13"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "11938343"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-14"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "21415865"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-15"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "27806097"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-16"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "34251871"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-17"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "21201815"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-18"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "20356303"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-19"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "35752791"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-20"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "11609910"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-21"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "27096539"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-22"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "25930122"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-23"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "30113274"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-24"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "24557885"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-25"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "9733646"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-26"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "29238535"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-27"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "21252406"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-28"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "32118290"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-29"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "23997375"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-30"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "11165716"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-31"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "28939358"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-01"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "24130809"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-02"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "32780427"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-03"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "29199928"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-04"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "18829121"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-05"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "9291010"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-06"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "9661436"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-07"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "27386092"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-08"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "589617"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-09"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "21539785"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-10"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "19878282"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-11"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "12236235"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-12"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "14871056"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-13"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "17689144"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-14"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "24429842"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-15"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "9800670"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-16"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "15083056"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-17"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "13716960"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-18"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "11973529"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-19"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "25699972"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-20"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "8638505"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-21"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "11958300"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-22"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "14806132"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-23"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "24212456"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-24"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "10126420"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-25"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799",
+      "campaign_budget": "customers/1675806490/campaignBudgets/13608776330"
+    },
+    "metrics": {
+      "cost_micros": "6372388"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-26"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "950957"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-01"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "4336533"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-02"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "10371154"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-03"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "5454961"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-04"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "10024025"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-05"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "1331644"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-06"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "1226652"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-07"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "1686135"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-08"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "730000"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-09"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "13687298"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-10"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "24669024"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-11"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "13451339"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-12"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "2521172"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-13"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "29536950"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-14"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "9191100"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-15"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "172786"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-16"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "1245196"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-17"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "24276326"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-18"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "4793797"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-19"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "11007335"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-20"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "10661607"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-21"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "1186453"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-22"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "457345"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-23"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "10907527"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-24"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "32662915"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-25"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "25068511"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-26"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "960000"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-27"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "13435007"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-28"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "366703"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-29"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "11302228"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-30"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "14837843"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-01-31"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "9224545"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-01"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "3139241"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-02"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "6178221"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-03"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "14980543"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-04"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "19751726"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-05"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "16341802"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-06"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "4700000"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-07"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "16595459"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-08"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "16484913"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-09"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "20578614"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-10"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "15506711"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-11"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "20019386"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-12"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "11900000"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-13"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "20883286"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-14"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "6514107"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-15"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "20020058"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-16"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "16490000"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-17"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "7436378"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-18"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "24088870"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-19"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "7986798"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-20"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "18797288"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-21"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "12649567"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-22"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "10290175"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-23"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "23076930"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-24"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "15159489"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-25"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156",
+      "campaign_budget": "customers/1675806490/campaignBudgets/14330776049"
+    },
+    "metrics": {
+      "cost_micros": "10368231"
+    },
+    "campaign_budget": {
+      "resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "amount_micros": "15000000"
+    },
+    "segments": {
+      "date": "2026-02-26"
+    }
+  }
+]

@@ -10,6 +10,7 @@ from datetime import timedelta
 
 from django.contrib.auth import authenticate
 from django.utils import timezone
+from drf_spectacular.utils import extend_schema, inline_serializer
 from rest_framework import serializers, status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
@@ -30,6 +31,36 @@ class SessionLoginView(APIView):
 
     permission_classes = [AllowAny]
 
+    @extend_schema(
+        request=LoginSerializer,
+        responses={
+            200: inline_serializer(
+                name="LoginResponse",
+                fields={
+                    "api_key": serializers.CharField(),
+                    "user": inline_serializer(
+                        name="LoginUser",
+                        fields={
+                            "username": serializers.CharField(),
+                            "email": serializers.EmailField(),
+                            "role": serializers.CharField(),
+                        },
+                    ),
+                    "organization": inline_serializer(
+                        name="LoginOrganization",
+                        fields={
+                            "name": serializers.CharField(),
+                            "slug": serializers.CharField(),
+                        },
+                    ),
+                },
+            ),
+            401: inline_serializer(
+                name="LoginError",
+                fields={"detail": serializers.CharField()},
+            ),
+        },
+    )
     def post(self, request):
         ser = LoginSerializer(data=request.data)
         ser.is_valid(raise_exception=True)
@@ -91,6 +122,15 @@ class SessionLogoutView(APIView):
 
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        request=None,
+        responses={
+            200: inline_serializer(
+                name="LogoutResponse",
+                fields={"detail": serializers.CharField()},
+            ),
+        },
+    )
     def post(self, request):
         # If authenticated via API key, delete it
         if hasattr(request, "auth") and isinstance(request.auth, ApiKey):
@@ -116,6 +156,19 @@ class ChangePasswordView(APIView):
 
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        request=ChangePasswordSerializer,
+        responses={
+            200: inline_serializer(
+                name="ChangePasswordResponse",
+                fields={"detail": serializers.CharField()},
+            ),
+            400: inline_serializer(
+                name="ChangePasswordError",
+                fields={"current_password": serializers.ListField(child=serializers.CharField())},
+            ),
+        },
+    )
     def post(self, request):
         ser = ChangePasswordSerializer(data=request.data)
         ser.is_valid(raise_exception=True)

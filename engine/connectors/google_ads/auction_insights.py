@@ -13,12 +13,11 @@ SELECT
   campaign.id,
   campaign.name,
   segments.date,
-  auction_insight.display_domain,
   metrics.auction_insight_search_impression_share,
   metrics.auction_insight_search_overlap_rate,
   metrics.auction_insight_search_position_above_rate,
-  metrics.auction_insight_search_top_of_page_rate,
-  metrics.auction_insight_search_absolute_top_of_page_rate,
+  metrics.auction_insight_search_top_impression_percentage,
+  metrics.auction_insight_search_absolute_top_impression_percentage,
   metrics.auction_insight_search_outranking_share
 FROM campaign
 WHERE segments.date BETWEEN '{start_date}' AND '{end_date}'

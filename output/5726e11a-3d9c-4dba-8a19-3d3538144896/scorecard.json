@@ -1,0 +1,166 @@
+{
+  "run_id": "5726e11a-3d9c-4dba-8a19-3d3538144896",
+  "account_id": "167-580-6490",
+  "account_name": "167-580-6490",
+  "date_range": {
+    "start": "2026-01-01",
+    "end": "2026-02-26"
+  },
+  "generated_at": "2026-02-27T02:13:24.954050+00:00",
+  "engine_version": "1.0.0",
+  "composite_score": {
+    "value": 59,
+    "risk_band": "High Structural Exposure",
+    "confidence": "Low",
+    "capital_implication": "REWEIGHT"
+  },
+  "domain_scores": {
+    "demand_capture_integrity": {
+      "value": 52,
+      "weight": 0.25,
+      "weighted_contribution": 13.0,
+      "key_findings": [
+        "Search impression share critically low at 0%",
+        "Auction insights unavailable \u2014 competitive position estimated"
+      ],
+      "data_completeness": 0.85
+    },
+    "automation_exposure": {
+      "value": 58,
+      "weight": 0.2,
+      "weighted_contribution": 11.6,
+      "key_findings": [
+        "0% spend on automated bidding",
+        "PMax channel HHI: 0.00",
+        "0 bidding strategy types in use"
+      ],
+      "data_completeness": 1.0
+    },
+    "measurement_integrity": {
+      "value": 66,
+      "weight": 0.25,
+      "weighted_contribution": 16.5,
+      "key_findings": [
+        "DDA adoption: 0%"
+      ],
+      "data_completeness": 0.7
+    },
+    "capital_allocation_discipline": {
+      "value": 70,
+      "weight": 0.2,
+      "weighted_contribution": 14.0,
+      "key_findings": [
+        "Budget utilization: 0%",
+        "ROAS variance CV: 0.00",
+        "Zero-conversion spend: 0%"
+      ],
+      "data_completeness": 1.0
+    },
+    "creative_velocity": {
+      "value": 42,
+      "weight": 0.1,
+      "weighted_contribution": 4.2,
+      "key_findings": [
+        "0 assets across 0 asset groups",
+        "0% disapproved",
+        "0 format types"
+      ],
+      "data_completeness": 0.0
+    }
+  },
+  "red_flags": [
+    {
+      "id": "DC-LOW-IMPRESSION-SHARE",
+      "severity": "high",
+      "domain": "demand_capture_integrity",
+      "title": "Low Search Impression Share",
+      "description": "Capturing less than 30% of available search impressions.",
+      "evidence": {
+        "metric": "avg_search_impression_share",
+        "actual_value": 0.0,
+        "condition": "avg_search_impression_share < 0.30"
+      },
+      "recommendation": "Review bid strategy and quality scores. Consider budget increases for high-ROAS campaigns."
+    },
+    {
+      "id": "MI-NO-DDA",
+      "severity": "high",
+      "domain": "measurement_integrity",
+      "title": "Low Data-Driven Attribution Adoption",
+      "description": "Less than 50% of conversion actions using Data-Driven Attribution.",
+      "evidence": {
+        "metric": "dda_adoption_rate",
+        "actual_value": 0.0,
+        "condition": "dda_adoption_rate < 0.50"
+      },
+      "recommendation": "Migrate eligible conversion actions to DDA for more accurate measurement."
+    },
+    {
+      "id": "CA-BUDGET-UNDERUTILIZED",
+      "severity": "medium",
+      "domain": "capital_allocation_discipline",
+      "title": "Severe Budget Underutilization",
+      "description": "Less than 50% of allocated budget being spent.",
+      "evidence": {
+        "metric": "avg_budget_utilization",
+        "actual_value": 0.0,
+        "condition": "avg_budget_utilization < 0.50"
+      },
+      "recommendation": "Reduce budgets to match actual spend or investigate delivery issues."
+    },
+    {
+      "id": "CV-LOW-ASSET-COUNT",
+      "severity": "medium",
+      "domain": "creative_velocity",
+      "title": "Insufficient Creative Assets",
+      "description": "Asset groups have fewer than 5 assets on average.",
+      "evidence": {
+        "metric": "avg_assets_per_group",
+        "actual_value": 0.0,
+        "condition": "avg_assets_per_group < 5"
+      },
+      "recommendation": "Add more creative assets. Google recommends 15+ per asset group."
+    }
+  ],
+  "confidence_report": {
+    "level": "Low",
+    "tables": [
+      {
+        "table": "campaign_performance",
+        "status": "failed"
+      },
+      {
+        "table": "budget_allocation",
+        "status": "failed"
+      },
+      {
+        "table": "impression_share",
+        "status": "failed"
+      },
+      {
+        "table": "conversion_actions",
+        "status": "failed"
+      },
+      {
+        "table": "bidding_strategies",
+        "status": "failed"
+      },
+      {
+        "table": "pmax_breakdown",
+        "status": "failed"
+      },
+      {
+        "table": "asset_performance",
+        "status": "failed"
+      },
+      {
+        "table": "auction_insights",
+        "status": "failed"
+      },
+      {
+        "table": "change_history",
+        "status": "failed"
+      }
+    ]
+  }
+}

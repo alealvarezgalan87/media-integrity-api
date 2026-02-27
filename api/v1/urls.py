@@ -14,7 +14,13 @@ from api.v1.views.auth import ChangePasswordView, SessionLoginView, SessionLogou
 from api.v1.views.health import HealthView
 from api.v1.views.red_flags import RedFlagRuleViewSet
 from api.v1.views.users import UserViewSet
+from api.v1.views.google_oauth import (
+    GoogleOAuthAuthorizeView,
+    GoogleOAuthCallbackView,
+    GoogleOAuthStatusView,
+)
 from api.v1.views.settings import (
+    GoogleAccountsListView,
     GoogleConfigView,
     ReportConfigView,
     ScoringConfigView,
@@ -41,6 +47,10 @@ urlpatterns = [
     # Settings
     path("settings/google/", GoogleConfigView.as_view(), name="settings-google"),
     path("settings/google/test/", TestConnectionView.as_view(), name="settings-google-test"),
+    path("settings/google/accounts/", GoogleAccountsListView.as_view(), name="settings-google-accounts"),
+    path("settings/google/oauth/authorize/", GoogleOAuthAuthorizeView.as_view(), name="google-oauth-authorize"),
+    path("settings/google/oauth/callback/", GoogleOAuthCallbackView.as_view(), name="google-oauth-callback"),
+    path("settings/google/oauth/status/", GoogleOAuthStatusView.as_view(), name="google-oauth-status"),
     path("settings/scoring/", ScoringConfigView.as_view(), name="settings-scoring"),
     path("settings/report/", ReportConfigView.as_view(), name="settings-report"),
 

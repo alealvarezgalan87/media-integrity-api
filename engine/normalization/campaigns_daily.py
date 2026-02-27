@@ -15,6 +15,23 @@ def _safe_div(numerator, denominator, default=0.0):
     return numerator / denominator if denominator != 0 else default
 
 
+def _to_num(value, default=0):
+    """Convert a value to a number. Proto MessageToDict returns int64 as strings."""
+    if value is None:
+        return default
+    if isinstance(value, (int, float)):
+        return value
+    if isinstance(value, str):
+        try:
+            return int(value)
+        except ValueError:
+            try:
+                return float(value)
+            except ValueError:
+                return default
+    return default
+
+
 def _flatten_campaign_row(row: dict) -> dict:
     """Flatten a nested Google Ads campaign row into a flat dict."""
     campaign = row.get("campaign", {})
@@ -29,15 +46,15 @@ def _flatten_campaign_row(row: dict) -> dict:
         "bidding_strategy_type": campaign.get("bidding_strategy_type"),
         "campaign_budget": campaign.get("campaign_budget"),
         "date": segments.get("date"),
-        "impressions": metrics.get("impressions", 0),
-        "clicks": metrics.get("clicks", 0),
-        "cost_micros": metrics.get("cost_micros", 0),
-        "conversions": metrics.get("conversions", 0.0),
-        "conversions_value": metrics.get("conversions_value", 0.0),
-        "all_conversions": metrics.get("all_conversions", 0.0),
-        "all_conversions_value": metrics.get("all_conversions_value", 0.0),
-        "average_cpc": metrics.get("average_cpc", 0),
-        "ctr": metrics.get("ctr", 0.0),
+        "impressions": _to_num(metrics.get("impressions", 0)),
+        "clicks": _to_num(metrics.get("clicks", 0)),
+        "cost_micros": _to_num(metrics.get("cost_micros", 0)),
+        "conversions": _to_num(metrics.get("conversions", 0.0), 0.0),
+        "conversions_value": _to_num(metrics.get("conversions_value", 0.0), 0.0),
+        "all_conversions": _to_num(metrics.get("all_conversions", 0.0), 0.0),
+        "all_conversions_value": _to_num(metrics.get("all_conversions_value", 0.0), 0.0),
+        "average_cpc": _to_num(metrics.get("average_cpc", 0)),
+        "ctr": _to_num(metrics.get("ctr", 0.0), 0.0),
     }
 
 
@@ -50,9 +67,9 @@ def _flatten_budget_row(row: dict) -> dict:
     return {
         "campaign_id": campaign.get("id"),
         "campaign_name": campaign.get("name"),
-        "budget_amount_micros": budget.get("amount_micros", row.get("budget_amount_micros", 0)),
+        "budget_amount_micros": _to_num(budget.get("amount_micros", row.get("budget_amount_micros", 0))),
         "date": segments.get("date"),
-        "budget_cost_micros": metrics.get("cost_micros", 0),
+        "budget_cost_micros": _to_num(metrics.get("cost_micros", 0)),
     }
 
 
@@ -66,14 +83,14 @@ def _flatten_impression_share_row(row: dict) -> dict:
         "campaign_name": campaign.get("name"),
         "advertising_channel_type": campaign.get("advertising_channel_type"),
         "date": segments.get("date"),
-        "search_impression_share": metrics.get("search_impression_share", 0.0),
-        "search_top_impression_percentage": metrics.get("search_top_impression_percentage", 0.0),
-        "search_absolute_top_impression_percentage": metrics.get("search_absolute_top_impression_percentage", 0.0),
-        "search_budget_lost_impression_share": metrics.get("search_budget_lost_impression_share", 0.0),
-        "search_rank_lost_impression_share": metrics.get("search_rank_lost_impression_share", 0.0),
-        "content_impression_share": metrics.get("content_impression_share", 0.0),
-        "content_budget_lost_impression_share": metrics.get("content_budget_lost_impression_share", 0.0),
-        "content_rank_lost_impression_share": metrics.get("content_rank_lost_impression_share", 0.0),
+        "search_impression_share": _to_num(metrics.get("search_impression_share", 0.0), 0.0),
+        "search_top_impression_share": _to_num(metrics.get("search_top_impression_share", 0.0), 0.0),
+        "search_absolute_top_impression_share": _to_num(metrics.get("search_absolute_top_impression_share", 0.0), 0.0),
+        "search_budget_lost_impression_share": _to_num(metrics.get("search_budget_lost_impression_share", 0.0), 0.0),
+        "search_rank_lost_impression_share": _to_num(metrics.get("search_rank_lost_impression_share", 0.0), 0.0),
+        "content_impression_share": _to_num(metrics.get("content_impression_share", 0.0), 0.0),
+        "content_budget_lost_impression_share": _to_num(metrics.get("content_budget_lost_impression_share", 0.0), 0.0),
+        "content_rank_lost_impression_share": _to_num(metrics.get("content_rank_lost_impression_share", 0.0), 0.0),
     }
 
 
@@ -131,8 +148,8 @@ def build_campaigns_daily(
         flat_is = [_flatten_impression_share_row(r) for r in impression_share_data]
         is_df = pd.DataFrame(flat_is)
         is_cols = [
-            "search_impression_share", "search_top_impression_percentage",
-            "search_absolute_top_impression_percentage",
+            "search_impression_share", "search_top_impression_share",
+            "search_absolute_top_impression_share",
             "search_budget_lost_impression_share", "search_rank_lost_impression_share",
             "content_impression_share", "content_budget_lost_impression_share",
             "content_rank_lost_impression_share",

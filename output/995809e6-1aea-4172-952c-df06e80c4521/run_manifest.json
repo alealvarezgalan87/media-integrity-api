@@ -1,0 +1,48 @@
+{
+  "run_id": "995809e6-1aea-4172-952c-df06e80c4521",
+  "account_id": "167-580-6490",
+  "account_name": "OOFOS_DE_Ad Account_1",
+  "date_range": {
+    "start": "2026-01-01",
+    "end": "2026-02-26"
+  },
+  "engine_version": "1.0.0",
+  "api_versions": {
+    "google_ads": "v23",
+    "ga4_data_api": "v1beta",
+    "bigquery": "v2"
+  },
+  "execution": {
+    "started_at": "2026-02-27T02:35:29.632279+00:00",
+    "completed_at": "2026-02-27T02:37:10.199843+00:00",
+    "duration_seconds": 100.567564,
+    "status": "SUCCESS"
+  },
+  "extraction_stats": {
+    "campaign_performance": "complete",
+    "budget_allocation": "complete",
+    "impression_share": "complete",
+    "conversion_actions": "complete",
+    "bidding_strategies": "complete",
+    "pmax_breakdown": "complete",
+    "asset_performance": "complete",
+    "auction_insights": "failed",
+    "change_history": "failed"
+  },
+  "scoring": {
+    "composite_score": 50,
+    "risk_band": "High Structural Exposure",
+    "risk_band_label": "HIGH",
+    "confidence": "High",
+    "capital_implication": "REWEIGHT",
+    "red_flags_count": 7
+  },
+  "outputs": {
+    "scorecard": "output\\995809e6-1aea-4172-952c-df06e80c4521\\scorecard.json",
+    "html_report": "output\\995809e6-1aea-4172-952c-df06e80c4521\\report.html",
+    "pdf_report": "./output\\995809e6-1aea-4172-952c-df06e80c4521\\report.pdf",
+    "evidence_pack": "./output\\995809e6-1aea-4172-952c-df06e80c4521\\evidence_pack.zip",
+    "run_directory": "./output\\995809e6-1aea-4172-952c-df06e80c4521"
+  },
+  "errors": []
+}

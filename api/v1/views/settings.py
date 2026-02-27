@@ -2,7 +2,9 @@
 Settings views — Google Ads config, Scoring config, Report options.
 """
 
-from rest_framework import status
+from django.utils import timezone
+from drf_spectacular.utils import extend_schema, inline_serializer
+from rest_framework import serializers, status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -18,6 +20,9 @@ from core.models import GoogleAdsCredential, ReportConfig, ScoringConfig
 class GoogleConfigView(APIView):
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        responses={200: GoogleAdsConfigSerializer},
+    )
     def get(self, request):
         org = request.user.organization
         if not org:
@@ -44,6 +49,15 @@ class GoogleConfigView(APIView):
             "api_version": creds.api_version,
         })
 
+    @extend_schema(
+        request=GoogleAdsConfigSerializer,
+        responses={
+            200: inline_serializer(
+                name="GoogleConfigSaveResponse",
+                fields={"status": serializers.CharField()},
+            ),
+        },
+    )
     def post(self, request):
         org = request.user.organization
         if not org:
@@ -59,7 +73,7 @@ class GoogleConfigView(APIView):
         creds, _ = GoogleAdsCredential.objects.get_or_create(organization=org)
 
         for field, value in data.items():
-            if value:
+            if value and not str(value).startswith("****"):
                 setattr(creds, field, value)
         creds.save()
 
@@ -75,6 +89,27 @@ class GoogleConfigView(APIView):
 class TestConnectionView(APIView):
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(
+        responses={
+            200: inline_serializer(
+                name="TestConnectionResponse",
+                fields={
+                    "connected": serializers.BooleanField(),
+                    "message": serializers.CharField(),
+                    "accounts": serializers.ListField(
+                        child=inline_serializer(
+                            name="GoogleAdsAccount",
+                            fields={
+                                "id": serializers.CharField(),
+                                "name": serializers.CharField(),
+                            },
+                        ),
+                        required=False,
+                    ),
+                },
+            ),
+        },
+    )
     def get(self, request):
         org = request.user.organization
         if not org:
@@ -94,17 +129,32 @@ class TestConnectionView(APIView):
                 "message": "Incomplete credentials. Please configure all fields.",
             })
 
-        # Attempt real connection via MCC manager (will be available in Fase 2)
+        if not creds.refresh_token:
+            return Response({
+                "connected": False,
+                "message": "No refresh token. Please connect your Google account first.",
+            })
+
+        if not creds.mcc_id:
+            return Response({
+                "connected": False,
+                "message": "MCC ID is required. Please configure it in settings.",
+            })
+
         try:
             from engine.auth.mcc_manager import MCCManager
-            manager = MCCManager({
-                "developer_token": creds.developer_token,
-                "client_id": creds.client_id,
-                "client_secret": creds.client_secret,
-                "refresh_token": creds.refresh_token,
-            })
-            accounts = manager.list_accounts(creds.mcc_id)
+            manager = MCCManager(
+                credentials={
+                    "developer_token": creds.developer_token,
+                    "client_id": creds.client_id,
+                    "client_secret": creds.client_secret,
+                    "refresh_token": creds.refresh_token,
+                },
+                mcc_customer_id=creds.mcc_id,
+            )
+            accounts = manager.list_accessible_accounts()
             creds.is_verified = True
+            creds.last_verified_at = timezone.now()
             creds.save(update_fields=["is_verified", "last_verified_at"])
             return Response({
                 "connected": True,
@@ -123,9 +173,65 @@ class TestConnectionView(APIView):
             })
 
 
+class GoogleAccountsListView(APIView):
+    """GET /api/v1/settings/google/accounts/ — list accessible accounts under MCC."""
+
+    permission_classes = [IsAuthenticated]
+
+    @extend_schema(
+        responses={
+            200: inline_serializer(
+                name="GoogleAccountsListResponse",
+                fields={
+                    "accounts": serializers.ListField(
+                        child=inline_serializer(
+                            name="GoogleAdsAccountItem",
+                            fields={
+                                "id": serializers.CharField(),
+                                "name": serializers.CharField(),
+                            },
+                        ),
+                    ),
+                },
+            ),
+        },
+    )
+    def get(self, request):
+        org = request.user.organization
+        if not org:
+            return Response({"accounts": []})
+
+        try:
+            creds = org.google_credentials
+        except GoogleAdsCredential.DoesNotExist:
+            return Response({"accounts": []})
+
+        if not all([creds.developer_token, creds.client_id, creds.client_secret, creds.refresh_token, creds.mcc_id]):
+            return Response({"accounts": []})
+
+        try:
+            from engine.auth.mcc_manager import MCCManager
+            manager = MCCManager(
+                credentials={
+                    "developer_token": creds.developer_token,
+                    "client_id": creds.client_id,
+                    "client_secret": creds.client_secret,
+                    "refresh_token": creds.refresh_token,
+                },
+                mcc_customer_id=creds.mcc_id,
+            )
+            accounts = manager.list_accessible_accounts()
+            return Response({
+                "accounts": [{"id": a["id"], "name": a["name"]} for a in accounts],
+            })
+        except Exception:
+            return Response({"accounts": []})
+
+
 class ScoringConfigView(APIView):
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(responses={200: ScoringConfigSerializer})
     def get(self, request):
         org = request.user.organization
         if not org:
@@ -135,6 +241,15 @@ class ScoringConfigView(APIView):
         serializer = ScoringConfigSerializer(config)
         return Response(serializer.data)
 
+    @extend_schema(
+        request=ScoringConfigSerializer,
+        responses={
+            200: inline_serializer(
+                name="ScoringConfigSaveResponse",
+                fields={"status": serializers.CharField()},
+            ),
+        },
+    )
     def post(self, request):
         org = request.user.organization
         if not org:
@@ -153,6 +268,7 @@ class ScoringConfigView(APIView):
 class ReportConfigView(APIView):
     permission_classes = [IsAuthenticated]
 
+    @extend_schema(responses={200: ReportOptionsSerializer})
     def get(self, request):
         config, _ = ReportConfig.objects.get_or_create(user=request.user)
         return Response({
@@ -162,6 +278,15 @@ class ReportConfigView(APIView):
             "page_size": config.page_size,
         })
 
+    @extend_schema(
+        request=ReportOptionsSerializer,
+        responses={
+            200: inline_serializer(
+                name="ReportConfigSaveResponse",
+                fields={"status": serializers.CharField()},
+            ),
+        },
+    )
     def post(self, request):
         serializer = ReportOptionsSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)

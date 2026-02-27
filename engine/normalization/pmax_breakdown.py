@@ -25,6 +25,23 @@ def _safe_div(numerator, denominator, default=0.0):
     return numerator / denominator if denominator != 0 else default
 
 
+def _to_num(value, default=0):
+    """Convert a value to a number. Proto MessageToDict returns int64 as strings."""
+    if value is None:
+        return default
+    if isinstance(value, (int, float)):
+        return value
+    if isinstance(value, str):
+        try:
+            return int(value)
+        except ValueError:
+            try:
+                return float(value)
+            except ValueError:
+                return default
+    return default
+
+
 def _flatten_pmax_row(row: dict) -> dict:
     """Flatten a nested Google Ads PMax breakdown row."""
     campaign = row.get("campaign", {})
@@ -35,13 +52,13 @@ def _flatten_pmax_row(row: dict) -> dict:
         "campaign_name": campaign.get("name"),
         "date": segments.get("date"),
         "ad_network_type": segments.get("ad_network_type"),
-        "impressions": metrics.get("impressions", 0),
-        "clicks": metrics.get("clicks", 0),
-        "cost_micros": metrics.get("cost_micros", 0),
-        "conversions": metrics.get("conversions", 0.0),
-        "conversions_value": metrics.get("conversions_value", 0.0),
-        "all_conversions": metrics.get("all_conversions", 0.0),
-        "all_conversions_value": metrics.get("all_conversions_value", 0.0),
+        "impressions": _to_num(metrics.get("impressions", 0)),
+        "clicks": _to_num(metrics.get("clicks", 0)),
+        "cost_micros": _to_num(metrics.get("cost_micros", 0)),
+        "conversions": _to_num(metrics.get("conversions", 0.0), 0.0),
+        "conversions_value": _to_num(metrics.get("conversions_value", 0.0), 0.0),
+        "all_conversions": _to_num(metrics.get("all_conversions", 0.0), 0.0),
+        "all_conversions_value": _to_num(metrics.get("all_conversions_value", 0.0), 0.0),
     }
 
 
@@ -56,7 +73,7 @@ def _flatten_campaign_row(row: dict) -> dict:
         "advertising_channel_type": campaign.get("advertising_channel_type"),
         "bidding_strategy_type": campaign.get("bidding_strategy_type"),
         "date": segments.get("date"),
-        "cost_micros": metrics.get("cost_micros", 0),
+        "cost_micros": _to_num(metrics.get("cost_micros", 0)),
     }
 
 

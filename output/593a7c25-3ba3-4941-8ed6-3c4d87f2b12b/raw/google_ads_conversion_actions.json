@@ -1,0 +1,112 @@
+[
+  {
+    "conversion_action": {
+      "resource_name": "customers/1675806490/conversionActions/246605227",
+      "status": "ENABLED",
+      "type_": "UNIVERSAL_ANALYTICS_TRANSACTION",
+      "category": "PURCHASE",
+      "value_settings": {
+        "default_value": 1.0,
+        "always_use_default_value": false
+      },
+      "counting_type": "MANY_PER_CLICK",
+      "attribution_model_settings": {
+        "attribution_model": "GOOGLE_ADS_LAST_CLICK",
+        "data_driven_model_status": "AVAILABLE"
+      },
+      "id": "246605227",
+      "name": "Transactions (All Web Site Data)",
+      "include_in_conversions_metric": false,
+      "click_through_lookback_window_days": "30",
+      "view_through_lookback_window_days": "1"
+    }
+  },
+  {
+    "conversion_action": {
+      "resource_name": "customers/1675806490/conversionActions/246606889",
+      "status": "ENABLED",
+      "type_": "UNIVERSAL_ANALYTICS_GOAL",
+      "category": "DEFAULT",
+      "value_settings": {
+        "default_value": 1.0,
+        "always_use_default_value": false
+      },
+      "counting_type": "MANY_PER_CLICK",
+      "attribution_model_settings": {
+        "attribution_model": "GOOGLE_ADS_LAST_CLICK",
+        "data_driven_model_status": "AVAILABLE"
+      },
+      "id": "246606889",
+      "name": "Checkout complete (All Web Site Data)",
+      "include_in_conversions_metric": false,
+      "click_through_lookback_window_days": "30",
+      "view_through_lookback_window_days": "1"
+    }
+  },
+  {
+    "conversion_action": {
+      "resource_name": "customers/1675806490/conversionActions/724243401",
+      "status": "HIDDEN",
+      "type_": "UNIVERSAL_ANALYTICS_GOAL",
+      "category": "ENGAGEMENT",
+      "value_settings": {
+        "default_value": 1.0,
+        "always_use_default_value": false
+      },
+      "counting_type": "MANY_PER_CLICK",
+      "attribution_model_settings": {
+        "attribution_model": "GOOGLE_ADS_LAST_CLICK",
+        "data_driven_model_status": "AVAILABLE"
+      },
+      "id": "724243401",
+      "name": "Intelligente Zielvorhaben (All Web Site Data)",
+      "include_in_conversions_metric": true,
+      "click_through_lookback_window_days": "30",
+      "view_through_lookback_window_days": "1"
+    }
+  },
+  {
+    "conversion_action": {
+      "resource_name": "customers/1675806490/conversionActions/1023883414",
+      "status": "ENABLED",
+      "type_": "GOOGLE_ANALYTICS_4_PURCHASE",
+      "category": "PURCHASE",
+      "value_settings": {
+        "default_value": 1.0,
+        "always_use_default_value": false
+      },
+      "counting_type": "MANY_PER_CLICK",
+      "attribution_model_settings": {
+        "attribution_model": "UNKNOWN",
+        "data_driven_model_status": "AVAILABLE"
+      },
+      "id": "1023883414",
+      "name": "OOFOS_DE_B2C - GA4 (web) purchase",
+      "include_in_conversions_metric": true,
+      "click_through_lookback_window_days": "90",
+      "view_through_lookback_window_days": "1"
+    }
+  },
+  {
+    "conversion_action": {
+      "resource_name": "customers/1675806490/conversionActions/6631221315",
+      "status": "ENABLED",
+      "type_": "GOOGLE_ANALYTICS_4_CUSTOM",
+      "category": "DEFAULT",
+      "value_settings": {
+        "default_value": 1.0,
+        "always_use_default_value": false
+      },
+      "counting_type": "MANY_PER_CLICK",
+      "attribution_model_settings": {
+        "attribution_model": "UNKNOWN",
+        "data_driven_model_status": "AVAILABLE"
+      },
+      "id": "6631221315",
+      "name": "OOFOS_DE_B2C - GA4 (web) checkout_complete",
+      "include_in_conversions_metric": false,
+      "click_through_lookback_window_days": "90",
+      "view_through_lookback_window_days": "1"
+    }
+  }
+]

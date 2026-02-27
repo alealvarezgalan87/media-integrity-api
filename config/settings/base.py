@@ -149,11 +149,27 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "Media Structural Integrity Engine™ — REST API",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
+    "SECURITY": [
+        {"jwtAuth": []},
+        {"apiKeyAuth": []},
+    ],
+    "APPEND_COMPONENTS": {
+        "securitySchemes": {
+            "apiKeyAuth": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "X-API-Key",
+                "description": "Session API Key returned by POST /api/v1/auth/login/",
+            },
+        },
+    },
 }
 
 # ---------------------------------------------------------------------------
 # CORS
 # ---------------------------------------------------------------------------
+
+FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:3000")
 
 CORS_ALLOWED_ORIGINS = os.getenv(
     "ALLOWED_ORIGINS", "http://localhost:3000"

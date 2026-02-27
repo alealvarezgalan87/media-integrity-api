@@ -1,0 +1,209 @@
+{
+  "run_id": "593a7c25-3ba3-4941-8ed6-3c4d87f2b12b",
+  "account_id": "167-580-6490",
+  "account_name": "OOFOS_DE_Ad Account_1",
+  "date_range": {
+    "start": "2026-02-01",
+    "end": "2026-02-26"
+  },
+  "generated_at": "2026-02-27T02:49:14.233766+00:00",
+  "engine_version": "1.0.0",
+  "composite_score": {
+    "value": 50,
+    "risk_band": "High Structural Exposure",
+    "confidence": "High",
+    "capital_implication": "REWEIGHT"
+  },
+  "domain_scores": {
+    "demand_capture_integrity": {
+      "value": 46,
+      "weight": 0.25,
+      "weighted_contribution": 11.5,
+      "key_findings": [
+        "Search impression share critically low at 22%",
+        "Rank-lost IS at 74% \u2014 quality/bid issues",
+        "Auction insights unavailable \u2014 competitive position estimated"
+      ],
+      "data_completeness": 0.85
+    },
+    "automation_exposure": {
+      "value": 21,
+      "weight": 0.2,
+      "weighted_contribution": 4.2,
+      "key_findings": [
+        "100% spend on automated bidding",
+        "PMax: 100% of total budget",
+        "PMax channel HHI: 0.96",
+        "1 bidding strategy types in use"
+      ],
+      "data_completeness": 1.0
+    },
+    "measurement_integrity": {
+      "value": 50,
+      "weight": 0.25,
+      "weighted_contribution": 12.5,
+      "key_findings": [
+        "2 attribution models across conversion actions",
+        "DDA adoption: 0%",
+        "Inconsistent lookback windows across conversion actions"
+      ],
+      "data_completeness": 0.7
+    },
+    "capital_allocation_discipline": {
+      "value": 75,
+      "weight": 0.2,
+      "weighted_contribution": 15.0,
+      "key_findings": [
+        "Budget utilization: 104%",
+        "ROAS variance CV: 0.53",
+        "Zero-conversion spend: 0%"
+      ],
+      "data_completeness": 1.0
+    },
+    "creative_velocity": {
+      "value": 73,
+      "weight": 0.1,
+      "weighted_contribution": 7.3,
+      "key_findings": [
+        "257 assets across 9 asset groups",
+        "0% disapproved",
+        "10 format types"
+      ],
+      "data_completeness": 0.9091
+    }
+  },
+  "red_flags": [
+    {
+      "id": "DC-LOW-IMPRESSION-SHARE",
+      "severity": "high",
+      "domain": "demand_capture_integrity",
+      "title": "Low Search Impression Share",
+      "description": "Capturing less than 30% of available search impressions.",
+      "evidence": {
+        "metric": "avg_search_impression_share",
+        "actual_value": 0.2221,
+        "condition": "avg_search_impression_share < 0.30"
+      },
+      "recommendation": "Review bid strategy and quality scores. Consider budget increases for high-ROAS campaigns."
+    },
+    {
+      "id": "DC-RANK-LOSS-HIGH",
+      "severity": "medium",
+      "domain": "demand_capture_integrity",
+      "title": "Significant Rank-Based Impression Loss",
+      "description": "More than 30% of impressions lost due to ad rank (quality/bid).",
+      "evidence": {
+        "metric": "avg_rank_lost_impression_share",
+        "actual_value": 0.7394,
+        "condition": "avg_rank_lost_impression_share > 0.30"
+      },
+      "recommendation": "Improve Quality Scores or increase bids on high-value keywords."
+    },
+    {
+      "id": "AE-OVER-AUTOMATED",
+      "severity": "medium",
+      "domain": "automation_exposure",
+      "title": "Over-Reliance on Automation",
+      "description": "More than 90% of spend on automated bidding strategies.",
+      "evidence": {
+        "metric": "pct_spend_automated",
+        "actual_value": 1.0,
+        "condition": "pct_spend_automated > 0.90"
+      },
+      "recommendation": "Maintain manual control on at least one campaign for benchmarking."
+    },
+    {
+      "id": "AE-PMAX-DOMINANT",
+      "severity": "high",
+      "domain": "automation_exposure",
+      "title": "PMax Budget Dominance",
+      "description": "Performance Max consuming more than 60% of total budget.",
+      "evidence": {
+        "metric": "pct_spend_pmax",
+        "actual_value": 1.0,
+        "condition": "pct_spend_pmax > 0.60"
+      },
+      "recommendation": "Diversify spend across campaign types. PMax should complement, not replace, Search."
+    },
+    {
+      "id": "AE-PMAX-CHANNEL-CONCENTRATED",
+      "severity": "medium",
+      "domain": "automation_exposure",
+      "title": "PMax Channel Concentration",
+      "description": "PMax spend heavily concentrated in one channel.",
+      "evidence": {
+        "metric": "pmax_channel_hhi",
+        "actual_value": 0.9555,
+        "condition": "pmax_channel_hhi > 0.50"
+      },
+      "recommendation": "Review PMax asset group strategy to encourage distribution across channels."
+    },
+    {
+      "id": "MI-NO-DDA",
+      "severity": "high",
+      "domain": "measurement_integrity",
+      "title": "Low Data-Driven Attribution Adoption",
+      "description": "Less than 50% of conversion actions using Data-Driven Attribution.",
+      "evidence": {
+        "metric": "dda_adoption_rate",
+        "actual_value": 0.0,
+        "condition": "dda_adoption_rate < 0.50"
+      },
+      "recommendation": "Migrate eligible conversion actions to DDA for more accurate measurement."
+    },
+    {
+      "id": "MI-LOOKBACK-MISMATCH",
+      "severity": "medium",
+      "domain": "measurement_integrity",
+      "title": "Inconsistent Lookback Windows",
+      "description": "Conversion actions have different lookback windows.",
+      "evidence": {
+        "metric": "lookback_window_consistency",
+        "actual_value": false,
+        "condition": "lookback_window_consistency == false"
+      },
+      "recommendation": "Standardize lookback windows across all conversion actions."
+    }
+  ],
+  "confidence_report": {
+    "level": "High",
+    "tables": [
+      {
+        "table": "campaign_performance",
+        "status": "complete"
+      },
+      {
+        "table": "budget_allocation",
+        "status": "complete"
+      },
+      {
+        "table": "impression_share",
+        "status": "complete"
+      },
+      {
+        "table": "conversion_actions",
+        "status": "complete"
+      },
+      {
+        "table": "bidding_strategies",
+        "status": "complete"
+      },
+      {
+        "table": "pmax_breakdown",
+        "status": "complete"
+      },
+      {
+        "table": "asset_performance",
+        "status": "complete"
+      },
+      {
+        "table": "auction_insights",
+        "status": "failed"
+      },
+      {
+        "table": "change_history",
+        "status": "complete"
+      }
+    ]
+  }
+}

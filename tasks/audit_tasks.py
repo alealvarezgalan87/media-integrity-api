@@ -46,6 +46,8 @@ def run_audit_task(self, run_id: str):
         credentials = None
         demo_key = None
 
+        login_customer_id = None
+
         if audit.source == "live":
             try:
                 creds = org.google_credentials
@@ -55,6 +57,7 @@ def run_audit_task(self, run_id: str):
                     "client_secret": creds.client_secret,
                     "refresh_token": creds.refresh_token,
                 }
+                login_customer_id = creds.mcc_id or None
             except Exception:
                 raise ValueError("No Google Ads credentials configured for this organization.")
         else:
@@ -66,6 +69,7 @@ def run_audit_task(self, run_id: str):
             end_date=str(audit.date_range_end),
             demo_key=demo_key,
             credentials=credentials,
+            login_customer_id=login_customer_id,
         )
 
         scorecard = result.get("_scorecard") or {}

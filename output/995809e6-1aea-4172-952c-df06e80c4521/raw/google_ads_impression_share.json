@@ -1,0 +1,1826 @@
+[
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.06144393241167435,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.8659205617730963
+    },
+    "segments": {
+      "date": "2026-01-01"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-02"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.14924019051939216,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.792469947833976
+    },
+    "segments": {
+      "date": "2026-01-03"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-04"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-05"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-06"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-07"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.02250108178277802,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-08"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.01757134862898713,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-09"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.1278819551183523,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.8223178604365201
+    },
+    "segments": {
+      "date": "2026-01-10"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.21318681318681318,
+      "search_rank_lost_impression_share": 0.7868131868131868
+    },
+    "segments": {
+      "date": "2026-01-11"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.005527043031977891,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-12"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.10642023346303502,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.8502918287937743
+    },
+    "segments": {
+      "date": "2026-01-13"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.030062393647192286,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-14"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-15"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-16"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-17"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.03942583732057416,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-18"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-19"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.10928301886792453,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.8502641509433962
+    },
+    "segments": {
+      "date": "2026-01-20"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-21"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-22"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-23"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.043562564632885215,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-24"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.01524390243902439,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-25"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.052106430155210645,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-26"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-27"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-28"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-29"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.08358032009484291,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.8518079430942501
+    },
+    "segments": {
+      "date": "2026-01-30"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0035932446999640674,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-31"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.1943127962085308,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.7612954186413902
+    },
+    "segments": {
+      "date": "2026-02-01"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-02-02"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.023282618718303366,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-02-03"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.038771031455742504,
+      "search_impression_share": 0.182882223847842,
+      "search_rank_lost_impression_share": 0.7783467446964155
+    },
+    "segments": {
+      "date": "2026-02-04"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0029455081001472753,
+      "search_impression_share": 0.23858615611192932,
+      "search_rank_lost_impression_share": 0.7584683357879234
+    },
+    "segments": {
+      "date": "2026-02-05"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.006514657980456026,
+      "search_impression_share": 0.19543973941368079,
+      "search_rank_lost_impression_share": 0.7980456026058632
+    },
+    "segments": {
+      "date": "2026-02-06"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-02-07"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-02-08"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-02-09"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-02-10"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-02-11"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-02-12"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-02-13"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-02-14"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.21715817694369974,
+      "search_impression_share": 0.10924932975871314,
+      "search_rank_lost_impression_share": 0.6735924932975871
+    },
+    "segments": {
+      "date": "2026-02-15"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.1141439205955335,
+      "search_rank_lost_impression_share": 0.8858560794044665
+    },
+    "segments": {
+      "date": "2026-02-16"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.12046783625730995,
+      "search_rank_lost_impression_share": 0.87953216374269
+    },
+    "segments": {
+      "date": "2026-02-17"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.13702623906705538,
+      "search_impression_share": 0.21720116618075802,
+      "search_rank_lost_impression_share": 0.6457725947521866
+    },
+    "segments": {
+      "date": "2026-02-18"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-02-19"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.5790031813361611,
+      "search_impression_share": 0.16755037115588547,
+      "search_rank_lost_impression_share": 0.25344644750795337
+    },
+    "segments": {
+      "date": "2026-02-20"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.21836734693877552,
+      "search_rank_lost_impression_share": 0.7816326530612245
+    },
+    "segments": {
+      "date": "2026-02-21"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.15781710914454278,
+      "search_rank_lost_impression_share": 0.8421828908554573
+    },
+    "segments": {
+      "date": "2026-02-22"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-02-23"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.007705008255365988,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-02-24"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.16082474226804125,
+      "search_rank_lost_impression_share": 0.8391752577319588
+    },
+    "segments": {
+      "date": "2026-02-25"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.14022140221402213,
+      "search_rank_lost_impression_share": 0.8597785977859779
+    },
+    "segments": {
+      "date": "2026-02-26"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-01"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-02"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.1019367991845056,
+      "search_rank_lost_impression_share": 0.8980632008154944
+    },
+    "segments": {
+      "date": "2026-01-03"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-04"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-05"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-06"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-07"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-08"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-09"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-10"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-11"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-12"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-13"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-14"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.1529808773903262,
+      "search_rank_lost_impression_share": 0.8470191226096738
+    },
+    "segments": {
+      "date": "2026-01-15"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-16"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-17"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-18"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-19"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-20"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-21"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-22"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-23"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-24"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-25"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-26"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-27"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-28"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-29"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-30"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-01-31"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-02-01"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-02-02"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-02-03"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-02-04"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.9001
+    },
+    "segments": {
+      "date": "2026-02-05"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.23173803526448364,
+      "search_rank_lost_impression_share": 0.7682619647355163
+    },
+    "segments": {
+      "date": "2026-02-06"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.538860103626943,
+      "search_rank_lost_impression_share": 0.46113989637305697
+    },
+    "segments": {
+      "date": "2026-02-07"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.14857142857142858,
+      "search_rank_lost_impression_share": 0.8514285714285714
+    },
+    "segments": {
+      "date": "2026-02-08"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.12179487179487179,
+      "search_rank_lost_impression_share": 0.8782051282051282
+    },
+    "segments": {
+      "date": "2026-02-09"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.24279210925644917,
+      "search_rank_lost_impression_share": 0.7572078907435509
+    },
+    "segments": {
+      "date": "2026-02-10"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.19873817034700317,
+      "search_rank_lost_impression_share": 0.8012618296529969
+    },
+    "segments": {
+      "date": "2026-02-11"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.027287319422150885,
+      "search_impression_share": 0.29213483146067415,
+      "search_rank_lost_impression_share": 0.680577849117175
+    },
+    "segments": {
+      "date": "2026-02-12"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.03855421686746988,
+      "search_impression_share": 0.17349397590361446,
+      "search_rank_lost_impression_share": 0.7879518072289157
+    },
+    "segments": {
+      "date": "2026-02-13"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0460431654676259,
+      "search_impression_share": 0.2805755395683453,
+      "search_rank_lost_impression_share": 0.6733812949640288
+    },
+    "segments": {
+      "date": "2026-02-14"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.256198347107438,
+      "search_rank_lost_impression_share": 0.743801652892562
+    },
+    "segments": {
+      "date": "2026-02-15"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.6148867313915858,
+      "search_rank_lost_impression_share": 0.3851132686084142
+    },
+    "segments": {
+      "date": "2026-02-16"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.7730496453900709,
+      "search_rank_lost_impression_share": 0.22695035460992907
+    },
+    "segments": {
+      "date": "2026-02-17"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.036290322580645164,
+      "search_impression_share": 0.4314516129032258,
+      "search_rank_lost_impression_share": 0.532258064516129
+    },
+    "segments": {
+      "date": "2026-02-18"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.057692307692307696,
+      "search_impression_share": 0.46794871794871795,
+      "search_rank_lost_impression_share": 0.47435897435897434
+    },
+    "segments": {
+      "date": "2026-02-19"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.031088082901554404,
+      "search_impression_share": 0.39378238341968913,
+      "search_rank_lost_impression_share": 0.5751295336787565
+    },
+    "segments": {
+      "date": "2026-02-20"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.06578947368421052,
+      "search_impression_share": 0.6348684210526315,
+      "search_rank_lost_impression_share": 0.2993421052631579
+    },
+    "segments": {
+      "date": "2026-02-21"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.020905923344947737,
+      "search_impression_share": 0.3519163763066202,
+      "search_rank_lost_impression_share": 0.627177700348432
+    },
+    "segments": {
+      "date": "2026-02-22"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.0,
+      "search_impression_share": 0.7447916666666666,
+      "search_rank_lost_impression_share": 0.2552083333333333
+    },
+    "segments": {
+      "date": "2026-02-23"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.007792207792207792,
+      "search_impression_share": 0.44415584415584414,
+      "search_rank_lost_impression_share": 0.548051948051948
+    },
+    "segments": {
+      "date": "2026-02-24"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.4298245614035088,
+      "search_impression_share": 0.0999,
+      "search_rank_lost_impression_share": 0.4824561403508772
+    },
+    "segments": {
+      "date": "2026-02-25"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "advertising_channel_type": "PERFORMANCE_MAX",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "search_budget_lost_impression_share": 0.13333333333333333,
+      "search_impression_share": 0.18787878787878787,
+      "search_rank_lost_impression_share": 0.6787878787878788
+    },
+    "segments": {
+      "date": "2026-02-26"
+    }
+  }
+]
