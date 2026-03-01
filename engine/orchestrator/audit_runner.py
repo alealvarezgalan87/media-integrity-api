@@ -195,4 +195,11 @@ def run_audit(
     manifest["_scorecard"] = report_results.get("scorecard") if report_results else None
     manifest["_scoring_results"] = scoring_results
 
+    # Save raw extractor data for detailed Excel report sheets
+    if is_live and raw_data:
+        manifest["_raw_data"] = {
+            k: v for k, v in raw_data.items()
+            if k != "extraction_stats"
+        }
+
     return manifest

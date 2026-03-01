@@ -57,7 +57,17 @@ class AuditViewSet(viewsets.ModelViewSet):
             account_id_raw = "000-000-0000"
         else:
             account_id_raw = data.get("account_id", "")
-            account_name = f"Account {account_id_raw}"
+            account_name = data.get("account_name", "")
+            if not account_name:
+                # Try to find the real name from GoogleAdsAccount
+                from core.models import GoogleAdsAccount
+                gads_account = GoogleAdsAccount.objects.filter(
+                    organization=org, account_id=account_id_raw
+                ).first()
+                account_name = (
+                    f"{gads_account.account_name} ({account_id_raw})"
+                    if gads_account else f"Account {account_id_raw}"
+                )
 
         today = date.today()
 
@@ -184,6 +194,7 @@ class AuditViewSet(viewsets.ModelViewSet):
                 "duration_seconds": audit.duration_seconds,
                 "timestamp": str(audit.created_at) if audit.created_at else "",
             },
+            "raw_data": audit.full_result.get("_raw_data", {}),
         }
 
         excel_bytes = generate_audit_excel(audit_data)

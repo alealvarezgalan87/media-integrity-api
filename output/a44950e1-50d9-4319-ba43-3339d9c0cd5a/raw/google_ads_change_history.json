@@ -1,0 +1,46 @@
+[
+  {
+    "change_event": {
+      "resource_name": "customers/1675806490/changeEvents/1770318403401183~0~0",
+      "change_date_time": "2026-02-05 20:06:43.401183",
+      "change_resource_type": "CAMPAIGN_BUDGET",
+      "change_resource_name": "customers/1675806490/campaignBudgets/14330776049",
+      "client_type": "GOOGLE_ADS_WEB_CLIENT",
+      "user_email": "felix.earebel@gmail.com",
+      "old_resource": {
+        "campaign_budget": {
+          "amount_micros": "35000000"
+        }
+      },
+      "new_resource": {
+        "campaign_budget": {
+          "amount_micros": "15000000"
+        }
+      },
+      "resource_change_operation": "UPDATE",
+      "changed_fields": "amountMicros"
+    }
+  },
+  {
+    "change_event": {
+      "resource_name": "customers/1675806490/changeEvents/1770318397163743~0~0",
+      "change_date_time": "2026-02-05 20:06:37.163743",
+      "change_resource_type": "CAMPAIGN_BUDGET",
+      "change_resource_name": "customers/1675806490/campaignBudgets/13608776330",
+      "client_type": "GOOGLE_ADS_WEB_CLIENT",
+      "user_email": "felix.earebel@gmail.com",
+      "old_resource": {
+        "campaign_budget": {
+          "amount_micros": "25000000"
+        }
+      },
+      "new_resource": {
+        "campaign_budget": {
+          "amount_micros": "15000000"
+        }
+      },
+      "resource_change_operation": "UPDATE",
+      "changed_fields": "amountMicros"
+    }
+  }
+]

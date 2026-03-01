@@ -56,6 +56,7 @@ class UserAdmin(admin.ModelAdmin):
     list_display = ["username", "email", "organization", "role", "is_active"]
     list_filter = ["role", "organization", "is_active"]
     search_fields = ["username", "email"]
+    filter_horizontal = ["google_ads_accounts"]
 
 
 @admin.register(ApiKey)

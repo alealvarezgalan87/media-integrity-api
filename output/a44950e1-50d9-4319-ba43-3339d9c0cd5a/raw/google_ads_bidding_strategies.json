@@ -1,0 +1,258 @@
+[
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/935927894",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSIONS",
+      "name": "DE_1_Search_Product Terms_1",
+      "id": "935927894"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/958966941",
+      "bidding_strategy_type": "MANUAL_CPC",
+      "name": "Generic [search]",
+      "id": "958966941"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/960577847",
+      "bidding_strategy_type": "TARGET_ROAS",
+      "name": "DE_1_Shopping_All Products_1",
+      "id": "960577847"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/1012857303",
+      "bidding_strategy_type": "MANUAL_CPC",
+      "name": "Generic Healthy Shoes [Search]",
+      "id": "1012857303"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/1095426190",
+      "bidding_strategy_type": "MANUAL_CPC",
+      "name": "Recovery [search]",
+      "id": "1095426190"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/1139146272",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSIONS",
+      "name": "sports [search]",
+      "id": "1139146272"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/1408192791",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSIONS",
+      "name": "Footbed (search)",
+      "id": "1408192791"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/1602409128",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSIONS",
+      "name": "Plantar Fasciitis [Search]",
+      "id": "1602409128"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/8560117588",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSIONS",
+      "name": "DE_1_Search_Brand_1",
+      "id": "8560117588"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/10338667334",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSIONS",
+      "name": "DE_1_Search_Brand + Gender_1",
+      "id": "10338667334"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/10344346263",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSIONS",
+      "name": "DE_1_Search_Brand + Market_1",
+      "id": "10344346263"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/11180419334",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSIONS",
+      "name": "DE_1_Search_Brand + Style_1",
+      "id": "11180419334"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/11180457725",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSIONS",
+      "name": "DE_1_Search_Recovery + Type_1",
+      "id": "11180457725"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/11181188121",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSIONS",
+      "name": "DE_Brand",
+      "id": "11181188121"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/11182821046",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSIONS",
+      "name": "DE_1_Search_Plantar Fasciitis + Type_1",
+      "id": "11182821046"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/13132658803",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSIONS",
+      "name": "DE_Berufe [Search]",
+      "id": "13132658803"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/13133181481",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSIONS",
+      "name": "DE_Sport, Outdoor & Fun [Search]",
+      "id": "13133181481"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/13146080632",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSIONS",
+      "name": "Gesundheitsschuhe",
+      "id": "13146080632"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/14347617002",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSIONS",
+      "name": "DE_Damen",
+      "id": "14347617002"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/16397354630",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSIONS",
+      "name": "DE_1_Search_Brand + Type_1",
+      "id": "16397354630"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/18325905045",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSION_VALUE",
+      "name": "PMax: Smart Shopping",
+      "id": "18325905045"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/18331974188",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSION_VALUE",
+      "name": "PMax: Campaign for 23361",
+      "id": "18331974188"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21016324548",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSIONS",
+      "name": "PMax: DACH_Shooping_All Products_FEB",
+      "id": "21016324548"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21020992240",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSION_VALUE",
+      "name": "DE_Shopping_TG_OOFOS",
+      "id": "21020992240"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21026416246",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSION_VALUE",
+      "name": "DACH_Sales-Performance Max_All Products",
+      "id": "21026416246"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21069413433",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSION_VALUE",
+      "name": "OOFOS_DE_Performance Max - Website-Traffic _ March 05",
+      "id": "21069413433"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21117357804",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSION_VALUE",
+      "name": "Leads-Fersensporn 22.03",
+      "id": "21117357804"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSION_VALUE",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21345488826",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSION_VALUE",
+      "name": "PF_Fersensporn_Juni",
+      "id": "21345488826"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21363239680",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSION_VALUE",
+      "name": "PF MAX_Recovery_Juni",
+      "id": "21363239680"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22122420863",
+      "bidding_strategy_type": "TARGET_SPEND",
+      "name": "Kampagne_25_Neu",
+      "id": "22122420863"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "bidding_strategy_type": "MAXIMIZE_CONVERSION_VALUE",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    }
+  }
+]

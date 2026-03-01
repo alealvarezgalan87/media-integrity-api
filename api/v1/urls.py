@@ -20,7 +20,9 @@ from api.v1.views.google_oauth import (
     GoogleOAuthStatusView,
 )
 from api.v1.views.settings import (
+    GoogleAccountDetailView,
     GoogleAccountsListView,
+    GoogleAccountsSyncView,
     GoogleConfigView,
     ReportConfigView,
     ScoringConfigView,
@@ -48,6 +50,8 @@ urlpatterns = [
     path("settings/google/", GoogleConfigView.as_view(), name="settings-google"),
     path("settings/google/test/", TestConnectionView.as_view(), name="settings-google-test"),
     path("settings/google/accounts/", GoogleAccountsListView.as_view(), name="settings-google-accounts"),
+    path("settings/google/accounts/sync/", GoogleAccountsSyncView.as_view(), name="settings-google-accounts-sync"),
+    path("settings/google/accounts/<str:account_id>/", GoogleAccountDetailView.as_view(), name="settings-google-account-detail"),
     path("settings/google/oauth/authorize/", GoogleOAuthAuthorizeView.as_view(), name="google-oauth-authorize"),
     path("settings/google/oauth/callback/", GoogleOAuthCallbackView.as_view(), name="google-oauth-callback"),
     path("settings/google/oauth/status/", GoogleOAuthStatusView.as_view(), name="google-oauth-status"),

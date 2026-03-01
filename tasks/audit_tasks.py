@@ -147,6 +147,13 @@ def run_audit_task(self, run_id: str):
                 if file_path:
                     _save_report_file(audit, report_type, file_path, default_name)
 
+        return {
+            "run_id": str(audit.run_id),
+            "status": "SUCCESS",
+            "composite_score": audit.composite_score,
+            "duration": audit.duration_seconds,
+        }
+
     except Exception as exc:
         audit.status = Audit.Status.FAILED
         audit.errors = [str(exc)]

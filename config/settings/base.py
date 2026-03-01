@@ -194,3 +194,9 @@ CELERY_ACCEPT_CONTENT = ["json"]
 CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"
 CELERY_TIMEZONE = "UTC"
+CELERY_BEAT_SCHEDULE = {
+    "sync-google-accounts": {
+        "task": "tasks.sync_accounts.sync_google_accounts_all",
+        "schedule": 3600,  # Every hour — individual orgs respect their own interval
+    },
+}

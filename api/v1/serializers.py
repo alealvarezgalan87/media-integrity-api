@@ -91,6 +91,7 @@ class RunAuditSerializer(serializers.Serializer):
     source = serializers.ChoiceField(choices=["demo", "live"])
     demo_key = serializers.CharField(required=False, default="demo-moderate")
     account_id = serializers.CharField(required=False)
+    account_name = serializers.CharField(required=False)
     start_date = serializers.DateField(required=False)
     end_date = serializers.DateField(required=False)
 
@@ -140,6 +141,7 @@ class GoogleAdsConfigSerializer(serializers.Serializer):
     refresh_token = serializers.CharField(required=False, allow_blank=True)
     mcc_id = serializers.CharField(required=False, allow_blank=True)
     api_version = serializers.CharField(required=False, default="v23")
+    account_sync_interval_hours = serializers.IntegerField(required=False, min_value=1, max_value=168)
 
 
 class ReportOptionsSerializer(serializers.Serializer):

@@ -41,6 +41,12 @@ class User(AbstractUser):
 
     role = models.CharField(max_length=20, choices=Role.choices, default=Role.USER)
 
+    google_ads_accounts = models.ManyToManyField(
+        "GoogleAdsAccount",
+        blank=True,
+        related_name="users",
+    )
+
     class Meta:
         db_table = "auth_user"
 
@@ -122,6 +128,10 @@ class GoogleAdsCredential(models.Model):
     api_version = models.CharField(max_length=10, default="v23")
     is_verified = models.BooleanField(default=False)
     last_verified_at = models.DateTimeField(null=True, blank=True)
+    account_sync_interval_hours = models.PositiveIntegerField(
+        default=6,
+        help_text="How often to sync accounts from Google Ads (in hours)",
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

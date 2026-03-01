@@ -137,7 +137,8 @@ def generate_audit_excel(audit_data: dict) -> bytes:
 
     Args:
         audit_data: Dict with keys: account_name, account_id, date_range,
-                    scoring, domain_scores, red_flags, execution, run_id.
+                    scoring, domain_scores, red_flags, execution, run_id,
+                    raw_data (optional — granular extractor output for detailed sheets).
 
     Returns:
         Excel file content as bytes.
@@ -151,6 +152,7 @@ def generate_audit_excel(audit_data: dict) -> bytes:
     domain_scores = audit_data.get("domain_scores", {})
     red_flags = audit_data.get("red_flags", [])
     run_id = audit_data.get("run_id", "")
+    raw_data = audit_data.get("raw_data", {})
 
     composite = scoring.get("composite_score", 0) or 0
     risk_band_label = scoring.get("risk_band", "")
@@ -403,7 +405,366 @@ def generate_audit_excel(audit_data: dict) -> bytes:
         row += 2
 
     # ═════════════════════════════════════════════════════════════════════════
-    # SHEET 4: EXECUTION LOG
+    # SHEET 4: RECOMMENDATIONS
+    # ═════════════════════════════════════════════════════════════════════════
+    ws_recs = wb.create_sheet("Recommendations")
+    ws_recs.sheet_properties.tabColor = "F39C12"
+    _set_col_widths(ws_recs, [5, 12, 22, 45, 45, 35])
+
+    _title_row(ws_recs, 1, f"Top Recommendations — {account_name}", 6)
+
+    severity_order = {"critical": 0, "high": 1, "medium": 2, "low": 3}
+    sorted_flags = sorted(
+        red_flags,
+        key=lambda f: severity_order.get(f.get("severity", "medium").lower(), 99),
+    )
+    top_flags = sorted_flags[:10]
+
+    _title_row(ws_recs, 2,
+               f"{len(top_flags)} action item(s) prioritized by severity",
+               6, font=WHITE_FONT_SM, fill=HEADER_BG)
+
+    row = 4
+    _header_row(ws_recs, row, ["#", "Priority", "Domain", "NOW (Current State)",
+                                "SUGGESTION (Action Required)", "WHY (Impact)"])
+    row += 1
+
+    if not top_flags:
+        ws_recs.merge_cells(start_row=row, start_column=1, end_row=row, end_column=6)
+        ws_recs.cell(row=row, column=1,
+                     value="No action items — all checks passed.").font = DARK_FONT
+        ws_recs.cell(row=row, column=1).alignment = CENTER
+    else:
+        for idx, flag in enumerate(top_flags, 1):
+            severity = flag.get("severity", "medium").lower()
+            domain = flag.get("domain", "")
+            domain_label = DOMAIN_LABELS.get(domain, domain)
+
+            ws_recs.cell(row=row, column=1, value=idx).font = DARK_FONT_BOLD
+            ws_recs.cell(row=row, column=1).alignment = CENTER
+
+            sev_cell = ws_recs.cell(row=row, column=2, value=severity.upper())
+            sev_cell.font = SEVERITY_FONTS.get(severity, DARK_FONT_BOLD)
+            sev_cell.fill = SEVERITY_FILLS.get(severity, YELLOW_BG)
+            sev_cell.alignment = CENTER
+
+            ws_recs.cell(row=row, column=3, value=domain_label).font = DARK_FONT
+            ws_recs.cell(row=row, column=3).alignment = LEFT_WRAP
+
+            ws_recs.cell(row=row, column=4,
+                         value=flag.get("description", "")).font = DARK_FONT
+            ws_recs.cell(row=row, column=4).alignment = LEFT_WRAP
+
+            ws_recs.cell(row=row, column=5,
+                         value=flag.get("recommendation", "")).font = DARK_FONT
+            ws_recs.cell(row=row, column=5).alignment = LEFT_WRAP
+
+            evidence = flag.get("evidence", {})
+            if isinstance(evidence, dict):
+                why = "; ".join(f"{k}: {v}" for k, v in evidence.items()) if evidence else ""
+            else:
+                why = str(evidence) if evidence else ""
+            if not why:
+                why = flag.get("triggered_by", "")
+            ws_recs.cell(row=row, column=6, value=why).font = DARK_FONT
+            ws_recs.cell(row=row, column=6).alignment = LEFT_WRAP
+
+            alt_fill = LIGHT_GRAY_BG if idx % 2 == 0 else WHITE_BG
+            _apply_row_fill(ws_recs, row, 1, 6, alt_fill, exclude={2})
+            _apply_row_border(ws_recs, row, 1, 6)
+            ws_recs.row_dimensions[row].height = 60
+            row += 1
+
+    # ═════════════════════════════════════════════════════════════════════════
+    # SHEET 5: IMPRESSION SHARE (only if raw_data available)
+    # ═════════════════════════════════════════════════════════════════════════
+    is_data = raw_data.get("impression_share", [])
+    if is_data:
+        ws_is = wb.create_sheet("Impression Share")
+        ws_is.sheet_properties.tabColor = "3498DB"
+        _set_col_widths(ws_is, [35, 18, 14, 14, 14, 16, 16])
+
+        _title_row(ws_is, 1, f"Impression Share — {account_name}", 7)
+        _title_row(ws_is, 2, f"Search impression share metrics by campaign  |  Period: {date_str}",
+                   7, font=WHITE_FONT_SM, fill=HEADER_BG)
+
+        row = 4
+        _header_row(ws_is, row, ["Campaign", "Type", "Search IS %", "Top IS %",
+                                  "Abs Top IS %", "Lost to Rank %", "Lost to Budget %"])
+        row += 1
+
+        # Aggregate daily rows by campaign (avg IS metrics)
+        is_agg = {}
+        for r in is_data:
+            camp = r.get("campaign", {}) if isinstance(r.get("campaign"), dict) else {}
+            metrics = r.get("metrics", {}) if isinstance(r.get("metrics"), dict) else r
+            cname = camp.get("name", r.get("campaign_name", ""))
+            if not cname:
+                continue
+            if cname not in is_agg:
+                is_agg[cname] = {
+                    "type": camp.get("advertising_channel_type", ""),
+                    "vals": [], "count": 0,
+                }
+            is_agg[cname]["count"] += 1
+            is_agg[cname]["vals"].append(metrics)
+
+        is_metric_keys = [
+            "search_impression_share", "search_top_impression_share",
+            "search_absolute_top_impression_share",
+            "search_rank_lost_impression_share", "search_budget_lost_impression_share",
+        ]
+
+        for idx, (cname, agg) in enumerate(sorted(is_agg.items()), 1):
+            ws_is.cell(row=row, column=1, value=cname).font = DARK_FONT
+            ws_is.cell(row=row, column=1).alignment = LEFT_WRAP
+            ws_is.cell(row=row, column=2, value=agg["type"]).font = DARK_FONT
+            ws_is.cell(row=row, column=2).alignment = CENTER
+
+            for ki, key in enumerate(is_metric_keys):
+                col = 3 + ki
+                vals = [float(m.get(key, 0) or 0) for m in agg["vals"] if m.get(key) is not None]
+                if vals:
+                    avg = sum(vals) / len(vals)
+                    display = f"{avg:.1%}" if avg <= 1.0 else f"{avg:.1f}%"
+                else:
+                    display = "—"
+                c = ws_is.cell(row=row, column=col, value=display)
+                c.font = DARK_FONT
+                c.alignment = CENTER
+
+            alt_fill = LIGHT_GRAY_BG if idx % 2 == 0 else WHITE_BG
+            _apply_row_fill(ws_is, row, 1, 7, alt_fill)
+            _apply_row_border(ws_is, row, 1, 7)
+            row += 1
+
+    # ═════════════════════════════════════════════════════════════════════════
+    # SHEET 6: BUDGET & CAMPAIGNS (only if raw_data available)
+    # ═════════════════════════════════════════════════════════════════════════
+    campaign_data = raw_data.get("campaign_performance", [])
+    if campaign_data:
+        ws_budget = wb.create_sheet("Budget & Campaigns")
+        ws_budget.sheet_properties.tabColor = "27AE60"
+        _set_col_widths(ws_budget, [35, 18, 22, 14, 12, 14, 12, 12])
+
+        _title_row(ws_budget, 1, f"Budget & Campaigns — {account_name}", 8)
+        _title_row(ws_budget, 2,
+                   f"Campaign performance and budget allocation  |  Period: {date_str}",
+                   8, font=WHITE_FONT_SM, fill=HEADER_BG)
+
+        # Build bidding strategy lookup (nested: row.campaign.name / .bidding_strategy_type)
+        bidding_map = {}
+        for br in raw_data.get("bidding_strategies", []):
+            bc = br.get("campaign", {}) if isinstance(br.get("campaign"), dict) else {}
+            bname = bc.get("name", br.get("campaign_name", ""))
+            btype = bc.get("bidding_strategy_type", br.get("bidding_strategy_type", ""))
+            if bname:
+                bidding_map[bname] = btype
+
+        # Aggregate daily rows by campaign (sum cost/conversions/value)
+        camp_agg = {}
+        for r in campaign_data:
+            camp = r.get("campaign", {}) if isinstance(r.get("campaign"), dict) else {}
+            metrics = r.get("metrics", {}) if isinstance(r.get("metrics"), dict) else r
+            cname = camp.get("name", r.get("campaign_name", ""))
+            if not cname:
+                continue
+            if cname not in camp_agg:
+                camp_agg[cname] = {
+                    "type": camp.get("advertising_channel_type", ""),
+                    "cost": 0, "conversions": 0, "conv_value": 0,
+                }
+            cost_raw = metrics.get("cost_micros", metrics.get("cost", 0))
+            cost_val = float(cost_raw or 0)
+            # cost_micros is in micros (divide by 1e6)
+            if cost_val > 1_000_000:
+                cost_val = cost_val / 1_000_000
+            camp_agg[cname]["cost"] += cost_val
+            camp_agg[cname]["conversions"] += float(metrics.get("conversions", 0) or 0)
+            camp_agg[cname]["conv_value"] += float(
+                metrics.get("conversions_value", metrics.get("conversion_value", 0)) or 0
+            )
+
+        total_cost = sum(a["cost"] for a in camp_agg.values())
+
+        row = 4
+        _header_row(ws_budget, row, ["Campaign", "Type", "Bidding Strategy",
+                                      "Cost", "% of Total", "Conversions", "CPA", "ROAS"])
+        row += 1
+
+        total_conv = 0
+        total_value = 0
+        sorted_campaigns = sorted(camp_agg.items(), key=lambda x: x[1]["cost"], reverse=True)
+
+        for idx, (cname, agg) in enumerate(sorted_campaigns, 1):
+            cost = agg["cost"]
+            conv = agg["conversions"]
+            conv_val = agg["conv_value"]
+            total_conv += conv
+            total_value += conv_val
+
+            pct = cost / total_cost if total_cost > 0 else 0
+            cpa = cost / conv if conv > 0 else None
+            roas = conv_val / cost if cost > 0 else None
+            bidding = bidding_map.get(cname, "—")
+
+            ws_budget.cell(row=row, column=1, value=cname).font = DARK_FONT
+            ws_budget.cell(row=row, column=1).alignment = LEFT_WRAP
+            ws_budget.cell(row=row, column=2, value=agg["type"]).font = DARK_FONT
+            ws_budget.cell(row=row, column=2).alignment = CENTER
+            ws_budget.cell(row=row, column=3, value=bidding).font = DARK_FONT
+            ws_budget.cell(row=row, column=3).alignment = LEFT_WRAP
+
+            ws_budget.cell(row=row, column=4, value=round(cost, 2)).font = DARK_FONT
+            ws_budget.cell(row=row, column=4).alignment = CENTER
+            ws_budget.cell(row=row, column=4).number_format = '#,##0.00'
+
+            ws_budget.cell(row=row, column=5, value=round(pct, 3)).font = DARK_FONT
+            ws_budget.cell(row=row, column=5).alignment = CENTER
+            ws_budget.cell(row=row, column=5).number_format = '0.0%'
+
+            ws_budget.cell(row=row, column=6, value=round(conv, 1)).font = DARK_FONT
+            ws_budget.cell(row=row, column=6).alignment = CENTER
+
+            ws_budget.cell(row=row, column=7,
+                           value=round(cpa, 2) if cpa is not None else "—").font = DARK_FONT
+            ws_budget.cell(row=row, column=7).alignment = CENTER
+            if cpa is not None:
+                ws_budget.cell(row=row, column=7).number_format = '#,##0.00'
+
+            ws_budget.cell(row=row, column=8,
+                           value=round(roas, 2) if roas is not None else "—").font = DARK_FONT
+            ws_budget.cell(row=row, column=8).alignment = CENTER
+
+            alt_fill = LIGHT_GRAY_BG if idx % 2 == 0 else WHITE_BG
+            _apply_row_fill(ws_budget, row, 1, 8, alt_fill)
+            _apply_row_border(ws_budget, row, 1, 8)
+            row += 1
+
+        # Totals row
+        total_cpa = total_cost / total_conv if total_conv > 0 else None
+        total_roas = total_value / total_cost if total_cost > 0 else None
+
+        ws_budget.cell(row=row, column=1, value="TOTAL").font = WHITE_FONT
+        for col in range(1, 9):
+            ws_budget.cell(row=row, column=col).fill = DOMAIN_BG
+            ws_budget.cell(row=row, column=col).border = THIN_BORDER
+        ws_budget.cell(row=row, column=4, value=round(total_cost, 2)).font = WHITE_FONT
+        ws_budget.cell(row=row, column=4).alignment = CENTER
+        ws_budget.cell(row=row, column=4).number_format = '#,##0.00'
+        ws_budget.cell(row=row, column=5, value=1.0).font = WHITE_FONT
+        ws_budget.cell(row=row, column=5).alignment = CENTER
+        ws_budget.cell(row=row, column=5).number_format = '0.0%'
+        ws_budget.cell(row=row, column=6, value=round(total_conv, 1)).font = WHITE_FONT
+        ws_budget.cell(row=row, column=6).alignment = CENTER
+        ws_budget.cell(row=row, column=7,
+                       value=round(total_cpa, 2) if total_cpa else "—").font = WHITE_FONT
+        ws_budget.cell(row=row, column=7).alignment = CENTER
+        ws_budget.cell(row=row, column=8,
+                       value=round(total_roas, 2) if total_roas else "—").font = WHITE_FONT
+        ws_budget.cell(row=row, column=8).alignment = CENTER
+
+    # ═════════════════════════════════════════════════════════════════════════
+    # SHEET 7: CONVERSION SETUP (only if raw_data available)
+    # ═════════════════════════════════════════════════════════════════════════
+    conv_data = raw_data.get("conversion_actions", [])
+    if conv_data:
+        ws_conv = wb.create_sheet("Conversion Setup")
+        ws_conv.sheet_properties.tabColor = "8E44AD"
+        _set_col_widths(ws_conv, [35, 16, 20, 16, 16, 18, 16, 12])
+
+        _title_row(ws_conv, 1, f"Conversion Setup — {account_name}", 8)
+        _title_row(ws_conv, 2, f"{len(conv_data)} conversion action(s) configured",
+                   8, font=WHITE_FONT_SM, fill=HEADER_BG)
+
+        row = 4
+        _header_row(ws_conv, row, ["Conversion Action", "Category", "Attribution Model",
+                                    "Lookback (click)", "Lookback (view)", "Counting",
+                                    "In Conversions", "Status"])
+        row += 1
+
+        dda_count = 0
+        included_count = 0
+
+        for idx, ca in enumerate(conv_data, 1):
+            # Handle nested structure: row.conversion_action.{field}
+            ca_inner = ca.get("conversion_action", {}) if isinstance(ca.get("conversion_action"), dict) else ca
+            attr_settings = ca_inner.get("attribution_model_settings", {})
+            if isinstance(attr_settings, dict):
+                attr_model = attr_settings.get("attribution_model", "")
+            else:
+                attr_model = ca_inner.get("attribution_model", "")
+
+            name = ca_inner.get("name", "")
+            category = ca_inner.get("category", ca_inner.get("type_", ca_inner.get("type", "")))
+            lb_click = ca_inner.get("click_through_lookback_window_days",
+                                    ca_inner.get("lookback_window_days", ""))
+            lb_view = ca_inner.get("view_through_lookback_window_days", "")
+            counting = ca_inner.get("counting_type", "")
+            included = ca_inner.get("include_in_conversions_metric",
+                                    ca_inner.get("include_in_conversions",
+                                                  ca_inner.get("primary_for_goal", "")))
+            status = ca_inner.get("status", "")
+
+            if "DATA_DRIVEN" in str(attr_model).upper():
+                dda_count += 1
+            if str(included).lower() in ("true", "yes", "1"):
+                included_count += 1
+
+            ws_conv.cell(row=row, column=1, value=name).font = DARK_FONT
+            ws_conv.cell(row=row, column=1).alignment = LEFT_WRAP
+
+            ws_conv.cell(row=row, column=2, value=str(category)).font = DARK_FONT
+            ws_conv.cell(row=row, column=2).alignment = CENTER
+
+            attr_cell = ws_conv.cell(row=row, column=3, value=str(attr_model))
+            attr_cell.font = DARK_FONT_BOLD
+            attr_cell.alignment = CENTER
+            if "DATA_DRIVEN" in str(attr_model).upper():
+                attr_cell.fill = PASS_BG
+            elif "LAST_CLICK" in str(attr_model).upper():
+                attr_cell.fill = FAIL_BG
+
+            ws_conv.cell(row=row, column=4, value=str(lb_click)).font = DARK_FONT
+            ws_conv.cell(row=row, column=4).alignment = CENTER
+
+            ws_conv.cell(row=row, column=5, value=str(lb_view)).font = DARK_FONT
+            ws_conv.cell(row=row, column=5).alignment = CENTER
+
+            ws_conv.cell(row=row, column=6, value=str(counting)).font = DARK_FONT
+            ws_conv.cell(row=row, column=6).alignment = CENTER
+
+            incl_cell = ws_conv.cell(row=row, column=7, value=str(included))
+            incl_cell.font = DARK_FONT
+            incl_cell.alignment = CENTER
+            if str(included).lower() in ("true", "yes", "1"):
+                incl_cell.fill = PASS_BG
+
+            ws_conv.cell(row=row, column=8, value=str(status)).font = DARK_FONT
+            ws_conv.cell(row=row, column=8).alignment = CENTER
+
+            alt_fill = LIGHT_GRAY_BG if idx % 2 == 0 else WHITE_BG
+            _apply_row_fill(ws_conv, row, 1, 8, alt_fill, exclude={3, 7})
+            _apply_row_border(ws_conv, row, 1, 8)
+            row += 1
+
+        # Summary
+        row += 1
+        _title_row(ws_conv, row, "Summary", 8, font=SUBTITLE_FONT, fill=DOMAIN_BG)
+        row += 1
+        dda_pct = dda_count / len(conv_data) if conv_data else 0
+        summary_items = [
+            f"Total conversion actions: {len(conv_data)}",
+            f"Using Data-Driven Attribution: {dda_count} ({dda_pct:.0%})",
+            f"Included in conversions column: {included_count}",
+        ]
+        for s in summary_items:
+            ws_conv.cell(row=row, column=1, value=s).font = DARK_FONT
+            ws_conv.cell(row=row, column=1).alignment = LEFT_WRAP
+            row += 1
+
+    # ═════════════════════════════════════════════════════════════════════════
+    # SHEET 8: EXECUTION LOG (always last)
     # ═════════════════════════════════════════════════════════════════════════
     ws_exec = wb.create_sheet("Execution")
     ws_exec.sheet_properties.tabColor = "27AE60"

@@ -1,0 +1,5102 @@
+[
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "46",
+      "conversions_value": 132.0,
+      "conversions": 2.0,
+      "cost_micros": "28675533",
+      "all_conversions_value": 132.0,
+      "all_conversions": 2.0,
+      "impressions": "887"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-01"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "19",
+      "conversions_value": 360.0,
+      "conversions": 1.0,
+      "cost_micros": "8456945",
+      "all_conversions_value": 360.0,
+      "all_conversions": 1.0,
+      "impressions": "309"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-01"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "44",
+      "conversions_value": 150.0,
+      "conversions": 1.0,
+      "cost_micros": "23747234",
+      "all_conversions_value": 150.0,
+      "all_conversions": 1.0,
+      "impressions": "776"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-02"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "4",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "2560000",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "246"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-02"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "52",
+      "conversions_value": 176.975186,
+      "conversions": 2.018059,
+      "cost_micros": "31133365",
+      "all_conversions_value": 176.975186,
+      "all_conversions": 2.018059,
+      "impressions": "952"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-03"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "5",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "5400000",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "77"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-03"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "30",
+      "conversions_value": 53.024814,
+      "conversions": 0.981941,
+      "cost_micros": "28788595",
+      "all_conversions_value": 53.024814,
+      "all_conversions": 0.981941,
+      "impressions": "1092"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-04"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "27",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "14131073",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "341"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-04"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "18",
+      "conversions_value": 60.0,
+      "conversions": 1.0,
+      "cost_micros": "18760502",
+      "all_conversions_value": 60.0,
+      "all_conversions": 1.0,
+      "impressions": "780"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-05"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "38",
+      "conversions_value": 157.0,
+      "conversions": 2.0,
+      "cost_micros": "17880508",
+      "all_conversions_value": 157.0,
+      "all_conversions": 2.0,
+      "impressions": "259"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-05"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "18",
+      "conversions_value": 7.8303,
+      "conversions": 0.130505,
+      "cost_micros": "9255050",
+      "all_conversions_value": 7.8303,
+      "all_conversions": 0.130505,
+      "impressions": "273"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-06"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "42",
+      "conversions_value": 178.0,
+      "conversions": 3.0,
+      "cost_micros": "16062191",
+      "all_conversions_value": 178.0,
+      "all_conversions": 3.0,
+      "impressions": "670"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-06"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "34",
+      "conversions_value": 120.0,
+      "conversions": 2.0,
+      "cost_micros": "9380280",
+      "all_conversions_value": 120.0,
+      "all_conversions": 2.0,
+      "impressions": "172"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-07"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "10",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "4700000",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "772"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-07"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "46",
+      "conversions_value": 206.160699,
+      "conversions": 1.224773,
+      "cost_micros": "27282182",
+      "all_conversions_value": 206.160699,
+      "all_conversions": 1.224773,
+      "impressions": "964"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-08"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "21",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "16595459",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "624"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-08"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "5",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "136923",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "24"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-09"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "36",
+      "conversions_value": 54.0,
+      "conversions": 1.0,
+      "cost_micros": "16074067",
+      "all_conversions_value": 54.0,
+      "all_conversions": 1.0,
+      "impressions": "863"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-09"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "36",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "20872983",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "237"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-10"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "34",
+      "conversions_value": 540.0,
+      "conversions": 3.0,
+      "cost_micros": "20578614",
+      "all_conversions_value": 540.0,
+      "all_conversions": 3.0,
+      "impressions": "970"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-10"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "32",
+      "conversions_value": 230.5,
+      "conversions": 2.00625,
+      "cost_micros": "19344034",
+      "all_conversions_value": 230.5,
+      "all_conversions": 2.00625,
+      "impressions": "319"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-11"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "30",
+      "conversions_value": 108.839301,
+      "conversions": 1.775227,
+      "cost_micros": "15506711",
+      "all_conversions_value": 108.839301,
+      "all_conversions": 1.775227,
+      "impressions": "1213"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-11"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "33",
+      "conversions_value": 235.743458,
+      "conversions": 1.091166,
+      "cost_micros": "11597700",
+      "all_conversions_value": 235.743458,
+      "all_conversions": 1.091166,
+      "impressions": "202"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-12"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "29",
+      "conversions_value": 416.828888,
+      "conversions": 2.060776,
+      "cost_micros": "18749386",
+      "all_conversions_value": 416.828888,
+      "all_conversions": 2.060776,
+      "impressions": "1066"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-12"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "43",
+      "conversions_value": 25.63816,
+      "conversions": 0.320477,
+      "cost_micros": "14837709",
+      "all_conversions_value": 25.63816,
+      "all_conversions": 0.320477,
+      "impressions": "575"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-13"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "14",
+      "conversions_value": 24.687208,
+      "conversions": 0.314808,
+      "cost_micros": "11900000",
+      "all_conversions_value": 24.687208,
+      "all_conversions": 0.314808,
+      "impressions": "379"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-13"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "28",
+      "conversions_value": 112.966872,
+      "conversions": 1.980868,
+      "cost_micros": "17520165",
+      "all_conversions_value": 112.966872,
+      "all_conversions": 1.980868,
+      "impressions": "419"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-14"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "37",
+      "conversions_value": 7.892781,
+      "conversions": 0.202379,
+      "cost_micros": "20883286",
+      "all_conversions_value": 7.892781,
+      "all_conversions": 0.202379,
+      "impressions": "1315"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-14"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "38",
+      "conversions_value": 220.40988,
+      "conversions": 3.602915,
+      "cost_micros": "24120654",
+      "all_conversions_value": 220.40988,
+      "all_conversions": 3.602915,
+      "impressions": "825"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-15"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "22",
+      "conversions_value": 31.107219,
+      "conversions": 0.797621,
+      "cost_micros": "6514107",
+      "all_conversions_value": 31.107219,
+      "all_conversions": 0.797621,
+      "impressions": "367"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-15"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "27",
+      "conversions_value": 539.960415,
+      "conversions": 3.461366,
+      "cost_micros": "9647572",
+      "all_conversions_value": 539.960415,
+      "all_conversions": 3.461366,
+      "impressions": "210"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-16"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "28",
+      "conversions_value": 95.040738,
+      "conversions": 1.653399,
+      "cost_micros": "19130058",
+      "all_conversions_value": 95.040738,
+      "all_conversions": 1.653399,
+      "impressions": "1060"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-16"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "35",
+      "conversions_value": 466.0,
+      "conversions": 5.0,
+      "cost_micros": "14438143",
+      "all_conversions_value": 466.0,
+      "all_conversions": 5.0,
+      "impressions": "174"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-17"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "16",
+      "conversions_value": 60.0,
+      "conversions": 1.0,
+      "cost_micros": "16490000",
+      "all_conversions_value": 60.0,
+      "all_conversions": 1.0,
+      "impressions": "800"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-17"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "32",
+      "conversions_value": 300.0,
+      "conversions": 2.0,
+      "cost_micros": "13361203",
+      "all_conversions_value": 300.0,
+      "all_conversions": 2.0,
+      "impressions": "506"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-18"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "21",
+      "conversions_value": 99.546006,
+      "conversions": 1.564869,
+      "cost_micros": "7403045",
+      "all_conversions_value": 99.546006,
+      "all_conversions": 1.564869,
+      "impressions": "497"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-18"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "32",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "11573683",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "260"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-19"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "24",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "24088870",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1444"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-19"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "39",
+      "conversions_value": 54.0,
+      "conversions": 1.0,
+      "cost_micros": "25690849",
+      "all_conversions_value": 54.0,
+      "all_conversions": 1.0,
+      "impressions": "873"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-20"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "16",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "7986798",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "357"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-20"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "35",
+      "conversions_value": 107.37488,
+      "conversions": 1.592186,
+      "cost_micros": "8435973",
+      "all_conversions_value": 107.37488,
+      "all_conversions": 1.592186,
+      "impressions": "158"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-21"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "24",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "18797288",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1288"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-21"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "38",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "10819191",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "691"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-22"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "23",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "12649567",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "519"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-22"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "36",
+      "conversions_value": 134.0,
+      "conversions": 2.0,
+      "cost_micros": "14213140",
+      "all_conversions_value": 134.0,
+      "all_conversions": 2.0,
+      "impressions": "147"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-23"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "13",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "10240000",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1042"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-23"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "39",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "23702601",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "222"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-24"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "28",
+      "conversions_value": 72.0,
+      "conversions": 1.0,
+      "cost_micros": "23076930",
+      "all_conversions_value": 72.0,
+      "all_conversions": 1.0,
+      "impressions": "1204"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-24"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "32",
+      "conversions_value": 60.0,
+      "conversions": 1.0,
+      "cost_micros": "9967534",
+      "all_conversions_value": 60.0,
+      "all_conversions": 1.0,
+      "impressions": "228"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-25"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "17",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "15159489",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "554"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-25"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "30",
+      "conversions_value": 114.0,
+      "conversions": 2.0,
+      "cost_micros": "5975632",
+      "all_conversions_value": 114.0,
+      "all_conversions": 2.0,
+      "impressions": "520"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-26"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "24",
+      "conversions_value": 60.0,
+      "conversions": 1.0,
+      "cost_micros": "10368231",
+      "all_conversions_value": 60.0,
+      "all_conversions": 1.0,
+      "impressions": "383"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-26"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "47",
+      "conversions_value": 255.79105,
+      "conversions": 1.797015,
+      "cost_micros": "21936316",
+      "all_conversions_value": 255.79105,
+      "all_conversions": 1.797015,
+      "impressions": "1552"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-27"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "12",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "4764065",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "131"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-27"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "20",
+      "conversions_value": 63.0,
+      "conversions": 1.0,
+      "cost_micros": "8723009",
+      "all_conversions_value": 63.0,
+      "all_conversions": 1.0,
+      "impressions": "414"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-28"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "14",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "2442046",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "59"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH",
+      "date": "2026-02-28"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-01"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-01"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "2"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-02"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-02"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "2",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "900000",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "4"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-03"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-03"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "8"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-04"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-04"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "5"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-05"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-05"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "7"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-06"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-07"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "10"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-07"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "19"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-08"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-08"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-09"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "7"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-09"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "13"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-10"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-11"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "4"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-11"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "200000",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "3"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-12"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "1270000",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "30"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-12"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-13"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "2"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-14"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "4"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-15"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-15"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "3"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-16"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "890000",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "27"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-16"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 80.0,
+      "conversions": 1.0,
+      "cost_micros": "430000",
+      "all_conversions_value": 80.0,
+      "all_conversions": 1.0,
+      "impressions": "2"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-17"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "4"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-17"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "2"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-18"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "5"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-18"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-19"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "21"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-19"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "4"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-20"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "20"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-20"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-21"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "3"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-21"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "1130000",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "9"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-22"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "4"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-22"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "3"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-23"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "16"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-23"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "7"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-24"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "27"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-24"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "150000",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-25"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "7"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-25"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-26"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "14"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-27"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "5"
+    },
+    "segments": {
+      "ad_network_type": "SEARCH_PARTNERS",
+      "date": "2026-02-28"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "89314",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "61"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-01"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "36"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-01"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "103"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-02"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "57"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-02"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "32"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-03"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "36"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-03"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "301337",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "37"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-04"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "40"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-04"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "23"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-05"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "4",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "1023018",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "87"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-05"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "32"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-06"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "279611",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "120"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-06"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "66"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-07"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "70"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-07"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "458"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-08"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "12"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-08"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 52.1697,
+      "conversions": 0.869495,
+      "cost_micros": "366697",
+      "all_conversions_value": 52.1697,
+      "all_conversions": 0.869495,
+      "impressions": "64"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-09"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "410846",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "115"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-09"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "589087",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "366"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-10"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "46"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-10"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "2",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "525239",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "28"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-11"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "29"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-11"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "420050",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "15"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-12"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "46"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-12"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "15"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-13"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "33"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-13"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "30"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-14"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "23"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-14"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "202403",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "126"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-15"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "11"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-15"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "134356",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "264"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-16"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "34"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-16"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "2",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "214913",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "438"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-17"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-17"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "355757",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "55"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-18"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "33333",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "19"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-18"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "391488",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "84"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-19"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "89"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-19"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "68"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-20"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "14"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-20"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "193423",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "90"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-21"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "21"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-21"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "146"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-22"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "5"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-22"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "436203",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "257"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-23"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "50175",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "67"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-23"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 200.0,
+      "conversions": 1.5,
+      "cost_micros": "416642",
+      "all_conversions_value": 200.0,
+      "all_conversions": 1.5,
+      "impressions": "70"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-24"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "123"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-24"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "53"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-25"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "20"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-25"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "303272",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "43"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-26"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "3"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-26"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "3",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "238264",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "79"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-27"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "4"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-27"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "46654",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "27"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-28"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "6"
+    },
+    "segments": {
+      "ad_network_type": "CONTENT",
+      "date": "2026-02-28"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "17"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-01"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "767600",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "670"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-01"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "13685",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "28"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-02"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "6",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "579241",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1882"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-02"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "4971",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "41"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-03"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "4",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "778221",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1722"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-03"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "14"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-04"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "4",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "849470",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "957"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-04"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "8945",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "39"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-05"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "5",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "848200",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "486"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-05"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-06"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "43"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-06"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "10247",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "3"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-07"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "38"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-07"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "10851",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "11"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-08"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "28"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-08"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-09"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "32"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-09"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "6"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-10"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "35"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-10"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "12"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-11"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "57"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-11"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "18"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-12"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "46"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-12"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "5870",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "9"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-13"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "15"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-13"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "2434",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "21"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-14"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "35"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-14"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "12435",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "38"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-15"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "18"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-15"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "16"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-16"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "31"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-16"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "3"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-17"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "11"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-17"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "23"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-18"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "9"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-18"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "8358",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "8"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-19"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "30"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-19"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "36"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-20"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "13"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-20"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "34"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-21"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "22"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-22"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "19"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-22"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "40582",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "6"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-23"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "26"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-23"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "93213",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "18"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-24"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "68"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-24"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "6"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-25"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "9"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-25"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "84369",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "26"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-26"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "4"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-26"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "2",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "449803",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "517"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-27"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "3"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-27"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "2",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "440027",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "100"
+    },
+    "segments": {
+      "ad_network_type": "YOUTUBE",
+      "date": "2026-02-28"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "9",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "174511",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "298"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-01"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-01"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "9",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "369890",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "327"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-02"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-02"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "12",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "742091",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "169"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-03"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "5",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "109996",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "88"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-04"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-04"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "4",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "59674",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "88"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-05"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "3"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-05"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "4",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "35960",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "130"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-06"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "9",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "270909",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "162"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-07"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-07"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "6",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "93059",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "121"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-08"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-08"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "2",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "85997",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "81"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-09"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "2"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-09"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "5",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "77715",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "51"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-10"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "9009",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "45"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-11"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-11"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "2",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "18485",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "35"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-12"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "2",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "27477",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "69"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-13"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "5",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "166545",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "57"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-14"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "3"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-14"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "6",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "94350",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "74"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-15"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "2",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "18742",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "35"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-16"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "3"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-16"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "23"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-17"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-17"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "12"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-18"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "14"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-19"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "9123",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "36"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-20"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "9109",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "17"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-21"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "9109",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "8"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-22"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "3",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "116207",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "11"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-23"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "14"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-24"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/22247130156",
+      "name": "Performance Max_Sales_25",
+      "id": "22247130156"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "1"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-24"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "8886",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "7"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-25"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "1",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "9115",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "6"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-26"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "25"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-27"
+    }
+  },
+  {
+    "campaign": {
+      "resource_name": "customers/1675806490/campaigns/21329566799",
+      "name": "PF_Fokus_Fersensporn",
+      "id": "21329566799"
+    },
+    "metrics": {
+      "clicks": "0",
+      "conversions_value": 0.0,
+      "conversions": 0.0,
+      "cost_micros": "0",
+      "all_conversions_value": 0.0,
+      "all_conversions": 0.0,
+      "impressions": "5"
+    },
+    "segments": {
+      "ad_network_type": "DISCOVER",
+      "date": "2026-02-28"
+    }
+  }
+]

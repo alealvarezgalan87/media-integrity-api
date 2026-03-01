@@ -14,7 +14,7 @@ from api.v1.serializers import (
     ReportOptionsSerializer,
     ScoringConfigSerializer,
 )
-from core.models import GoogleAdsCredential, ReportConfig, ScoringConfig
+from core.models import GoogleAdsAccount, GoogleAdsCredential, ReportConfig, ScoringConfig
 
 
 class GoogleConfigView(APIView):
@@ -38,6 +38,7 @@ class GoogleConfigView(APIView):
                 "refresh_token": "",
                 "mcc_id": "",
                 "api_version": "v23",
+                "account_sync_interval_hours": 6,
             })
 
         return Response({
@@ -47,6 +48,7 @@ class GoogleConfigView(APIView):
             "refresh_token": self._mask(creds.refresh_token),
             "mcc_id": creds.mcc_id,
             "api_version": creds.api_version,
+            "account_sync_interval_hours": creds.account_sync_interval_hours,
         })
 
     @extend_schema(
@@ -156,9 +158,31 @@ class TestConnectionView(APIView):
             creds.is_verified = True
             creds.last_verified_at = timezone.now()
             creds.save(update_fields=["is_verified", "last_verified_at"])
+
+            # Save accounts directly to DB
+            now = timezone.now()
+            remote_ids = set()
+            for acc in accounts:
+                remote_ids.add(acc["id"])
+                GoogleAdsAccount.objects.update_or_create(
+                    organization=org,
+                    account_id=acc["id"],
+                    defaults={
+                        "account_name": acc.get("name", ""),
+                        "currency": acc.get("currency", ""),
+                        "timezone": acc.get("timezone", ""),
+                        "is_active": True,
+                        "last_synced_at": now,
+                    },
+                )
+            # Deactivate accounts no longer in MCC
+            GoogleAdsAccount.objects.filter(
+                organization=org, is_active=True
+            ).exclude(account_id__in=remote_ids).update(is_active=False)
+
             return Response({
                 "connected": True,
-                "message": f"Connected. Found {len(accounts)} accounts.",
+                "message": f"Connected. Found {len(accounts)} accounts saved to database.",
                 "accounts": [{"id": a["id"], "name": a["name"]} for a in accounts],
             })
         except ImportError:
@@ -169,12 +193,51 @@ class TestConnectionView(APIView):
         except Exception as e:
             return Response({
                 "connected": False,
-                "message": f"Connection failed: {str(e)}",
+                "message": _friendly_connection_error(e),
             })
 
 
+def _friendly_connection_error(exc: Exception) -> str:
+    """Convert raw Google Ads / network exceptions into user-friendly messages."""
+    raw = str(exc).lower()
+
+    # SSL / network connectivity issues
+    if "ssl" in raw or "eof" in raw or "connection" in raw and "pool" in raw:
+        return "Could not reach Google servers. Please check your internet connection and try again."
+
+    # Max retries / timeout
+    if "max retries" in raw or "timed out" in raw or "timeout" in raw:
+        return "Request to Google timed out. Please try again in a few moments."
+
+    # Invalid OAuth credentials
+    if "invalid_client" in raw:
+        return "Invalid Client ID or Client Secret. Please verify your OAuth credentials."
+    if "invalid_grant" in raw or "token has been expired or revoked" in raw:
+        return "Refresh token is invalid or expired. Please reconnect your Google account."
+    if "unauthorized" in raw or "401" in raw:
+        return "Authentication failed. Please check your credentials and try again."
+
+    # Google Ads API specific
+    if "developer_token" in raw or "developer token" in raw:
+        return "Invalid Developer Token. Please verify it in your Google Ads API Center."
+    if "not_found" in raw and "customer" in raw:
+        return "MCC account not found. Please verify the MCC ID is correct."
+    if "permission_denied" in raw or "authorization_error" in raw:
+        return "Access denied. Your Developer Token may not have the required permissions."
+    if "customer_not_enabled" in raw:
+        return "The MCC account is not enabled. Please check its status in Google Ads."
+
+    # DNS resolution
+    if "name or service not known" in raw or "getaddrinfo" in raw:
+        return "DNS resolution failed. Please check your internet connection."
+
+    # Fallback — truncate to avoid showing a wall of text
+    short = str(exc)[:200]
+    return f"Connection failed: {short}{'…' if len(str(exc)) > 200 else ''}"
+
+
 class GoogleAccountsListView(APIView):
-    """GET /api/v1/settings/google/accounts/ — list accessible accounts under MCC."""
+    """GET /api/v1/settings/google/accounts/ — list accounts from local DB cache."""
 
     permission_classes = [IsAuthenticated]
 
@@ -192,6 +255,8 @@ class GoogleAccountsListView(APIView):
                             },
                         ),
                     ),
+                    "last_synced_at": serializers.DateTimeField(allow_null=True),
+                    "sync_interval_hours": serializers.IntegerField(),
                 },
             ),
         },
@@ -199,33 +264,146 @@ class GoogleAccountsListView(APIView):
     def get(self, request):
         org = request.user.organization
         if not org:
-            return Response({"accounts": []})
+            return Response({"accounts": [], "last_synced_at": None, "sync_interval_hours": 6})
 
+        # Admins see all org accounts; regular users see only their assigned accounts
+        qs = GoogleAdsAccount.objects.filter(organization=org, is_active=True)
+        if request.user.role != "admin" and not request.user.is_superuser:
+            qs = qs.filter(users=request.user)
+        accounts = list(qs.order_by("account_name"))
+
+        sync_interval = 6
         try:
             creds = org.google_credentials
+            sync_interval = creds.account_sync_interval_hours
         except GoogleAdsCredential.DoesNotExist:
-            return Response({"accounts": []})
+            creds = None
 
-        if not all([creds.developer_token, creds.client_id, creds.client_secret, creds.refresh_token, creds.mcc_id]):
-            return Response({"accounts": []})
+        # If DB is empty but we have verified credentials, fetch directly + trigger background sync
+        if not accounts and creds and creds.is_verified:
+            try:
+                from engine.auth.mcc_manager import MCCManager
+                manager = MCCManager(
+                    credentials={
+                        "developer_token": creds.developer_token,
+                        "client_id": creds.client_id,
+                        "client_secret": creds.client_secret,
+                        "refresh_token": creds.refresh_token,
+                    },
+                    mcc_customer_id=creds.mcc_id,
+                )
+                remote = manager.list_accessible_accounts()
+
+                # Trigger background sync to persist into DB
+                try:
+                    from tasks.sync_accounts import sync_google_accounts
+                    sync_google_accounts.delay(str(org.id))
+                except Exception:
+                    pass
+
+                return Response({
+                    "accounts": [{"id": a["id"], "name": a["name"]} for a in remote],
+                    "last_synced_at": None,
+                    "sync_interval_hours": sync_interval,
+                })
+            except Exception:
+                pass  # Fall through to empty response
+
+        last_synced = accounts[0].last_synced_at if accounts else None
+
+        from core.models import Audit
+        from django.db.models import Count
+
+        # Get audit counts per account_id
+        audit_counts = dict(
+            Audit.objects.filter(organization=org)
+            .values_list("account_id_raw")
+            .annotate(count=Count("run_id"))
+            .values_list("account_id_raw", "count")
+        )
+
+        return Response({
+            "accounts": [
+                {
+                    "id": str(a.id),
+                    "account_id": a.account_id,
+                    "name": a.account_name,
+                    "currency": a.currency,
+                    "timezone": a.timezone,
+                    "last_synced_at": a.last_synced_at,
+                    "audit_count": audit_counts.get(a.account_id, 0),
+                }
+                for a in accounts
+            ],
+            "last_synced_at": last_synced,
+            "sync_interval_hours": sync_interval,
+        })
+
+
+class GoogleAccountDetailView(APIView):
+    """GET /api/v1/settings/google/accounts/<account_id>/ — account detail (read-only)."""
+
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, account_id):
+        org = request.user.organization
+        if not org:
+            return Response({"error": "No organization."}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
-            from engine.auth.mcc_manager import MCCManager
-            manager = MCCManager(
-                credentials={
-                    "developer_token": creds.developer_token,
-                    "client_id": creds.client_id,
-                    "client_secret": creds.client_secret,
-                    "refresh_token": creds.refresh_token,
-                },
-                mcc_customer_id=creds.mcc_id,
+            account = GoogleAdsAccount.objects.get(
+                organization=org, account_id=account_id
             )
-            accounts = manager.list_accessible_accounts()
-            return Response({
-                "accounts": [{"id": a["id"], "name": a["name"]} for a in accounts],
-            })
-        except Exception:
-            return Response({"accounts": []})
+        except GoogleAdsAccount.DoesNotExist:
+            return Response({"error": "Account not found."}, status=status.HTTP_404_NOT_FOUND)
+
+        from core.models import Audit
+
+        audits = Audit.objects.filter(
+            organization=org, account_id_raw=account_id
+        ).order_by("-created_at")[:20]
+
+        return Response({
+            "id": str(account.id),
+            "account_id": account.account_id,
+            "name": account.account_name,
+            "currency": account.currency,
+            "timezone": account.timezone,
+            "is_active": account.is_active,
+            "last_synced_at": account.last_synced_at,
+            "recent_audits": [
+                {
+                    "run_id": str(a.run_id),
+                    "status": a.status,
+                    "composite_score": a.composite_score,
+                    "risk_band": a.risk_band,
+                    "source": a.source,
+                    "date_range_start": str(a.date_range_start),
+                    "date_range_end": str(a.date_range_end),
+                    "created_at": a.created_at.isoformat(),
+                }
+                for a in audits
+            ],
+        })
+
+
+class GoogleAccountsSyncView(APIView):
+    """POST /api/v1/settings/google/accounts/sync/ — trigger manual account sync."""
+
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        org = request.user.organization
+        if not org:
+            return Response(
+                {"error": "No organization assigned."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        from tasks.sync_accounts import sync_google_accounts
+        sync_google_accounts.delay(str(org.id))
+
+        return Response({"status": "sync_started"}, status=status.HTTP_202_ACCEPTED)
 
 
 class ScoringConfigView(APIView):
