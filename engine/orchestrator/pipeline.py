@@ -66,6 +66,12 @@ def extract_stage_real(
     from engine.connectors.google_ads.asset_performance import AssetPerformanceExtractor
     from engine.connectors.google_ads.auction_insights import AuctionInsightsExtractor
     from engine.connectors.google_ads.change_history import ChangeHistoryExtractor
+    from engine.connectors.google_ads.keyword_quality_score import KeywordQualityScoreExtractor
+    from engine.connectors.google_ads.negative_keywords import NegativeKeywordsExtractor
+    from engine.connectors.google_ads.shopping_structure import ShoppingStructureExtractor
+    from engine.connectors.google_ads.pmax_audience_signals import PMaxAudienceSignalsExtractor
+    from engine.connectors.google_ads.customer_lists import CustomerListsExtractor
+    from engine.connectors.google_ads.nca_settings import NCASettingsExtractor
 
     logger.info("extract_stage", mode="real", customer_id=customer_id)
 
@@ -79,6 +85,12 @@ def extract_stage_real(
         ("asset_performance", AssetPerformanceExtractor),
         ("auction_insights", AuctionInsightsExtractor),
         ("change_history", ChangeHistoryExtractor),
+        ("keyword_quality_score", KeywordQualityScoreExtractor),
+        ("negative_keywords", NegativeKeywordsExtractor),
+        ("shopping_structure", ShoppingStructureExtractor),
+        ("pmax_audience_signals", PMaxAudienceSignalsExtractor),
+        ("customer_lists", CustomerListsExtractor),
+        ("nca_settings", NCASettingsExtractor),
     ]
 
     raw_data = {}
@@ -129,7 +141,92 @@ def extract_stage_real(
     return raw_data
 
 
-def normalize_stage(raw_data: dict) -> dict:
+def extract_ga4_stage(
+    credentials: dict,
+    property_id: str,
+    start_date: str,
+    end_date: str,
+    bq_config: dict | None = None,
+) -> dict:
+    """Extract GA4 data from BigQuery (preferred) or GA4 Data API v1 (fallback).
+
+    If bq_config is provided with a bq_project_id, tries BigQuery first for
+    unsampled data. Falls back to GA4 Data API if BQ fails.
+
+    Args:
+        credentials: OAuth2 credentials dict (client_id, client_secret, refresh_token).
+        property_id: GA4 property ID (e.g. "345678901").
+        start_date: YYYY-MM-DD.
+        end_date: YYYY-MM-DD.
+        bq_config: Optional dict with bq_project_id and bq_dataset_id.
+
+    Returns:
+        Dict with keys: attribution, channel_revenue, traffic_acquisition, paid_vs_organic.
+        Empty dict if property_id is None.
+    """
+    if not property_id:
+        return {}
+
+    # ── Try BigQuery first (unsampled data) ───────────────────────
+    if bq_config and bq_config.get("bq_project_id"):
+        try:
+            from engine.connectors.bigquery.ga4_raw_query import BigQueryGA4Connector
+
+            connector = BigQueryGA4Connector(
+                credentials=credentials,
+                bq_project_id=bq_config["bq_project_id"],
+                property_id=property_id,
+            )
+            bq_data = connector.extract(start_date, end_date)
+            logger.info("bq_extract_success", property_id=property_id, source="bigquery")
+            return bq_data
+        except Exception as e:
+            logger.warning(
+                "bq_extract_failed_fallback_ga4",
+                property_id=property_id,
+                error=str(e),
+            )
+            # Fall through to GA4 Data API
+
+    # ── Fallback: GA4 Data API ────────────────────────────────────
+    from engine.connectors.ga4.attribution import GA4AttributionExtractor
+    from engine.connectors.ga4.channel_revenue import GA4ChannelRevenueExtractor
+    from engine.connectors.ga4.traffic_acquisition import GA4TrafficAcquisitionExtractor
+    from engine.connectors.ga4.paid_vs_organic import GA4PaidVsOrganicExtractor
+    from engine.connectors.ga4.events_list import GA4EventsListExtractor
+
+    logger.info("extract_ga4_stage_start", property_id=property_id, source="ga4_api")
+
+    ga4_extractors = [
+        ("attribution", GA4AttributionExtractor),
+        ("channel_revenue", GA4ChannelRevenueExtractor),
+        ("traffic_acquisition", GA4TrafficAcquisitionExtractor),
+        ("paid_vs_organic", GA4PaidVsOrganicExtractor),
+        ("events_list", GA4EventsListExtractor),
+    ]
+
+    ga4_data = {"source": "ga4_api"}
+    for name, ExtractorClass in ga4_extractors:
+        t0 = time.time()
+        try:
+            extractor = ExtractorClass(
+                credentials=credentials,
+                property_id=property_id,
+            )
+            data = extractor.extract(start_date, end_date)
+            ga4_data[name] = data
+            duration = time.time() - t0
+            logger.info("ga4_extractor_complete", extractor=name, rows=len(data), duration=round(duration, 2))
+        except Exception as e:
+            ga4_data[name] = []
+            duration = time.time() - t0
+            logger.warning("ga4_extractor_failed", extractor=name, error=str(e), duration=round(duration, 2))
+
+    logger.info("extract_ga4_stage_complete", extractors_ok=sum(1 for k, v in ga4_data.items() if k != "source" and v))
+    return ga4_data
+
+
+def normalize_stage(raw_data: dict, ga4_raw_data: dict | None = None) -> dict:
     """Stage 2: Normalize raw API data into scoring metrics.
 
     Takes raw extractor output and produces the same metric dictionaries
@@ -140,6 +237,12 @@ def normalize_stage(raw_data: dict) -> dict:
     from engine.normalization.pmax_breakdown import build_pmax_breakdown, compute_automation_metrics
     from engine.normalization.auction_density import build_auction_density, compute_auction_metrics
     from engine.normalization.creative_velocity import build_creative_velocity, compute_creative_metrics
+    from engine.normalization.keyword_quality import compute_quality_score_metrics
+    from engine.normalization.negative_keywords import compute_negative_keyword_metrics
+    from engine.normalization.shopping_structure import compute_shopping_structure_metrics
+    from engine.normalization.pmax_audiences import compute_pmax_audience_metrics
+    from engine.normalization.customer_lists import compute_customer_list_metrics
+    from engine.normalization.nca_settings import compute_nca_metrics
 
     logger.info("normalize_stage_start")
 
@@ -170,11 +273,56 @@ def normalize_stage(raw_data: dict) -> dict:
     )
     creative_metrics = compute_creative_metrics(creative_df)
 
+    # Phase 3A: Quality Score brand vs non-brand
+    qs_metrics = compute_quality_score_metrics(
+        qs_data=raw_data.get("keyword_quality_score", []),
+        brand_name=raw_data.get("_brand_name", ""),
+    )
+
+    # Phase 3B: Negative keywords overlap and Shopping coverage
+    nk_metrics = compute_negative_keyword_metrics(
+        nk_data=raw_data.get("negative_keywords", []),
+    )
+
+    # Phase 3C: Shopping structure (product overlap + RLSA)
+    shopping_metrics = compute_shopping_structure_metrics(
+        ss_data=raw_data.get("shopping_structure", []),
+    )
+
+    # Phase 3D: PMax audience signals (prospecting vs retargeting)
+    pmax_aud_metrics = compute_pmax_audience_metrics(
+        pmax_aud_data=raw_data.get("pmax_audience_signals", []),
+    )
+
+    # Phase 3E: Customer lists health
+    cl_metrics = compute_customer_list_metrics(
+        cl_data=raw_data.get("customer_lists", []),
+        change_data=raw_data.get("change_history", []),
+    )
+
+    # Phase 3F: NCA bid settings
+    nca_metrics = compute_nca_metrics(
+        nca_data=raw_data.get("nca_settings", []),
+    )
+
     demand_capture = {
         "avg_search_impression_share": campaigns_metrics.get("avg_search_impression_share", 0),
         "avg_budget_lost_impression_share": campaigns_metrics.get("avg_budget_lost_impression_share", 0),
         "avg_rank_lost_impression_share": campaigns_metrics.get("avg_rank_lost_impression_share", 0),
         "avg_outranking_share": auction_metrics.get("avg_outranking_share", 0),
+        # Phase 2: brand/nonbrand metrics
+        "brand_spend_pct": campaigns_metrics.get("brand_spend_pct", 0),
+        "nonbrand_search_impression_share": campaigns_metrics.get("nonbrand_search_impression_share", 0),
+        "nonbrand_abs_top_impression_share": campaigns_metrics.get("nonbrand_abs_top_impression_share", 0),
+        # Phase 3A: quality score metrics
+        "avg_quality_score": qs_metrics.get("avg_quality_score"),
+        "nonbrand_avg_quality_score": qs_metrics.get("nonbrand_avg_quality_score"),
+        # Phase 3B: negative keyword metrics
+        "negative_keyword_overlap_count": nk_metrics.get("negative_keyword_overlap_count", 0),
+        "shopping_negative_keyword_coverage": nk_metrics.get("shopping_negative_keyword_coverage", 1.0),
+        # Phase 3C: shopping structure metrics
+        "shopping_campaign_product_overlap_pct": shopping_metrics.get("shopping_campaign_product_overlap_pct", 0),
+        "shopping_rlsa_campaign_count": shopping_metrics.get("shopping_rlsa_campaign_count", 0),
     }
 
     automation_exposure = {
@@ -182,6 +330,18 @@ def normalize_stage(raw_data: dict) -> dict:
         "pct_spend_pmax": automation_metrics.get("pct_spend_pmax", 0),
         "pmax_channel_concentration": automation_metrics.get("pmax_channel_concentration", 0),
         "bidding_strategy_diversity": automation_metrics.get("bidding_strategy_diversity", 1),
+        # Phase 2: bidding + PMax metrics
+        "campaigns_with_maximize_clicks": campaigns_metrics.get("campaigns_with_maximize_clicks", 0),
+        "pmax_brand_exclusion_count": campaigns_metrics.get("pmax_brand_exclusion_count", -1),
+        # Phase 3D: PMax audience split
+        "pmax_prospecting_campaign_count": pmax_aud_metrics.get("pmax_prospecting_campaign_count", 0),
+        "pmax_retargeting_campaign_count": pmax_aud_metrics.get("pmax_retargeting_campaign_count", 0),
+        # Phase 3E: customer lists health
+        "days_since_customer_list_refresh": cl_metrics.get("days_since_customer_list_refresh", 0),
+        "customer_list_match_rate": cl_metrics.get("customer_list_match_rate", 1.0),
+        # Phase 3F: NCA bid settings
+        "nca_bid_adjustment": nca_metrics.get("nca_bid_adjustment", 0),
+        "nca_bid_validation": nca_metrics.get("nca_bid_validation", True),
     }
 
     measurement_integrity = {
@@ -190,6 +350,10 @@ def normalize_stage(raw_data: dict) -> dict:
         "lookback_window_consistency": measurement_metrics.get("lookback_window_consistency", True),
         "conversion_action_count": measurement_metrics.get("conversion_action_count", 0),
         "ga4_ads_revenue_discrepancy": measurement_metrics.get("ga4_ads_revenue_discrepancy", None),
+        # Phase 2: conversion source + enhanced conversions
+        "conversion_source_count": measurement_metrics.get("conversion_source_count", 0),
+        "conversion_source_variance": measurement_metrics.get("conversion_source_variance", 0),
+        "enhanced_conversions_enabled": measurement_metrics.get("enhanced_conversions_enabled", None),
     }
 
     capital_allocation = {
@@ -198,6 +362,9 @@ def normalize_stage(raw_data: dict) -> dict:
         "roas_variance_coefficient": campaigns_metrics.get("roas_variance_coefficient", 0),
         "zero_conversion_spend_pct": campaigns_metrics.get("zero_conversion_spend_pct", 0),
         "campaign_count": campaigns_metrics.get("campaign_count", 0),
+        # Phase 3H: profit-based bidding detection
+        "profit_based_bidding": raw_data.get("_audit_config", {}).get("profit_based_bidding", False),
+        "revenue_based_bidding": campaigns_metrics.get("has_troas_campaigns", False),
     }
 
     creative_velocity = {
@@ -210,6 +377,65 @@ def normalize_stage(raw_data: dict) -> dict:
         "format_diversity": creative_metrics.get("format_diversity", 0),
         "data_completeness": creative_metrics.get("data_completeness", 0),
     }
+
+    # ── GA4 normalization (optional) ──────────────────────────────
+    if ga4_raw_data:
+        try:
+            from engine.normalization.ga4_channel_performance import build_ga4_channel_performance
+            from engine.normalization.attribution_config import build_attribution_config
+
+            ga4_channel_df = build_ga4_channel_performance(
+                ga4_channel_data=ga4_raw_data.get("channel_revenue", []),
+            )
+
+            attribution_df = build_attribution_config(
+                google_ads_conversions=raw_data.get("conversion_actions", []),
+                ga4_attribution=ga4_raw_data.get("attribution", []),
+            )
+
+            # Use paid_vs_organic data for apples-to-apples comparisons
+            paid_vs_organic = ga4_raw_data.get("paid_vs_organic", [])
+            ga4_paid_revenue = sum(
+                float(r.get("totalRevenue", 0) or 0)
+                for r in paid_vs_organic if r.get("category") == "paid"
+            )
+            ga4_paid_conversions = sum(
+                float(r.get("conversions", 0) or 0)
+                for r in paid_vs_organic if r.get("category") == "paid"
+            )
+            ga4_total_revenue = sum(
+                float(r.get("totalRevenue", 0) or 0) for r in paid_vs_organic
+            )
+
+            # Google Ads totals from campaigns DataFrame
+            gads_revenue = float(campaigns_df["conversions_value"].sum()) if not campaigns_df.empty and "conversions_value" in campaigns_df.columns else 0
+            gads_conversions = float(campaigns_df["conversions"].sum()) if not campaigns_df.empty and "conversions" in campaigns_df.columns else 0
+
+            # Revenue discrepancy: GA4 paid revenue vs Google Ads conversions_value (as %)
+            if ga4_paid_revenue > 0 and gads_revenue > 0:
+                rev_disc = abs(ga4_paid_revenue - gads_revenue) / max(ga4_paid_revenue, gads_revenue) * 100
+                measurement_integrity["ga4_ads_revenue_discrepancy"] = round(rev_disc, 2)
+
+            # Conversion discrepancy: GA4 paid conversions vs Google Ads conversions (as %)
+            if ga4_paid_conversions > 0 and gads_conversions > 0:
+                conv_disc = abs(ga4_paid_conversions - gads_conversions) / max(ga4_paid_conversions, gads_conversions) * 100
+                measurement_integrity["ga4_ads_conversion_discrepancy"] = round(conv_disc, 2)
+
+            # Capital allocation: paid_revenue_share (ratio 0-1)
+            if ga4_total_revenue > 0:
+                capital_allocation["paid_revenue_share"] = round(ga4_paid_revenue / ga4_total_revenue, 4)
+
+            # Phase 3G: GA4 mid-funnel events
+            from engine.normalization.ga4_events import compute_ga4_events_metrics
+            ga4_events_metrics = compute_ga4_events_metrics(
+                events_data=ga4_raw_data.get("events_list", []),
+            )
+            if ga4_events_metrics.get("tracked_funnel_events") is not None:
+                measurement_integrity["tracked_funnel_events"] = ga4_events_metrics["tracked_funnel_events"]
+
+            logger.info("ga4_normalization_complete")
+        except Exception as e:
+            logger.warning("ga4_normalization_failed", error=str(e))
 
     extraction_stats = raw_data.get("extraction_stats", [])
 
@@ -330,6 +556,24 @@ def report_stage(
     )
 
     scorecard_path = save_scorecard(scorecard, os.path.join(run_dir, "scorecard.json"))
+
+    # ── Generate confidence report ────────────────────────────────
+    try:
+        from engine.reporting.confidence_report import generate_confidence_report
+
+        confidence_data = generate_confidence_report(
+            scorecard=scorecard,
+            extraction_stats=scoring_results.get("extraction_stats", []),
+        )
+        confidence_path = os.path.join(run_dir, "confidence_report.json")
+        with open(confidence_path, "w") as f:
+            json.dump(confidence_data, f, indent=2, default=str)
+        logger.info("confidence_report_saved", path=confidence_path)
+
+        # Store in scorecard for frontend access
+        scorecard["_confidence"] = confidence_data
+    except Exception as e:
+        logger.warning("confidence_report_failed", error=str(e))
 
     html = render_report_html(scorecard)
     html_path = save_html(html, os.path.join(run_dir, "report.html"))

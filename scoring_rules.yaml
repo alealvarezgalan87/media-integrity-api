@@ -111,6 +111,31 @@ rules:
     description: "Massive performance disparity between campaigns."
     recommendation: "Shift budget from low-ROAS to high-ROAS campaigns."
 
+  # CROSS-PLATFORM (requires GA4 — Phase 2)
+  - id: MI-REVENUE-DISCREPANCY
+    severity: critical
+    domain: measurement_integrity
+    condition: "ga4_ads_revenue_discrepancy > 20"
+    title: "Critical Revenue Discrepancy Between Platforms"
+    description: "Google Ads and GA4 revenue differ by more than 20%."
+    recommendation: "Audit conversion tracking setup. Check for duplicate tags, missing tags, or attribution model differences."
+
+  - id: MI-CONVERSION-DISCREPANCY
+    severity: high
+    domain: measurement_integrity
+    condition: "ga4_ads_conversion_discrepancy > 15"
+    title: "Conversion Count Discrepancy"
+    description: "Google Ads and GA4 conversion counts differ by more than 15%."
+    recommendation: "Verify conversion action mapping between platforms."
+
+  - id: CA-PAID-ORGANIC-IMBALANCE
+    severity: medium
+    domain: capital_allocation_discipline
+    condition: "paid_revenue_share > 0.85"
+    title: "Over-Dependence on Paid Revenue"
+    description: "More than 85% of revenue attributed to paid channels."
+    recommendation: "Invest in organic channels to reduce paid dependency."
+
   # CREATIVE VELOCITY
   - id: CV-LOW-ASSET-COUNT
     severity: medium
@@ -127,3 +152,93 @@ rules:
     title: "High Asset Disapproval Rate"
     description: "More than 10% of assets disapproved by Google."
     recommendation: "Review and fix disapproved assets. Check policy compliance."
+
+  # ── PHASE 3 RULES ─────────────────────────────────────────────
+
+  # Phase 3A: Quality Score
+  - id: DC-QS-BRAND-INFLATION
+    severity: medium
+    domain: demand_capture_integrity
+    condition: "avg_quality_score > 7 and nonbrand_avg_quality_score < 5"
+    title: "Quality Score Inflated by Brand Keywords"
+    description: "Overall Quality Score appears healthy but is inflated by branded keywords. Non-brand keywords have significantly lower QS."
+    recommendation: "Report QS separately for brand and non-brand. Focus optimization on non-brand ad relevance, expected CTR, and landing page experience."
+
+  # Phase 3B: Negative Keywords
+  - id: DC-NEGKW-MISMANAGEMENT
+    severity: high
+    domain: demand_capture_integrity
+    condition: "negative_keyword_overlap_count > 10"
+    title: "Negative Keywords Mismanagement"
+    description: "Negative keyword lists have overlaps across campaigns, causing wasted spend on irrelevant search terms."
+    recommendation: "Conduct quarterly negative keyword audits. Eliminate cross-campaign overlaps. Implement shared negative keyword lists."
+
+  - id: DC-SHOPPING-NEGKW-WEAK
+    severity: high
+    domain: demand_capture_integrity
+    condition: "shopping_negative_keyword_coverage < 0.50"
+    title: "Shopping Negative Keywords Insufficient"
+    description: "Shopping campaigns have insufficient negative keywords for proper traffic control."
+    recommendation: "Audit search term reports for Shopping campaigns. Add negative keywords for irrelevant queries."
+
+  # Phase 3C: Shopping Structure
+  - id: DC-SHOPPING-OVERLAP
+    severity: critical
+    domain: demand_capture_integrity
+    condition: "shopping_campaign_product_overlap_pct > 0.30"
+    title: "Shopping Campaign Product Overlap"
+    description: "More than 30% of products targeted by multiple Shopping campaigns without proper exclusions."
+    recommendation: "Implement product-level exclusions to prevent overlap."
+
+  - id: DC-SHOPPING-NO-RLSA
+    severity: high
+    domain: demand_capture_integrity
+    condition: "shopping_rlsa_campaign_count == 0"
+    title: "No Remarketing Lists for Shopping Ads"
+    description: "No RLSA campaigns exist for Shopping, missing the opportunity to bid more aggressively on known users."
+    recommendation: "Create a dedicated Shopping remarketing campaign with higher bids for past visitors and cart abandoners."
+
+  # Phase 3D: PMax Audience Signals
+  - id: AE-PMAX-NO-PRO-RET-SPLIT
+    severity: high
+    domain: automation_exposure
+    condition: "pmax_prospecting_campaign_count == 0 or pmax_retargeting_campaign_count == 0"
+    title: "PMax Missing Prospecting vs Retargeting Split"
+    description: "PMax campaigns do not separate prospecting from retargeting."
+    recommendation: "Create separate PMax campaigns or asset groups for prospecting and retargeting."
+
+  # Phase 3E: Customer Lists
+  - id: AE-OUTDATED-CUSTOMER-LISTS
+    severity: high
+    domain: automation_exposure
+    condition: "days_since_customer_list_refresh > 90 or customer_list_match_rate < 0.30"
+    title: "Outdated Customer Lists"
+    description: "Customer match lists have not been refreshed in over 90 days or have a match rate below 30%."
+    recommendation: "Refresh customer lists monthly. Use automated CRM syncs. Verify match rates."
+
+  # Phase 3F: NCA Bid
+  - id: AE-NCA-BID-UNVERIFIED
+    severity: medium
+    domain: automation_exposure
+    condition: "nca_bid_adjustment > 0 and nca_bid_validation == false"
+    title: "New Customer Acquisition Bid Not Validated"
+    description: "A new customer acquisition bid adjustment is set but has not been validated against actual CAC and LTV data."
+    recommendation: "Verify the NCA bid value against real CAC and LTV metrics."
+
+  # Phase 3G: GA4 Events
+  - id: MI-MISSING-MIDFUNNEL
+    severity: critical
+    domain: measurement_integrity
+    condition: "tracked_funnel_events < 3"
+    title: "Missing Mid-Funnel Conversion Tracking"
+    description: "Fewer than 3 mid-funnel events tracked. Missing Add to Cart, Begin Checkout, View Item limits optimization."
+    recommendation: "Implement tracking for: Add to Cart, Begin Checkout, View Item, View Item List, Sign Up."
+
+  # Phase 3H: Profit-Based Bidding
+  - id: CA-NO-PROFIT-BIDDING
+    severity: high
+    domain: capital_allocation_discipline
+    condition: "profit_based_bidding == false and revenue_based_bidding == true"
+    title: "No Profit-Based Bidding Strategy"
+    description: "Campaigns optimize for revenue (tROAS) without connection to actual product margins."
+    recommendation: "Implement profit-based bidding using value rules, custom labels in product feed, or margin data in conversion values."

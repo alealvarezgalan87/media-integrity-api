@@ -13,6 +13,7 @@ import structlog
 from engine.orchestrator.pipeline import (
     extract_stage_fixture,
     extract_stage_real,
+    extract_ga4_stage,
     normalize_stage,
     score_stage,
     report_stage,
@@ -31,6 +32,8 @@ def run_audit(
     demo_key: str | None = None,
     credentials: dict | None = None,
     login_customer_id: str | None = None,
+    ga4_property_id: str | None = None,
+    bq_config: dict | None = None,
 ) -> dict:
     """Execute a complete media structural integrity audit.
 
@@ -71,6 +74,7 @@ def run_audit(
     account_name = account_id
     date_range = {"start": start_date, "end": end_date}
     domain_data = None
+    ga4_raw_data = {}
 
     if is_live:
         try:
@@ -85,8 +89,22 @@ def run_audit(
                 output_dir=run_dir,
                 login_customer_id=login_customer_id,
             )
-            domain_data = normalize_stage(raw_data)
 
+            # GA4 extraction (optional — only if property linked)
+            ga4_raw_data = {}
+            if ga4_property_id:
+                try:
+                    ga4_raw_data = extract_ga4_stage(
+                        credentials=credentials,
+                        property_id=ga4_property_id,
+                        start_date=start_date,
+                        end_date=end_date,
+                        bq_config=bq_config,
+                    )
+                except Exception as ga4_err:
+                    logger.warning("ga4_extraction_failed", error=str(ga4_err))
+
+            # Resolve account name before normalization (needed for brand classifier)
             from engine.auth.mcc_manager import MCCManager
             try:
                 mcc_id = login_customer_id or account_id
@@ -96,6 +114,11 @@ def run_audit(
                     account_name = info.get("name", account_id)
             except Exception:
                 pass
+
+            # Pass brand name to normalization for brand/nonbrand classification
+            raw_data["_brand_name"] = account_name
+
+            domain_data = normalize_stage(raw_data, ga4_raw_data=ga4_raw_data or None)
 
         except Exception as e:
             errors.append(f"Extraction/normalization failed: {e}")
@@ -152,6 +175,8 @@ def run_audit(
             for s in domain_data.get("extraction_stats", [])
             if isinstance(s, dict)
         }
+    if ga4_raw_data:
+        extraction_stats["ga4_source"] = ga4_raw_data.get("source", "ga4_api")
 
     scoring_summary = {}
     if scoring_results:
@@ -201,5 +226,9 @@ def run_audit(
             k: v for k, v in raw_data.items()
             if k != "extraction_stats"
         }
+
+    # Save GA4 raw data if available
+    if is_live and ga4_raw_data:
+        manifest["_ga4_raw_data"] = ga4_raw_data
 
     return manifest

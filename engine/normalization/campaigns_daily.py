@@ -221,6 +221,23 @@ def compute_campaigns_metrics(df: pd.DataFrame) -> dict:
 
     campaign_count = df["campaign_id"].nunique()
 
+    # ── Brand / Non-brand classification ──────────────────────────
+    from engine.normalization.brand_classifier import classify_brand_nonbrand
+
+    brand_metrics = classify_brand_nonbrand(df, brand_name="")
+    # Note: brand_name is populated by the caller (audit_runner) via
+    # a second call: compute_campaigns_metrics(df, account_name=...)
+    # For now we compute with empty name; it gets overridden below.
+
+    # ── Maximize Clicks ratio ─────────────────────────────────────
+    campaigns_with_maximize_clicks = _calc_maximize_clicks_ratio(df)
+
+    # ── PMax brand exclusion count ────────────────────────────────
+    pmax_brand_exclusion_count = _calc_pmax_brand_exclusion_count(df)
+
+    # ── Phase 3H: tROAS campaign detection ─────────────────────
+    has_troas_campaigns = _calc_has_troas_campaigns(df)
+
     return {
         "avg_search_impression_share": round(float(avg_search_impression_share), 4),
         "avg_budget_lost_impression_share": round(float(avg_budget_lost_impression_share), 4),
@@ -230,4 +247,70 @@ def compute_campaigns_metrics(df: pd.DataFrame) -> dict:
         "roas_variance_coefficient": round(float(roas_variance_coefficient), 4),
         "zero_conversion_spend_pct": round(float(zero_conversion_spend_pct), 4),
         "campaign_count": int(campaign_count),
+        # Phase 2 metrics
+        "brand_spend_pct": brand_metrics["brand_spend_pct"],
+        "nonbrand_search_impression_share": brand_metrics["nonbrand_search_impression_share"],
+        "nonbrand_abs_top_impression_share": brand_metrics["nonbrand_abs_top_impression_share"],
+        "campaigns_with_maximize_clicks": campaigns_with_maximize_clicks,
+        "pmax_brand_exclusion_count": pmax_brand_exclusion_count,
+        "has_troas_campaigns": has_troas_campaigns,
     }
+
+
+def compute_campaigns_metrics_with_brand(df: pd.DataFrame, account_name: str = "") -> dict:
+    """Compute campaigns metrics with brand classifier using the account name.
+
+    Wrapper around compute_campaigns_metrics that re-runs the brand classifier
+    with the actual account/brand name for better classification accuracy.
+    """
+    metrics = compute_campaigns_metrics(df)
+    if account_name and not df.empty:
+        from engine.normalization.brand_classifier import classify_brand_nonbrand
+        brand_metrics = classify_brand_nonbrand(df, brand_name=account_name)
+        metrics.update({
+            "brand_spend_pct": brand_metrics["brand_spend_pct"],
+            "nonbrand_search_impression_share": brand_metrics["nonbrand_search_impression_share"],
+            "nonbrand_abs_top_impression_share": brand_metrics["nonbrand_abs_top_impression_share"],
+        })
+    return metrics
+
+
+def _calc_maximize_clicks_ratio(df: pd.DataFrame) -> float:
+    """Ratio of active campaigns using MAXIMIZE_CLICKS bidding."""
+    if df.empty or "bidding_strategy_type" not in df.columns:
+        return 0.0
+    # Deduplicate to campaign level
+    campaigns = df.drop_duplicates(subset=["campaign_id"]) if "campaign_id" in df.columns else df
+    total = len(campaigns)
+    max_clicks = len(campaigns[
+        campaigns["bidding_strategy_type"].astype(str).str.contains("MAXIMIZE_CLICKS", case=False, na=False)
+    ])
+    return round(max_clicks / total, 4) if total > 0 else 0.0
+
+
+def _calc_pmax_brand_exclusion_count(df: pd.DataFrame) -> int:
+    """Count PMax campaigns (brand exclusion detection not available via GAQL).
+
+    Returns 0 if PMax campaigns exist (assumes no brand exclusions configured).
+    This is a conservative approach — the red flag rule fires when count == 0
+    and PMax campaigns are present.
+    """
+    if df.empty or "advertising_channel_type" not in df.columns:
+        return 0
+    campaigns = df.drop_duplicates(subset=["campaign_id"]) if "campaign_id" in df.columns else df
+    pmax = campaigns[
+        campaigns["advertising_channel_type"].astype(str).str.contains("PERFORMANCE_MAX", case=False, na=False)
+    ]
+    # Brand exclusion data is not available via standard GAQL.
+    # Return 0 if PMax exists (triggers the red flag), -1 if no PMax (skip rule).
+    return 0 if len(pmax) > 0 else -1
+
+
+def _calc_has_troas_campaigns(df: pd.DataFrame) -> bool:
+    """Check if any campaign uses TARGET_ROAS or MAXIMIZE_CONVERSION_VALUE bidding."""
+    if df.empty or "bidding_strategy_type" not in df.columns:
+        return False
+    campaigns = df.drop_duplicates(subset=["campaign_id"]) if "campaign_id" in df.columns else df
+    troas_types = {"TARGET_ROAS", "MAXIMIZE_CONVERSION_VALUE"}
+    has_troas = campaigns["bidding_strategy_type"].astype(str).str.upper().isin(troas_types).any()
+    return bool(has_troas)
