@@ -20,10 +20,13 @@ from api.v1.views.google_oauth import (
     GoogleOAuthStatusView,
 )
 from api.v1.views.settings import (
+    GA4PropertiesListView,
+    GA4PropertiesSyncView,
     GoogleAccountDetailView,
     GoogleAccountsListView,
     GoogleAccountsSyncView,
     GoogleConfigView,
+    LinkGA4PropertyView,
     ReportConfigView,
     ScoringConfigView,
     TestConnectionView,
@@ -57,6 +60,11 @@ urlpatterns = [
     path("settings/google/oauth/status/", GoogleOAuthStatusView.as_view(), name="google-oauth-status"),
     path("settings/scoring/", ScoringConfigView.as_view(), name="settings-scoring"),
     path("settings/report/", ReportConfigView.as_view(), name="settings-report"),
+
+    # GA4
+    path("settings/ga4/properties/", GA4PropertiesListView.as_view(), name="ga4-properties-list"),
+    path("settings/ga4/properties/sync/", GA4PropertiesSyncView.as_view(), name="ga4-properties-sync"),
+    path("settings/google/accounts/<uuid:account_id>/link-ga4/", LinkGA4PropertyView.as_view(), name="link-ga4-property"),
 
     # Health
     path("health/", HealthView.as_view(), name="health"),

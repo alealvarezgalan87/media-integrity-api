@@ -26,7 +26,11 @@ from core.models import GoogleAdsCredential
 
 GOOGLE_AUTH_URL = "https://accounts.google.com/o/oauth2/v2/auth"
 GOOGLE_TOKEN_URL = "https://oauth2.googleapis.com/token"
-SCOPES = "https://www.googleapis.com/auth/adwords"
+SCOPES = " ".join([
+    "https://www.googleapis.com/auth/adwords",
+    "https://www.googleapis.com/auth/analytics.readonly",
+    "https://www.googleapis.com/auth/bigquery.readonly",
+])
 
 # In-memory state store (for production, use cache/redis/db)
 _oauth_states = {}
@@ -165,9 +169,10 @@ class GoogleOAuthCallbackView(APIView):
             if not refresh_token:
                 return self._redirect(redirect_base, "error", "No refresh token received. Try disconnecting and reconnecting.")
 
-            # Save the refresh token
+            # Save the refresh token and scopes
             creds.refresh_token = refresh_token
-            creds.save(update_fields=["refresh_token", "updated_at"])
+            creds.oauth_scopes = SCOPES
+            creds.save(update_fields=["refresh_token", "oauth_scopes", "updated_at"])
 
             return self._redirect(redirect_base, "success", "Google account connected successfully.")
 
@@ -193,6 +198,8 @@ class GoogleOAuthStatusView(APIView):
                 fields={
                     "connected": serializers.BooleanField(),
                     "has_refresh_token": serializers.BooleanField(),
+                    "has_ga4_scope": serializers.BooleanField(),
+                    "has_bq_scope": serializers.BooleanField(),
                 },
             ),
         },
@@ -205,9 +212,14 @@ class GoogleOAuthStatusView(APIView):
         try:
             creds = org.google_credentials
             has_token = bool(creds.refresh_token and len(creds.refresh_token) > 5)
+            scopes = creds.oauth_scopes or ""
+            has_ga4 = "analytics.readonly" in scopes
+            has_bq = "bigquery.readonly" in scopes
             return Response({
                 "connected": has_token,
                 "has_refresh_token": has_token,
+                "has_ga4_scope": has_ga4,
+                "has_bq_scope": has_bq,
             })
         except GoogleAdsCredential.DoesNotExist:
-            return Response({"connected": False, "has_refresh_token": False})
+            return Response({"connected": False, "has_refresh_token": False, "has_ga4_scope": False, "has_bq_scope": False})

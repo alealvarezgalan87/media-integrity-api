@@ -37,6 +37,24 @@ class AuditViewSet(viewsets.ModelViewSet):
             return RunAuditSerializer
         return AuditListSerializer
 
+    def get_object(self):
+        """Support lookup by slug in addition to UUID (run_id)."""
+        from django.http import Http404
+
+        pk = self.kwargs.get("pk", "")
+        queryset = self.get_queryset()
+        try:
+            import uuid as _uuid
+            _uuid.UUID(pk)
+            obj = queryset.get(run_id=pk)
+        except (ValueError, Audit.DoesNotExist):
+            try:
+                obj = queryset.get(slug=pk)
+            except Audit.DoesNotExist:
+                raise Http404
+        self.check_object_permissions(self.request, obj)
+        return obj
+
     @action(detail=False, methods=["post"])
     def run(self, request):
         """Launch an audit. Returns 202 with run_id for polling."""
@@ -92,7 +110,7 @@ class AuditViewSet(viewsets.ModelViewSet):
             pass
 
         return Response(
-            {"status": "accepted", "run_id": str(audit.run_id)},
+            {"status": "accepted", "run_id": str(audit.run_id), "slug": audit.slug},
             status=status.HTTP_202_ACCEPTED,
         )
 
@@ -195,6 +213,7 @@ class AuditViewSet(viewsets.ModelViewSet):
                 "timestamp": str(audit.created_at) if audit.created_at else "",
             },
             "raw_data": audit.full_result.get("_raw_data", {}),
+            "ga4_raw_data": audit.full_result.get("_ga4_raw_data", {}),
         }
 
         excel_bytes = generate_audit_excel(audit_data)

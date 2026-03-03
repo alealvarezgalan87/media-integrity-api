@@ -6,6 +6,7 @@ from core.models import (
     AuditDomainScore,
     AuditRedFlag,
     BillingPlan,
+    GA4Property,
     GoogleAdsAccount,
     GoogleAdsCredential,
     Organization,
@@ -83,9 +84,17 @@ class GoogleAdsCredentialAdmin(admin.ModelAdmin):
 
 @admin.register(GoogleAdsAccount)
 class GoogleAdsAccountAdmin(admin.ModelAdmin):
-    list_display = ["account_name", "account_id", "organization", "currency", "is_active"]
+    list_display = ["account_name", "account_id", "organization", "currency", "ga4_property", "is_active"]
     list_filter = ["is_active", "organization", "currency"]
     search_fields = ["account_name", "account_id"]
+
+
+@admin.register(GA4Property)
+class GA4PropertyAdmin(admin.ModelAdmin):
+    list_display = ["display_name", "property_id", "organization", "timezone", "currency", "is_active", "last_synced_at"]
+    list_filter = ["organization", "is_active"]
+    search_fields = ["display_name", "property_id"]
+    readonly_fields = ["id", "last_synced_at"]
 
 
 # ── Settings & Rules ─────────────────────────────────────────────

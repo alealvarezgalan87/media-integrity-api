@@ -48,6 +48,8 @@ def run_audit_task(self, run_id: str):
 
         login_customer_id = None
 
+        ga4_property_id = None
+
         if audit.source == "live":
             try:
                 creds = org.google_credentials
@@ -60,7 +62,25 @@ def run_audit_task(self, run_id: str):
                 login_customer_id = creds.mcc_id or None
             except Exception:
                 raise ValueError("No Google Ads credentials configured for this organization.")
+
+            # Resolve linked GA4 property + BigQuery config
+            bq_config = None
+            from core.models import GoogleAdsAccount
+            try:
+                gads_account = GoogleAdsAccount.objects.select_related("ga4_property").get(
+                    organization=org, account_id=audit.account_id_raw,
+                )
+                if gads_account.ga4_property:
+                    ga4_property_id = gads_account.ga4_property.property_id
+                    if gads_account.ga4_property.bq_project_id:
+                        bq_config = {
+                            "bq_project_id": gads_account.ga4_property.bq_project_id,
+                            "bq_dataset_id": gads_account.ga4_property.bq_dataset_id,
+                        }
+            except GoogleAdsAccount.DoesNotExist:
+                pass
         else:
+            bq_config = None
             demo_key = audit.full_result.get("demo_key", "demo-moderate")
 
         result = run_audit(
@@ -70,6 +90,8 @@ def run_audit_task(self, run_id: str):
             demo_key=demo_key,
             credentials=credentials,
             login_customer_id=login_customer_id,
+            ga4_property_id=ga4_property_id,
+            bq_config=bq_config,
         )
 
         scorecard = result.get("_scorecard") or {}

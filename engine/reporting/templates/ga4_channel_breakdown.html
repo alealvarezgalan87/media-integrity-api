@@ -1,0 +1,55 @@
+<!-- GA4 Channel Revenue Breakdown -->
+<div class="page">
+  <div class="page-title">GA4 CHANNEL REVENUE BREAKDOWN</div>
+  <p class="secondary-text" style="margin-bottom: 16px;">
+    Revenue attribution by traffic channel from GA4 {{ "(BigQuery — unsampled)" if ga4_data.get("source") == "bigquery" else "(GA4 Data API)" }}.
+  </p>
+
+  {% if ga4_data.get("channel_revenue") %}
+  <div class="card">
+    <div class="section-title">REVENUE BY CHANNEL</div>
+    <table style="width: 100%; border-collapse: collapse; font-size: 9px;">
+      <thead>
+        <tr style="border-bottom: 1px solid #1A2E4A;">
+          <th style="text-align: left; padding: 6px 4px; color: #4A6480; font-weight: 500;">Channel</th>
+          <th style="text-align: right; padding: 6px 4px; color: #4A6480; font-weight: 500;">Revenue</th>
+          <th style="text-align: right; padding: 6px 4px; color: #4A6480; font-weight: 500;">Purchases</th>
+          <th style="text-align: right; padding: 6px 4px; color: #4A6480; font-weight: 500;">Users</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for ch in ga4_data.channel_revenue[:12] %}
+        <tr style="border-bottom: 1px solid #0D1B2E;">
+          <td style="padding: 5px 4px;">
+            {{ ch.get("session_source", ch.get("sessionDefaultChannelGroup", "—")) }}
+            {% if ch.get("session_medium") %}<span class="secondary-text"> / {{ ch.session_medium }}</span>{% endif %}
+          </td>
+          <td style="text-align: right; padding: 5px 4px; font-weight: 600;">${{ "{:,.0f}".format(ch.get("revenue", ch.get("totalRevenue", 0)) | float) }}</td>
+          <td style="text-align: right; padding: 5px 4px;">{{ ch.get("purchases", ch.get("transactions", 0)) }}</td>
+          <td style="text-align: right; padding: 5px 4px;">{{ "{:,}".format(ch.get("users", ch.get("totalUsers", 0)) | int) }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+
+  {% if ga4_data.get("paid_vs_organic") %}
+  <div class="card">
+    <div class="section-title">PAID VS ORGANIC SPLIT</div>
+    <div style="display: flex; gap: 12px;">
+      {% for row in ga4_data.paid_vs_organic %}
+      <div style="flex: 1; background: #0D1B2E; border-radius: 8px; padding: 14px; text-align: center;">
+        <div class="label">{{ row.get("category", "unknown") | upper }}</div>
+        <div class="score-medium" style="margin: 6px 0;">
+          ${{ "{:,.0f}".format(row.get("totalRevenue", 0) | float) }}
+        </div>
+        <div class="secondary-text" style="font-size: 9px;">
+          {{ row.get("conversions", row.get("purchases", 0)) }} conversions
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</div>

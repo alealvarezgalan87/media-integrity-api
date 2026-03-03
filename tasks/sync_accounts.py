@@ -121,3 +121,91 @@ def sync_google_accounts_all():
 
     logger.info("sync_accounts_all_dispatched", organizations=count)
     return {"dispatched": count}
+
+
+@shared_task(bind=True, max_retries=2, default_retry_delay=60)
+def sync_ga4_properties(self, organization_id: str):
+    """Sync GA4 properties from Analytics Admin API into GA4Property table."""
+    from core.models import GA4Property, GoogleAdsCredential, Organization
+
+    try:
+        org = Organization.objects.get(id=organization_id)
+    except Organization.DoesNotExist:
+        logger.error("sync_ga4_org_not_found", organization_id=organization_id)
+        return {"status": "error", "message": "Organization not found"}
+
+    try:
+        creds = org.google_credentials
+    except GoogleAdsCredential.DoesNotExist:
+        logger.warning("sync_ga4_no_credentials", org=org.name)
+        return {"status": "skipped", "message": "No credentials configured"}
+
+    if not all([creds.client_id, creds.client_secret, creds.refresh_token]):
+        logger.warning("sync_ga4_incomplete_credentials", org=org.name)
+        return {"status": "skipped", "message": "Incomplete credentials"}
+
+    if "analytics.readonly" not in (creds.oauth_scopes or ""):
+        logger.warning("sync_ga4_no_scope", org=org.name)
+        return {"status": "skipped", "message": "GA4 scope not authorized"}
+
+    try:
+        from engine.auth.ga4_manager import GA4Manager
+
+        manager = GA4Manager(credentials={
+            "client_id": creds.client_id,
+            "client_secret": creds.client_secret,
+            "refresh_token": creds.refresh_token,
+        })
+        remote_properties = manager.list_properties()
+    except Exception as exc:
+        logger.error("sync_ga4_api_failed", org=org.name, error=str(exc))
+        raise self.retry(exc=exc)
+
+    now = timezone.now()
+    remote_ids = set()
+
+    bq_detected = 0
+    for prop in remote_properties:
+        remote_ids.add(prop["property_id"])
+        defaults = {
+            "display_name": prop.get("display_name", ""),
+            "timezone": prop.get("timezone", ""),
+            "currency": prop.get("currency", ""),
+            "industry_category": prop.get("industry_category", ""),
+            "service_level": prop.get("service_level", ""),
+            "is_active": True,
+            "last_synced_at": now,
+        }
+
+        # Auto-detect BigQuery export links
+        bq_info = manager.get_bigquery_links(prop["property_id"])
+        if bq_info:
+            defaults["bq_project_id"] = bq_info["bq_project_id"]
+            defaults["bq_dataset_id"] = bq_info["bq_dataset_id"]
+            bq_detected += 1
+
+        GA4Property.objects.update_or_create(
+            organization=org,
+            property_id=prop["property_id"],
+            defaults=defaults,
+        )
+
+    # Deactivate properties no longer accessible
+    deactivated = GA4Property.objects.filter(
+        organization=org, is_active=True
+    ).exclude(property_id__in=remote_ids).update(is_active=False)
+
+    logger.info(
+        "sync_ga4_done",
+        org=org.name,
+        synced=len(remote_properties),
+        deactivated=deactivated,
+        bq_detected=bq_detected,
+    )
+
+    return {
+        "status": "ok",
+        "synced": len(remote_properties),
+        "deactivated": deactivated,
+        "bq_detected": bq_detected,
+    }

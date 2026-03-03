@@ -1,0 +1,94 @@
+<!-- GA4 Measurement Findings -->
+<div class="card">
+  <div class="section-title">GA4 MEASUREMENT FINDINGS</div>
+  <p class="secondary-text" style="margin-bottom: 12px;">Data quality and configuration assessment.</p>
+
+  {% if ga4_data.get("attribution") %}
+  <div style="margin-bottom: 12px;">
+    <div class="label" style="margin-bottom: 6px;">ATTRIBUTION MODEL CONFIGURATION</div>
+    <table style="width: 100%; border-collapse: collapse; font-size: 9px;">
+      <thead>
+        <tr style="border-bottom: 1px solid #1A2E4A;">
+          <th style="text-align: left; padding: 5px 4px; color: #4A6480; font-weight: 500;">Conversion Action</th>
+          <th style="text-align: left; padding: 5px 4px; color: #4A6480; font-weight: 500;">Attribution Model</th>
+          <th style="text-align: right; padding: 5px 4px; color: #4A6480; font-weight: 500;">Conversions</th>
+          <th style="text-align: right; padding: 5px 4px; color: #4A6480; font-weight: 500;">Revenue</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for conv in ga4_data.attribution[:8] %}
+        <tr style="border-bottom: 1px solid #0D1B2E;">
+          <td style="padding: 4px;">{{ conv.get("sessionDefaultChannelGroup", conv.get("name", "—")) }}</td>
+          <td style="padding: 4px;">
+            {{ conv.get("attribution_model", "—") }}
+            {% if "DATA_DRIVEN" in (conv.get("attribution_model", "") | string | upper) %}
+              <span style="background: #0B2D1B; color: #22C55E; padding: 1px 6px; border-radius: 4px; font-size: 7px; font-weight: 600; margin-left: 4px;">DDA</span>
+            {% endif %}
+          </td>
+          <td style="text-align: right; padding: 4px;">{{ conv.get("conversions", 0) }}</td>
+          <td style="text-align: right; padding: 4px;">${{ "{:,.0f}".format(conv.get("totalRevenue", 0) | float) }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+
+  <div style="display: flex; gap: 10px;">
+    {% set mi = scorecard.get("tables", {}).get("measurement_integrity", {}) %}
+    <div style="flex: 1; background: #0D1B2E; border-radius: 8px; padding: 12px; text-align: center;">
+      <div class="label">DDA ADOPTION</div>
+      <div class="score-medium" style="margin: 4px 0;">{{ "%.0f" | format((mi.get("dda_adoption_rate", 0) or 0) * 100) }}%</div>
+    </div>
+    <div style="flex: 1; background: #0D1B2E; border-radius: 8px; padding: 12px; text-align: center;">
+      <div class="label">ATTRIBUTION MODELS</div>
+      <div class="score-medium" style="margin: 4px 0;">{{ mi.get("attribution_model_count", 0) }}</div>
+    </div>
+    <div style="flex: 1; background: #0D1B2E; border-radius: 8px; padding: 12px; text-align: center;">
+      <div class="label">LOOKBACK CONSISTENT</div>
+      <div class="score-medium" style="margin: 4px 0;">
+        {% if mi.get("lookback_window_consistency") %}
+          <span class="excellent">YES</span>
+        {% else %}
+          <span class="critical">NO</span>
+        {% endif %}
+      </div>
+    </div>
+    <div style="flex: 1; background: #0D1B2E; border-radius: 8px; padding: 12px; text-align: center;">
+      <div class="label">ENHANCED CONV.</div>
+      <div class="score-medium" style="margin: 4px 0;">
+        {% if mi.get("enhanced_conversions_enabled") == true %}
+          <span class="excellent">ON</span>
+        {% elif mi.get("enhanced_conversions_enabled") == false %}
+          <span class="moderate">OFF</span>
+        {% else %}
+          <span class="secondary-text">N/A</span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {% if ga4_data.get("traffic_acquisition") %}
+  <div style="margin-top: 12px;">
+    <div class="label" style="margin-bottom: 6px;">TOP TRAFFIC SOURCES</div>
+    <table style="width: 100%; border-collapse: collapse; font-size: 9px;">
+      <thead>
+        <tr style="border-bottom: 1px solid #1A2E4A;">
+          <th style="text-align: left; padding: 5px 4px; color: #4A6480; font-weight: 500;">Source / Medium</th>
+          <th style="text-align: right; padding: 5px 4px; color: #4A6480; font-weight: 500;">Sessions</th>
+          <th style="text-align: right; padding: 5px 4px; color: #4A6480; font-weight: 500;">Users</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in ga4_data.traffic_acquisition[:8] %}
+        <tr style="border-bottom: 1px solid #0D1B2E;">
+          <td style="padding: 4px;">{{ row.get("session_source", row.get("sessionSource", "—")) }} / {{ row.get("session_medium", row.get("sessionMedium", "—")) }}</td>
+          <td style="text-align: right; padding: 4px;">{{ "{:,}".format(row.get("sessions", 0) | int) }}</td>
+          <td style="text-align: right; padding: 4px;">{{ "{:,}".format(row.get("total_users", row.get("totalUsers", 0)) | int) }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+</div>

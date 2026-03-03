@@ -90,10 +90,62 @@ def compute_measurement_metrics(df: pd.DataFrame) -> dict:
     else:
         lookback_window_consistency = True
 
+    # ── Conversion source variance ──────────────────────────────
+    conv_source_metrics = _calc_conversion_source_metrics(df)
+
+    # ── Enhanced Conversions detection ────────────────────────────
+    enhanced_conversions_enabled = _detect_enhanced_conversions(df)
+
     return {
         "attribution_model_count": attribution_model_count,
         "dda_adoption_rate": round(float(dda_adoption_rate), 4),
         "lookback_window_consistency": bool(lookback_window_consistency),
         "conversion_action_count": conversion_action_count,
         "ga4_ads_revenue_discrepancy": None,
+        # Phase 2 metrics
+        "conversion_source_count": conv_source_metrics["conversion_source_count"],
+        "conversion_source_variance": conv_source_metrics["conversion_source_variance"],
+        "enhanced_conversions_enabled": enhanced_conversions_enabled,
     }
+
+
+def _calc_conversion_source_metrics(df: pd.DataFrame) -> dict:
+    """Calculate conversion source count and variance."""
+    if df.empty or "type" not in df.columns:
+        return {"conversion_source_count": 0, "conversion_source_variance": 0.0}
+
+    sources = df["type"].dropna().tolist()
+    unique_sources = set(sources)
+
+    source_counts: dict[str, int] = {}
+    for s in sources:
+        source_counts[s] = source_counts.get(s, 0) + 1
+
+    values = list(source_counts.values())
+    if len(values) <= 1:
+        variance = 0.0
+    else:
+        mean = sum(values) / len(values)
+        variance = sum((v - mean) ** 2 for v in values) / len(values)
+        # Normalize to 0-1 range
+        variance = min(variance / (mean ** 2) if mean > 0 else 0, 1.0)
+
+    return {
+        "conversion_source_count": len(unique_sources),
+        "conversion_source_variance": round(variance, 3),
+    }
+
+
+def _detect_enhanced_conversions(df: pd.DataFrame) -> bool | None:
+    """Detect if any conversion action has Enhanced Conversions enabled.
+
+    Returns True if enabled, False if not, None if data not available.
+    The enhanced_conversions_opt_in_status field may not be available
+    in all Google Ads API versions.
+    """
+    ec_col = "enhanced_conversions_opt_in_status"
+    if ec_col not in df.columns:
+        # Field not available in extractor — return None (data insufficient)
+        return None
+    enabled = df[ec_col].astype(str).str.contains("ENABLED", case=False, na=False)
+    return bool(enabled.any())

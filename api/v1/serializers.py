@@ -63,7 +63,7 @@ class AuditListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Audit
         fields = [
-            "run_id", "account_name", "account_id_raw", "source",
+            "run_id", "slug", "account_name", "account_id_raw", "source",
             "status", "composite_score", "risk_band", "capital_implication",
             "confidence", "red_flags_count",
             "date_range_start", "date_range_end", "created_at",
@@ -78,6 +78,8 @@ class AuditDetailSerializer(serializers.ModelSerializer):
     red_flags = AuditRedFlagSerializer(many=True, read_only=True)
     reports = ReportSerializer(many=True, read_only=True)
     red_flags_count = serializers.SerializerMethodField()
+    ga4_summary = serializers.SerializerMethodField()
+    confidence_summary = serializers.SerializerMethodField()
 
     class Meta:
         model = Audit
@@ -85,6 +87,42 @@ class AuditDetailSerializer(serializers.ModelSerializer):
 
     def get_red_flags_count(self, obj):
         return obj.red_flags.count()
+
+    def get_ga4_summary(self, obj):
+        """Extract GA4 summary from full_result for frontend display."""
+        fr = obj.full_result or {}
+        scorecard = fr.get("_scorecard", fr)
+        tables = scorecard.get("tables", {})
+        mi = tables.get("measurement_integrity", {})
+        ca = tables.get("capital_allocation", {})
+        es = obj.extraction_stats or {}
+
+        ga4_source = es.get("ga4_source")
+        if not ga4_source:
+            ga4_raw = fr.get("_ga4_raw_data", scorecard.get("_ga4_raw_data", {}))
+            ga4_source = ga4_raw.get("source") if ga4_raw else None
+
+        if not ga4_source:
+            return None
+
+        return {
+            "paid_revenue_share": ca.get("paid_revenue_share", 0) or 0,
+            "ga4_ads_revenue_discrepancy": mi.get("ga4_ads_revenue_discrepancy", 0) or 0,
+            "ga4_ads_conversion_discrepancy": mi.get("ga4_ads_conversion_discrepancy", 0) or 0,
+            "ga4_source": ga4_source,
+        }
+
+    def get_confidence_summary(self, obj):
+        """Extract confidence summary from full_result for frontend display."""
+        fr = obj.full_result or {}
+        scorecard = fr.get("_scorecard", fr)
+        confidence_data = scorecard.get("_confidence")
+        if not confidence_data:
+            return None
+        return {
+            "overall": confidence_data.get("overall_confidence", "Unknown"),
+            "completeness": confidence_data.get("overall_data_completeness", 0),
+        }
 
 
 class RunAuditSerializer(serializers.Serializer):

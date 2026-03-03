@@ -14,7 +14,7 @@ from api.v1.serializers import (
     ReportOptionsSerializer,
     ScoringConfigSerializer,
 )
-from core.models import GoogleAdsAccount, GoogleAdsCredential, ReportConfig, ScoringConfig
+from core.models import GA4Property, GoogleAdsAccount, GoogleAdsCredential, ReportConfig, ScoringConfig
 
 
 class GoogleConfigView(APIView):
@@ -267,7 +267,9 @@ class GoogleAccountsListView(APIView):
             return Response({"accounts": [], "last_synced_at": None, "sync_interval_hours": 6})
 
         # Admins see all org accounts; regular users see only their assigned accounts
-        qs = GoogleAdsAccount.objects.filter(organization=org, is_active=True)
+        qs = GoogleAdsAccount.objects.filter(
+            organization=org, is_active=True
+        ).select_related("ga4_property")
         if request.user.role != "admin" and not request.user.is_superuser:
             qs = qs.filter(users=request.user)
         accounts = list(qs.order_by("account_name"))
@@ -332,6 +334,11 @@ class GoogleAccountsListView(APIView):
                     "timezone": a.timezone,
                     "last_synced_at": a.last_synced_at,
                     "audit_count": audit_counts.get(a.account_id, 0),
+                    "ga4_property": {
+                        "id": str(a.ga4_property.id),
+                        "property_id": a.ga4_property.property_id,
+                        "display_name": a.ga4_property.display_name,
+                    } if a.ga4_property else None,
                 }
                 for a in accounts
             ],
@@ -371,6 +378,13 @@ class GoogleAccountDetailView(APIView):
             "timezone": account.timezone,
             "is_active": account.is_active,
             "last_synced_at": account.last_synced_at,
+            "ga4_property": {
+                "id": str(account.ga4_property.id),
+                "property_id": account.ga4_property.property_id,
+                "display_name": account.ga4_property.display_name,
+                "bq_project_id": account.ga4_property.bq_project_id or "",
+                "bq_dataset_id": account.ga4_property.bq_dataset_id or "",
+            } if account.ga4_property else None,
             "recent_audits": [
                 {
                     "run_id": str(a.run_id),
@@ -476,3 +490,183 @@ class ReportConfigView(APIView):
                 setattr(config, field, value)
         config.save()
         return Response({"status": "saved"})
+
+
+# ── GA4 Properties ──────────────────────────────────────────────
+
+
+class GA4PropertiesListView(APIView):
+    """GET /api/v1/settings/ga4/properties/ — list GA4 properties for the org."""
+
+    permission_classes = [IsAuthenticated]
+
+    @extend_schema(
+        tags=["GA4"],
+        responses={
+            200: inline_serializer(
+                name="GA4PropertiesListResponse",
+                fields={
+                    "properties": serializers.ListField(
+                        child=inline_serializer(
+                            name="GA4PropertyItem",
+                            fields={
+                                "id": serializers.CharField(),
+                                "property_id": serializers.CharField(),
+                                "display_name": serializers.CharField(),
+                            },
+                        ),
+                    ),
+                },
+            ),
+        },
+    )
+    def get(self, request):
+        org = request.user.organization
+        if not org:
+            return Response({"properties": []})
+
+        properties = GA4Property.objects.filter(
+            organization=org, is_active=True
+        ).order_by("display_name")
+
+        return Response({
+            "properties": [
+                {
+                    "id": str(p.id),
+                    "property_id": p.property_id,
+                    "display_name": p.display_name,
+                    "timezone": p.timezone,
+                    "currency": p.currency,
+                    "industry_category": p.industry_category,
+                    "service_level": p.service_level,
+                    "last_synced_at": p.last_synced_at,
+                    "linked_accounts": [
+                        {
+                            "account_id": a.account_id,
+                            "account_name": a.account_name,
+                        }
+                        for a in p.google_ads_accounts.filter(is_active=True)
+                    ],
+                }
+                for p in properties
+            ],
+        })
+
+
+class GA4PropertiesSyncView(APIView):
+    """POST /api/v1/settings/ga4/properties/sync/ — trigger GA4 property sync."""
+
+    permission_classes = [IsAuthenticated]
+
+    @extend_schema(
+        tags=["GA4"],
+        responses={
+            200: inline_serializer(
+                name="GA4SyncResponse",
+                fields={"status": serializers.CharField()},
+            ),
+            400: inline_serializer(
+                name="GA4SyncError",
+                fields={"error": serializers.CharField()},
+            ),
+        },
+    )
+    def post(self, request):
+        org = request.user.organization
+        if not org:
+            return Response(
+                {"error": "No organization assigned."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        try:
+            creds = org.google_credentials
+        except GoogleAdsCredential.DoesNotExist:
+            return Response(
+                {"error": "Google credentials not configured."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        if "analytics.readonly" not in (creds.oauth_scopes or ""):
+            return Response(
+                {"error": "GA4 scope not authorized. Please re-authorize your Google account."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        from tasks.sync_accounts import sync_ga4_properties
+        sync_ga4_properties.delay(str(org.id))
+
+        return Response({"status": "sync_started"}, status=status.HTTP_202_ACCEPTED)
+
+
+class LinkGA4PropertyView(APIView):
+    """POST/DELETE /api/v1/settings/google/accounts/<id>/link-ga4/ — link/unlink GA4 property."""
+
+    permission_classes = [IsAuthenticated]
+
+    @extend_schema(
+        tags=["Google Ads Accounts"],
+        request=inline_serializer(
+            name="LinkGA4Request",
+            fields={"ga4_property_id": serializers.CharField()},
+        ),
+        responses={
+            200: inline_serializer(
+                name="LinkGA4Response",
+                fields={
+                    "status": serializers.CharField(),
+                    "ga4_property_id": serializers.CharField(),
+                    "display_name": serializers.CharField(),
+                },
+            ),
+        },
+    )
+    def post(self, request, account_id):
+        org = request.user.organization
+        ga4_property_id = request.data.get("ga4_property_id")
+        if not ga4_property_id:
+            return Response(
+                {"error": "ga4_property_id is required."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        try:
+            account = GoogleAdsAccount.objects.get(id=account_id, organization=org)
+        except GoogleAdsAccount.DoesNotExist:
+            return Response({"error": "Account not found."}, status=status.HTTP_404_NOT_FOUND)
+
+        try:
+            ga4_prop = GA4Property.objects.get(id=ga4_property_id, organization=org)
+        except GA4Property.DoesNotExist:
+            return Response({"error": "GA4 property not found."}, status=status.HTTP_404_NOT_FOUND)
+
+        account.ga4_property = ga4_prop
+        account.save(update_fields=["ga4_property"])
+
+        return Response({
+            "status": "linked",
+            "ga4_property_id": ga4_prop.property_id,
+            "display_name": ga4_prop.display_name,
+        })
+
+    @extend_schema(
+        tags=["Google Ads Accounts"],
+        responses={
+            200: inline_serializer(
+                name="UnlinkGA4Response",
+                fields={"status": serializers.CharField()},
+            ),
+        },
+    )
+    def delete(self, request, account_id):
+        org = request.user.organization
+
+        try:
+            account = GoogleAdsAccount.objects.get(id=account_id, organization=org)
+        except GoogleAdsAccount.DoesNotExist:
+            return Response({"error": "Account not found."}, status=status.HTTP_404_NOT_FOUND)
+
+        account.ga4_property = None
+        account.save(update_fields=["ga4_property"])
+
+        return Response({"status": "unlinked"})

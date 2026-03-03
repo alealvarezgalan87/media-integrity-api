@@ -1,0 +1,60 @@
+<!-- GA4 vs Google Ads Attribution Analysis -->
+<div class="card">
+  <div class="section-title">GA4 VS GOOGLE ADS: ATTRIBUTION ANALYSIS</div>
+  <p class="secondary-text" style="margin-bottom: 12px;">Cross-platform measurement discrepancy detection.</p>
+
+  <table style="width: 100%; border-collapse: collapse; font-size: 9px;">
+    <thead>
+      <tr style="border-bottom: 1px solid #1A2E4A;">
+        <th style="text-align: left; padding: 6px 4px; color: #4A6480; font-weight: 500;">Metric</th>
+        <th style="text-align: right; padding: 6px 4px; color: #4A6480; font-weight: 500;">Google Ads</th>
+        <th style="text-align: right; padding: 6px 4px; color: #4A6480; font-weight: 500;">GA4</th>
+        <th style="text-align: right; padding: 6px 4px; color: #4A6480; font-weight: 500;">Discrepancy</th>
+        <th style="text-align: center; padding: 6px 4px; color: #4A6480; font-weight: 500;">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% set rev_disc = scorecard.get("tables", {}).get("measurement_integrity", {}).get("ga4_ads_revenue_discrepancy", 0) or 0 %}
+      <tr style="border-bottom: 1px solid #0D1B2E;">
+        <td style="padding: 5px 4px;">Revenue</td>
+        <td style="text-align: right; padding: 5px 4px;">—</td>
+        <td style="text-align: right; padding: 5px 4px;">—</td>
+        <td style="text-align: right; padding: 5px 4px; font-weight: 600;">{{ "%.1f" | format(rev_disc) }}%</td>
+        <td style="text-align: center; padding: 5px 4px;">
+          {% if rev_disc > 20 %}
+            <span style="background: #2D1215; color: #EF4444; padding: 2px 8px; border-radius: 4px; font-size: 8px; font-weight: 600;">HIGH</span>
+          {% elif rev_disc > 10 %}
+            <span style="background: #2D2507; color: #F59E0B; padding: 2px 8px; border-radius: 4px; font-size: 8px; font-weight: 600;">MODERATE</span>
+          {% else %}
+            <span style="background: #0B2D1B; color: #22C55E; padding: 2px 8px; border-radius: 4px; font-size: 8px; font-weight: 600;">ALIGNED</span>
+          {% endif %}
+        </td>
+      </tr>
+      {% set conv_disc = scorecard.get("tables", {}).get("measurement_integrity", {}).get("ga4_ads_conversion_discrepancy", 0) or 0 %}
+      <tr style="border-bottom: 1px solid #0D1B2E;">
+        <td style="padding: 5px 4px;">Conversions</td>
+        <td style="text-align: right; padding: 5px 4px;">—</td>
+        <td style="text-align: right; padding: 5px 4px;">—</td>
+        <td style="text-align: right; padding: 5px 4px; font-weight: 600;">{{ "%.1f" | format(conv_disc) }}%</td>
+        <td style="text-align: center; padding: 5px 4px;">
+          {% if conv_disc > 20 %}
+            <span style="background: #2D1215; color: #EF4444; padding: 2px 8px; border-radius: 4px; font-size: 8px; font-weight: 600;">HIGH</span>
+          {% elif conv_disc > 10 %}
+            <span style="background: #2D2507; color: #F59E0B; padding: 2px 8px; border-radius: 4px; font-size: 8px; font-weight: 600;">MODERATE</span>
+          {% else %}
+            <span style="background: #0B2D1B; color: #22C55E; padding: 2px 8px; border-radius: 4px; font-size: 8px; font-weight: 600;">ALIGNED</span>
+          {% endif %}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  {% if rev_disc > 15 %}
+  <div style="background: #2D2507; border-left: 3px solid #F59E0B; padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0;">
+    <div style="font-weight: 600; font-size: 9px; color: #F59E0B; margin-bottom: 4px;">⚠ Significant Revenue Discrepancy</div>
+    <div class="secondary-text" style="font-size: 8px;">
+      A {{ "%.0f" | format(rev_disc) }}% gap between Google Ads and GA4 reported revenue suggests attribution model differences, missing tracking, or conversion counting discrepancies.
+    </div>
+  </div>
+  {% endif %}
+</div>

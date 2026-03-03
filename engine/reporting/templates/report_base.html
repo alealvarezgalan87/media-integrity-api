@@ -113,5 +113,20 @@
 
   <!-- Page 4: Capital Implication -->
   {% include 'capital_implication.html' %}
+
+  {% if has_ga4 %}
+  <!-- Page 5: GA4 Channel Breakdown -->
+  {% include 'ga4_channel_breakdown.html' %}
+
+  <!-- Page 6: GA4 Attribution + Measurement -->
+  <div class="page">
+    <div class="page-title">GA4 MEASUREMENT ANALYSIS</div>
+    <p class="secondary-text" style="margin-bottom: 16px;">
+      Cross-platform attribution comparison and measurement configuration review.
+    </p>
+    {% include 'ga4_attribution_analysis.html' %}
+    {% include 'ga4_measurement_findings.html' %}
+  </div>
+  {% endif %}
 </body>
 </html>

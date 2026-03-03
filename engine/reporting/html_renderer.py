@@ -26,12 +26,15 @@ def render_report_html(scorecard: dict, template_name: str = "report_base.html")
     )
 
     template = env.get_template(template_name)
+    has_ga4 = _has_ga4_data(scorecard)
     html = template.render(
         scorecard=scorecard,
         has_pmax=_has_pmax_data(scorecard),
+        has_ga4=has_ga4,
+        ga4_data=scorecard.get("_ga4_raw_data", {}),
     )
 
-    logger.info("html_rendered", template=template_name)
+    logger.info("html_rendered", template=template_name, has_ga4=has_ga4)
     return html
 
 
@@ -58,3 +61,9 @@ def _has_pmax_data(scorecard: dict) -> bool:
     """Check if scorecard contains PMax-specific data."""
     # TODO: Check for PMax data in domain scores or tables
     return True
+
+
+def _has_ga4_data(scorecard: dict) -> bool:
+    """Check if scorecard contains GA4 data for report sections."""
+    ga4 = scorecard.get("_ga4_raw_data", {})
+    return bool(ga4 and any(ga4.get(k) for k in ["channel_revenue", "paid_vs_organic", "attribution"]))

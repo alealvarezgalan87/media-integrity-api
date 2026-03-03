@@ -2,6 +2,7 @@ import uuid
 
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.utils.text import slugify
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -132,6 +133,11 @@ class GoogleAdsCredential(models.Model):
         default=6,
         help_text="How often to sync accounts from Google Ads (in hours)",
     )
+    oauth_scopes = models.TextField(
+        blank=True,
+        default="",
+        help_text="Space-separated OAuth2 scopes granted by the current refresh token",
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -152,12 +158,44 @@ class GoogleAdsAccount(models.Model):
     timezone = models.CharField(max_length=50, blank=True)
     is_active = models.BooleanField(default=True)
     last_synced_at = models.DateTimeField(null=True, blank=True)
+    ga4_property = models.ForeignKey(
+        "GA4Property",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="google_ads_accounts",
+    )
 
     class Meta:
         unique_together = ("organization", "account_id")
 
     def __str__(self):
         return f"{self.account_name} ({self.account_id})"
+
+
+class GA4Property(models.Model):
+    """Propiedades GA4 descubiertas vía Analytics Admin API."""
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    organization = models.ForeignKey(
+        Organization, on_delete=models.CASCADE, related_name="ga4_properties"
+    )
+    property_id = models.CharField(max_length=20)
+    display_name = models.CharField(max_length=200)
+    timezone = models.CharField(max_length=50, blank=True)
+    currency = models.CharField(max_length=10, blank=True)
+    industry_category = models.CharField(max_length=100, blank=True)
+    service_level = models.CharField(max_length=20, blank=True)
+    is_active = models.BooleanField(default=True)
+    last_synced_at = models.DateTimeField(null=True, blank=True)
+    bq_project_id = models.CharField(max_length=100, blank=True)
+    bq_dataset_id = models.CharField(max_length=100, blank=True)
+
+    class Meta:
+        unique_together = ("organization", "property_id")
+
+    def __str__(self):
+        return f"{self.display_name} ({self.property_id})"
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -289,6 +327,7 @@ class Audit(models.Model):
     errors = models.JSONField(default=list)
 
     full_result = models.JSONField(default=dict)
+    slug = models.SlugField(max_length=120, unique=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -298,6 +337,24 @@ class Audit(models.Model):
 
     def __str__(self):
         return f"{self.account_name} — {self.created_at:%Y-%m-%d}"
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = self._generate_unique_slug()
+        super().save(*args, **kwargs)
+
+    def _generate_unique_slug(self) -> str:
+        date_str = str(self.date_range_start) if self.date_range_start else "draft"
+        base = slugify(f"{self.account_name}-{date_str}")
+        if not base:
+            base = "audit"
+        base = base[:100]
+        candidate = base
+        counter = 1
+        while Audit.objects.filter(slug=candidate).exclude(pk=self.pk).exists():
+            candidate = f"{base}-{counter}"
+            counter += 1
+        return candidate
 
 
 # ═══════════════════════════════════════════════════════════════════════════════

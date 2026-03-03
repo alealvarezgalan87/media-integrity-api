@@ -153,6 +153,7 @@ def generate_audit_excel(audit_data: dict) -> bytes:
     red_flags = audit_data.get("red_flags", [])
     run_id = audit_data.get("run_id", "")
     raw_data = audit_data.get("raw_data", {})
+    ga4_raw_data = audit_data.get("ga4_raw_data", {})
 
     composite = scoring.get("composite_score", 0) or 0
     risk_band_label = scoring.get("risk_band", "")
@@ -764,7 +765,431 @@ def generate_audit_excel(audit_data: dict) -> bytes:
             row += 1
 
     # ═════════════════════════════════════════════════════════════════════════
-    # SHEET 8: EXECUTION LOG (always last)
+    # SHEET 8: GA4 CHANNEL PERFORMANCE (only if ga4_raw_data available)
+    # ═════════════════════════════════════════════════════════════════════════
+    ga4_channel_data = ga4_raw_data.get("channel_revenue", [])
+    if ga4_channel_data:
+        ws_ga4ch = wb.create_sheet("GA4 Channel Performance")
+        ws_ga4ch.sheet_properties.tabColor = "E67E22"
+        _set_col_widths(ws_ga4ch, [28, 16, 16, 16, 14, 14, 14, 14])
+
+        _title_row(ws_ga4ch, 1, f"GA4 Channel Performance — {account_name}", 8)
+        _title_row(ws_ga4ch, 2,
+                   f"Revenue and engagement by channel group  |  Period: {date_str}",
+                   8, font=WHITE_FONT_SM, fill=HEADER_BG)
+
+        # Aggregate daily rows by channel group
+        ch_agg = {}
+        for r in ga4_channel_data:
+            ch = r.get("sessionDefaultChannelGroup", "(not set)")
+            if ch not in ch_agg:
+                ch_agg[ch] = {
+                    "revenue": 0, "transactions": 0, "purchase_revenue": 0,
+                    "sessions": 0, "engaged_sessions": 0, "users": 0, "conversions": 0,
+                }
+            ch_agg[ch]["revenue"] += float(r.get("totalRevenue", 0) or 0)
+            ch_agg[ch]["transactions"] += int(float(r.get("transactions", 0) or 0))
+            ch_agg[ch]["purchase_revenue"] += float(r.get("purchaseRevenue", 0) or 0)
+            ch_agg[ch]["sessions"] += int(float(r.get("sessions", 0) or 0))
+            ch_agg[ch]["engaged_sessions"] += int(float(r.get("engagedSessions", 0) or 0))
+            ch_agg[ch]["users"] += int(float(r.get("totalUsers", 0) or 0))
+            ch_agg[ch]["conversions"] += float(r.get("conversions", 0) or 0)
+
+        total_rev = sum(a["revenue"] for a in ch_agg.values())
+        total_sess = sum(a["sessions"] for a in ch_agg.values())
+
+        row = 4
+        _header_row(ws_ga4ch, row, ["Channel Group", "Revenue", "% of Revenue",
+                                     "Transactions", "Sessions", "Engaged %",
+                                     "Conversions", "Rev/Session"])
+        row += 1
+
+        sorted_channels = sorted(ch_agg.items(), key=lambda x: x[1]["revenue"], reverse=True)
+        for idx, (ch_name, agg) in enumerate(sorted_channels, 1):
+            rev = agg["revenue"]
+            sess = agg["sessions"]
+            eng = agg["engaged_sessions"]
+            eng_rate = eng / sess if sess > 0 else 0
+            rev_per_sess = rev / sess if sess > 0 else 0
+            pct_rev = rev / total_rev if total_rev > 0 else 0
+
+            ws_ga4ch.cell(row=row, column=1, value=ch_name).font = DARK_FONT
+            ws_ga4ch.cell(row=row, column=1).alignment = LEFT_WRAP
+
+            ws_ga4ch.cell(row=row, column=2, value=round(rev, 2)).font = DARK_FONT_BOLD
+            ws_ga4ch.cell(row=row, column=2).alignment = CENTER
+            ws_ga4ch.cell(row=row, column=2).number_format = '#,##0.00'
+
+            ws_ga4ch.cell(row=row, column=3, value=round(pct_rev, 3)).font = DARK_FONT
+            ws_ga4ch.cell(row=row, column=3).alignment = CENTER
+            ws_ga4ch.cell(row=row, column=3).number_format = '0.0%'
+
+            ws_ga4ch.cell(row=row, column=4, value=agg["transactions"]).font = DARK_FONT
+            ws_ga4ch.cell(row=row, column=4).alignment = CENTER
+
+            ws_ga4ch.cell(row=row, column=5, value=sess).font = DARK_FONT
+            ws_ga4ch.cell(row=row, column=5).alignment = CENTER
+            ws_ga4ch.cell(row=row, column=5).number_format = '#,##0'
+
+            ws_ga4ch.cell(row=row, column=6, value=round(eng_rate, 3)).font = DARK_FONT
+            ws_ga4ch.cell(row=row, column=6).alignment = CENTER
+            ws_ga4ch.cell(row=row, column=6).number_format = '0.0%'
+
+            ws_ga4ch.cell(row=row, column=7, value=round(agg["conversions"], 1)).font = DARK_FONT
+            ws_ga4ch.cell(row=row, column=7).alignment = CENTER
+
+            ws_ga4ch.cell(row=row, column=8, value=round(rev_per_sess, 2)).font = DARK_FONT
+            ws_ga4ch.cell(row=row, column=8).alignment = CENTER
+            ws_ga4ch.cell(row=row, column=8).number_format = '#,##0.00'
+
+            alt_fill = LIGHT_GRAY_BG if idx % 2 == 0 else WHITE_BG
+            _apply_row_fill(ws_ga4ch, row, 1, 8, alt_fill)
+            _apply_row_border(ws_ga4ch, row, 1, 8)
+            row += 1
+
+        # Totals row
+        ws_ga4ch.cell(row=row, column=1, value="TOTAL").font = WHITE_FONT
+        for col in range(1, 9):
+            ws_ga4ch.cell(row=row, column=col).fill = DOMAIN_BG
+            ws_ga4ch.cell(row=row, column=col).border = THIN_BORDER
+        ws_ga4ch.cell(row=row, column=2, value=round(total_rev, 2)).font = WHITE_FONT
+        ws_ga4ch.cell(row=row, column=2).alignment = CENTER
+        ws_ga4ch.cell(row=row, column=2).number_format = '#,##0.00'
+        ws_ga4ch.cell(row=row, column=3, value=1.0).font = WHITE_FONT
+        ws_ga4ch.cell(row=row, column=3).alignment = CENTER
+        ws_ga4ch.cell(row=row, column=3).number_format = '0.0%'
+        t_trans = sum(a["transactions"] for a in ch_agg.values())
+        t_conv = sum(a["conversions"] for a in ch_agg.values())
+        ws_ga4ch.cell(row=row, column=4, value=t_trans).font = WHITE_FONT
+        ws_ga4ch.cell(row=row, column=4).alignment = CENTER
+        ws_ga4ch.cell(row=row, column=5, value=total_sess).font = WHITE_FONT
+        ws_ga4ch.cell(row=row, column=5).alignment = CENTER
+        ws_ga4ch.cell(row=row, column=5).number_format = '#,##0'
+        t_eng_rate = sum(a["engaged_sessions"] for a in ch_agg.values()) / total_sess if total_sess > 0 else 0
+        ws_ga4ch.cell(row=row, column=6, value=round(t_eng_rate, 3)).font = WHITE_FONT
+        ws_ga4ch.cell(row=row, column=6).alignment = CENTER
+        ws_ga4ch.cell(row=row, column=6).number_format = '0.0%'
+        ws_ga4ch.cell(row=row, column=7, value=round(t_conv, 1)).font = WHITE_FONT
+        ws_ga4ch.cell(row=row, column=7).alignment = CENTER
+        t_rps = total_rev / total_sess if total_sess > 0 else 0
+        ws_ga4ch.cell(row=row, column=8, value=round(t_rps, 2)).font = WHITE_FONT
+        ws_ga4ch.cell(row=row, column=8).alignment = CENTER
+        ws_ga4ch.cell(row=row, column=8).number_format = '#,##0.00'
+
+    # ═════════════════════════════════════════════════════════════════════════
+    # SHEET 9: GA4 TRAFFIC ACQUISITION (only if ga4_raw_data available)
+    # ═════════════════════════════════════════════════════════════════════════
+    ga4_traffic_data = ga4_raw_data.get("traffic_acquisition", [])
+    if ga4_traffic_data:
+        ws_ga4tr = wb.create_sheet("GA4 Traffic Acquisition")
+        ws_ga4tr.sheet_properties.tabColor = "3498DB"
+        _set_col_widths(ws_ga4tr, [22, 16, 30, 14, 14, 14, 14, 14])
+
+        _title_row(ws_ga4tr, 1, f"GA4 Traffic Acquisition — {account_name}", 8)
+        _title_row(ws_ga4tr, 2,
+                   f"Sessions by source / medium / campaign  |  Period: {date_str}",
+                   8, font=WHITE_FONT_SM, fill=HEADER_BG)
+
+        # Aggregate daily rows by source/medium/campaign
+        tr_agg = {}
+        for r in ga4_traffic_data:
+            source = r.get("sessionSource", "(direct)")
+            medium = r.get("sessionMedium", "(none)")
+            campaign = r.get("sessionCampaignName", "(not set)")
+            key = (source, medium, campaign)
+            if key not in tr_agg:
+                tr_agg[key] = {
+                    "sessions": 0, "engaged_sessions": 0,
+                    "conversions": 0, "revenue": 0,
+                    "bounce_sum": 0, "bounce_count": 0,
+                }
+            tr_agg[key]["sessions"] += int(float(r.get("sessions", 0) or 0))
+            tr_agg[key]["engaged_sessions"] += int(float(r.get("engagedSessions", 0) or 0))
+            tr_agg[key]["conversions"] += float(r.get("conversions", 0) or 0)
+            tr_agg[key]["revenue"] += float(r.get("totalRevenue", 0) or 0)
+            br = float(r.get("bounceRate", 0) or 0)
+            if br > 0:
+                tr_agg[key]["bounce_sum"] += br
+                tr_agg[key]["bounce_count"] += 1
+
+        row = 4
+        _header_row(ws_ga4tr, row, ["Source", "Medium", "Campaign",
+                                     "Sessions", "Engaged %", "Bounce Rate",
+                                     "Conversions", "Revenue"])
+        row += 1
+
+        sorted_traffic = sorted(tr_agg.items(), key=lambda x: x[1]["sessions"], reverse=True)
+        # Limit to top 50 to keep the sheet readable
+        for idx, ((source, medium, campaign), agg) in enumerate(sorted_traffic[:50], 1):
+            sess = agg["sessions"]
+            eng_rate = agg["engaged_sessions"] / sess if sess > 0 else 0
+            avg_bounce = agg["bounce_sum"] / agg["bounce_count"] if agg["bounce_count"] > 0 else 0
+
+            ws_ga4tr.cell(row=row, column=1, value=source).font = DARK_FONT
+            ws_ga4tr.cell(row=row, column=1).alignment = LEFT_WRAP
+
+            ws_ga4tr.cell(row=row, column=2, value=medium).font = DARK_FONT
+            ws_ga4tr.cell(row=row, column=2).alignment = CENTER
+
+            ws_ga4tr.cell(row=row, column=3, value=campaign).font = DARK_FONT
+            ws_ga4tr.cell(row=row, column=3).alignment = LEFT_WRAP
+
+            ws_ga4tr.cell(row=row, column=4, value=sess).font = DARK_FONT
+            ws_ga4tr.cell(row=row, column=4).alignment = CENTER
+            ws_ga4tr.cell(row=row, column=4).number_format = '#,##0'
+
+            ws_ga4tr.cell(row=row, column=5, value=round(eng_rate, 3)).font = DARK_FONT
+            ws_ga4tr.cell(row=row, column=5).alignment = CENTER
+            ws_ga4tr.cell(row=row, column=5).number_format = '0.0%'
+
+            ws_ga4tr.cell(row=row, column=6, value=round(avg_bounce, 3)).font = DARK_FONT
+            ws_ga4tr.cell(row=row, column=6).alignment = CENTER
+            ws_ga4tr.cell(row=row, column=6).number_format = '0.0%'
+
+            ws_ga4tr.cell(row=row, column=7, value=round(agg["conversions"], 1)).font = DARK_FONT
+            ws_ga4tr.cell(row=row, column=7).alignment = CENTER
+
+            ws_ga4tr.cell(row=row, column=8, value=round(agg["revenue"], 2)).font = DARK_FONT
+            ws_ga4tr.cell(row=row, column=8).alignment = CENTER
+            ws_ga4tr.cell(row=row, column=8).number_format = '#,##0.00'
+
+            alt_fill = LIGHT_GRAY_BG if idx % 2 == 0 else WHITE_BG
+            _apply_row_fill(ws_ga4tr, row, 1, 8, alt_fill)
+            _apply_row_border(ws_ga4tr, row, 1, 8)
+            row += 1
+
+        if len(sorted_traffic) > 50:
+            row += 1
+            ws_ga4tr.merge_cells(start_row=row, start_column=1, end_row=row, end_column=8)
+            ws_ga4tr.cell(row=row, column=1,
+                          value=f"Showing top 50 of {len(sorted_traffic)} source/medium/campaign combinations.").font = DARK_FONT
+            ws_ga4tr.cell(row=row, column=1).alignment = CENTER
+
+    # ═════════════════════════════════════════════════════════════════════════
+    # SHEET 10: GA4 PAID VS ORGANIC (only if ga4_raw_data available)
+    # ═════════════════════════════════════════════════════════════════════════
+    ga4_pvo_data = ga4_raw_data.get("paid_vs_organic", [])
+    if ga4_pvo_data:
+        ws_pvo = wb.create_sheet("GA4 Paid vs Organic")
+        ws_pvo.sheet_properties.tabColor = "27AE60"
+        _set_col_widths(ws_pvo, [28, 14, 16, 16, 14, 14, 14])
+
+        _title_row(ws_pvo, 1, f"GA4 Paid vs Organic — {account_name}", 7)
+        _title_row(ws_pvo, 2,
+                   f"Revenue and traffic split by paid / organic / other  |  Period: {date_str}",
+                   7, font=WHITE_FONT_SM, fill=HEADER_BG)
+
+        total_pvo_rev = sum(float(r.get("totalRevenue", 0) or 0) for r in ga4_pvo_data)
+        total_pvo_sess = sum(int(float(r.get("sessions", 0) or 0)) for r in ga4_pvo_data)
+
+        # ── Detail by channel group ──
+        row = 4
+        _header_row(ws_pvo, row, ["Channel Group", "Category", "Revenue",
+                                   "% of Revenue", "Transactions", "Sessions", "Conversions"])
+        row += 1
+
+        sorted_pvo = sorted(ga4_pvo_data, key=lambda r: float(r.get("totalRevenue", 0) or 0), reverse=True)
+        for idx, r in enumerate(sorted_pvo, 1):
+            ch = r.get("sessionDefaultChannelGroup", "(not set)")
+            cat = r.get("category", "other")
+            rev = float(r.get("totalRevenue", 0) or 0)
+            trans = int(float(r.get("transactions", 0) or 0))
+            sess = int(float(r.get("sessions", 0) or 0))
+            conv = float(r.get("conversions", 0) or 0)
+            pct = rev / total_pvo_rev if total_pvo_rev > 0 else 0
+
+            ws_pvo.cell(row=row, column=1, value=ch).font = DARK_FONT
+            ws_pvo.cell(row=row, column=1).alignment = LEFT_WRAP
+
+            cat_cell = ws_pvo.cell(row=row, column=2, value=cat.upper())
+            cat_cell.font = DARK_FONT_BOLD
+            cat_cell.alignment = CENTER
+            if cat == "paid":
+                cat_cell.fill = PatternFill(start_color="D6EAF8", end_color="D6EAF8", fill_type="solid")
+            elif cat == "organic":
+                cat_cell.fill = PASS_BG
+
+            ws_pvo.cell(row=row, column=3, value=round(rev, 2)).font = DARK_FONT
+            ws_pvo.cell(row=row, column=3).alignment = CENTER
+            ws_pvo.cell(row=row, column=3).number_format = '#,##0.00'
+
+            ws_pvo.cell(row=row, column=4, value=round(pct, 3)).font = DARK_FONT
+            ws_pvo.cell(row=row, column=4).alignment = CENTER
+            ws_pvo.cell(row=row, column=4).number_format = '0.0%'
+
+            ws_pvo.cell(row=row, column=5, value=trans).font = DARK_FONT
+            ws_pvo.cell(row=row, column=5).alignment = CENTER
+
+            ws_pvo.cell(row=row, column=6, value=sess).font = DARK_FONT
+            ws_pvo.cell(row=row, column=6).alignment = CENTER
+            ws_pvo.cell(row=row, column=6).number_format = '#,##0'
+
+            ws_pvo.cell(row=row, column=7, value=round(conv, 1)).font = DARK_FONT
+            ws_pvo.cell(row=row, column=7).alignment = CENTER
+
+            alt_fill = LIGHT_GRAY_BG if idx % 2 == 0 else WHITE_BG
+            _apply_row_fill(ws_pvo, row, 1, 7, alt_fill, exclude={2})
+            _apply_row_border(ws_pvo, row, 1, 7)
+            row += 1
+
+        # ── Category summary ──
+        row += 1
+        _title_row(ws_pvo, row, "CATEGORY SUMMARY", 7, font=SUBTITLE_FONT, fill=DOMAIN_BG)
+        row += 1
+        _header_row(ws_pvo, row, ["Category", "", "Revenue", "% of Revenue",
+                                   "Transactions", "Sessions", "Conversions"])
+        row += 1
+
+        cat_agg = {"paid": {"rev": 0, "trans": 0, "sess": 0, "conv": 0},
+                   "organic": {"rev": 0, "trans": 0, "sess": 0, "conv": 0},
+                   "other": {"rev": 0, "trans": 0, "sess": 0, "conv": 0}}
+        for r in ga4_pvo_data:
+            cat = r.get("category", "other")
+            if cat not in cat_agg:
+                cat = "other"
+            cat_agg[cat]["rev"] += float(r.get("totalRevenue", 0) or 0)
+            cat_agg[cat]["trans"] += int(float(r.get("transactions", 0) or 0))
+            cat_agg[cat]["sess"] += int(float(r.get("sessions", 0) or 0))
+            cat_agg[cat]["conv"] += float(r.get("conversions", 0) or 0)
+
+        cat_fills = {
+            "paid": PatternFill(start_color="D6EAF8", end_color="D6EAF8", fill_type="solid"),
+            "organic": PASS_BG,
+            "other": LIGHT_GRAY_BG,
+        }
+
+        for cat_name in ("paid", "organic", "other"):
+            ca = cat_agg[cat_name]
+            pct = ca["rev"] / total_pvo_rev if total_pvo_rev > 0 else 0
+
+            c1 = ws_pvo.cell(row=row, column=1, value=cat_name.upper())
+            c1.font = DARK_FONT_BOLD
+            c1.alignment = CENTER
+            c1.fill = cat_fills.get(cat_name, WHITE_BG)
+
+            ws_pvo.cell(row=row, column=3, value=round(ca["rev"], 2)).font = DARK_FONT_BOLD
+            ws_pvo.cell(row=row, column=3).alignment = CENTER
+            ws_pvo.cell(row=row, column=3).number_format = '#,##0.00'
+
+            ws_pvo.cell(row=row, column=4, value=round(pct, 3)).font = DARK_FONT_BOLD
+            ws_pvo.cell(row=row, column=4).alignment = CENTER
+            ws_pvo.cell(row=row, column=4).number_format = '0.0%'
+
+            ws_pvo.cell(row=row, column=5, value=ca["trans"]).font = DARK_FONT_BOLD
+            ws_pvo.cell(row=row, column=5).alignment = CENTER
+
+            ws_pvo.cell(row=row, column=6, value=ca["sess"]).font = DARK_FONT_BOLD
+            ws_pvo.cell(row=row, column=6).alignment = CENTER
+            ws_pvo.cell(row=row, column=6).number_format = '#,##0'
+
+            ws_pvo.cell(row=row, column=7, value=round(ca["conv"], 1)).font = DARK_FONT_BOLD
+            ws_pvo.cell(row=row, column=7).alignment = CENTER
+
+            _apply_row_border(ws_pvo, row, 1, 7)
+            row += 1
+
+    # ═════════════════════════════════════════════════════════════════════════
+    # SHEET 11: GA4 ATTRIBUTION COMPARISON (only if both GA4 + GAds data)
+    # ═════════════════════════════════════════════════════════════════════════
+    ga4_attr_data = ga4_raw_data.get("attribution", [])
+    if ga4_attr_data and conv_data:
+        ws_attr = wb.create_sheet("GA4 vs Ads Attribution")
+        ws_attr.sheet_properties.tabColor = "8E44AD"
+        _set_col_widths(ws_attr, [28, 18, 18, 18, 18, 16])
+
+        _title_row(ws_attr, 1, f"GA4 vs Google Ads Attribution — {account_name}", 6)
+        _title_row(ws_attr, 2,
+                   f"GA4 DDA conversions by channel vs Google Ads reported conversions  |  Period: {date_str}",
+                   6, font=WHITE_FONT_SM, fill=HEADER_BG)
+
+        # GA4 attribution: channel group → conversions, revenue
+        row = 4
+        _title_row(ws_attr, row, "GA4 Attribution (Data-Driven)", 6,
+                   font=SUBTITLE_FONT, fill=DOMAIN_BG)
+        row += 1
+        _header_row(ws_attr, row, ["Channel Group", "GA4 Conversions", "GA4 Revenue",
+                                    "% of Conversions", "% of Revenue", ""])
+        row += 1
+
+        total_ga4_conv = sum(float(r.get("conversions", 0) or 0) for r in ga4_attr_data)
+        total_ga4_rev = sum(float(r.get("totalRevenue", 0) or 0) for r in ga4_attr_data)
+
+        sorted_attr = sorted(ga4_attr_data,
+                             key=lambda r: float(r.get("totalRevenue", 0) or 0), reverse=True)
+        for idx, r in enumerate(sorted_attr, 1):
+            ch = r.get("sessionDefaultChannelGroup", "(not set)")
+            conv = float(r.get("conversions", 0) or 0)
+            rev = float(r.get("totalRevenue", 0) or 0)
+            pct_conv = conv / total_ga4_conv if total_ga4_conv > 0 else 0
+            pct_rev = rev / total_ga4_rev if total_ga4_rev > 0 else 0
+
+            ws_attr.cell(row=row, column=1, value=ch).font = DARK_FONT
+            ws_attr.cell(row=row, column=1).alignment = LEFT_WRAP
+
+            ws_attr.cell(row=row, column=2, value=round(conv, 1)).font = DARK_FONT
+            ws_attr.cell(row=row, column=2).alignment = CENTER
+
+            ws_attr.cell(row=row, column=3, value=round(rev, 2)).font = DARK_FONT
+            ws_attr.cell(row=row, column=3).alignment = CENTER
+            ws_attr.cell(row=row, column=3).number_format = '#,##0.00'
+
+            ws_attr.cell(row=row, column=4, value=round(pct_conv, 3)).font = DARK_FONT
+            ws_attr.cell(row=row, column=4).alignment = CENTER
+            ws_attr.cell(row=row, column=4).number_format = '0.0%'
+
+            ws_attr.cell(row=row, column=5, value=round(pct_rev, 3)).font = DARK_FONT
+            ws_attr.cell(row=row, column=5).alignment = CENTER
+            ws_attr.cell(row=row, column=5).number_format = '0.0%'
+
+            alt_fill = LIGHT_GRAY_BG if idx % 2 == 0 else WHITE_BG
+            _apply_row_fill(ws_attr, row, 1, 6, alt_fill)
+            _apply_row_border(ws_attr, row, 1, 6)
+            row += 1
+
+        # Totals
+        ws_attr.cell(row=row, column=1, value="TOTAL").font = WHITE_FONT
+        for col in range(1, 7):
+            ws_attr.cell(row=row, column=col).fill = DOMAIN_BG
+            ws_attr.cell(row=row, column=col).border = THIN_BORDER
+        ws_attr.cell(row=row, column=2, value=round(total_ga4_conv, 1)).font = WHITE_FONT
+        ws_attr.cell(row=row, column=2).alignment = CENTER
+        ws_attr.cell(row=row, column=3, value=round(total_ga4_rev, 2)).font = WHITE_FONT
+        ws_attr.cell(row=row, column=3).alignment = CENTER
+        ws_attr.cell(row=row, column=3).number_format = '#,##0.00'
+        row += 2
+
+        # Cross-reference summary: GA4 total vs Google Ads total
+        _title_row(ws_attr, row, "Cross-Platform Comparison", 6,
+                   font=SUBTITLE_FONT, fill=DOMAIN_BG)
+        row += 1
+
+        # Compute Google Ads totals from conversion_actions
+        gads_total_conv = 0
+        for ca in conv_data:
+            ca_inner = ca.get("conversion_action", {}) if isinstance(ca.get("conversion_action"), dict) else ca
+            metrics = ca.get("metrics", ca_inner)
+            gads_total_conv += float(metrics.get("all_conversions", metrics.get("conversions", 0)) or 0)
+
+        comparison_items = [
+            ("GA4 Total Conversions (DDA)", round(total_ga4_conv, 1)),
+            ("GA4 Total Revenue", f"${total_ga4_rev:,.2f}"),
+            ("Google Ads Total Conversions", round(gads_total_conv, 1) if gads_total_conv else "N/A"),
+        ]
+        if total_ga4_conv > 0 and gads_total_conv > 0:
+            conv_delta = ((total_ga4_conv - gads_total_conv) / gads_total_conv) * 100
+            comparison_items.append(("Conversion Delta (GA4 vs Ads)", f"{conv_delta:+.1f}%"))
+
+        for label, value in comparison_items:
+            ws_attr.cell(row=row, column=1, value=label).font = DARK_FONT_BOLD
+            ws_attr.cell(row=row, column=1).alignment = LEFT_WRAP
+            c = ws_attr.cell(row=row, column=2, value=str(value))
+            c.font = DARK_FONT_BOLD
+            c.alignment = CENTER
+            _apply_row_border(ws_attr, row, 1, 2)
+            row += 1
+
+    # ═════════════════════════════════════════════════════════════════════════
+    # LAST SHEET: EXECUTION LOG (always last)
     # ═════════════════════════════════════════════════════════════════════════
     ws_exec = wb.create_sheet("Execution")
     ws_exec.sheet_properties.tabColor = "27AE60"
