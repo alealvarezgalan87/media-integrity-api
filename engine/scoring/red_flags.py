@@ -24,7 +24,7 @@ OPERATORS = {
 }
 
 CONDITION_PATTERN = re.compile(
-    r"^(\w+)\s*(>|<|>=|<=|==|!=)\s*(.+)$"
+    r"^(\w+)\s*(>=|<=|!=|==|>|<)\s*(.+)$"
 )
 
 

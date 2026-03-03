@@ -132,6 +132,236 @@ def _header_row(ws, row: int, headers: list[str], fill=HEADER_BG):
         c.border = THIN_BORDER
 
 
+def _build_advanced_health_sheet(wb, raw_data: dict, account_name: str, date_str: str):
+    """Build the Advanced Health sheet with Phase 3 metrics.
+
+    Sections: Quality Score, Negative Keywords, Shopping Structure,
+    PMax Audiences, Customer Lists, NCA Settings, GA4 Events.
+    """
+    has_any = any(raw_data.get(k) for k in (
+        "keyword_quality_score", "negative_keywords", "shopping_structure",
+        "pmax_audience_signals", "customer_lists", "nca_settings",
+    ))
+    if not has_any:
+        return
+
+    ws = wb.create_sheet("Advanced Health")
+    ws.sheet_properties.tabColor = "8E44AD"
+    _set_col_widths(ws, [35, 20, 20, 20, 25])
+
+    _title_row(ws, 1, f"Advanced Health Analysis — {account_name}", 5)
+    _title_row(ws, 2, f"Phase 3 diagnostic metrics  |  Period: {date_str}",
+               5, font=WHITE_FONT_SM, fill=HEADER_BG)
+
+    row = 4
+
+    # ── Quality Score Breakdown ──────────────────────────────────
+    qs_data = raw_data.get("keyword_quality_score", [])
+    if qs_data:
+        _title_row(ws, row, "Quality Score Analysis", 5, font=SUBTITLE_FONT, fill=DOMAIN_BG)
+        row += 1
+        _header_row(ws, row, ["Keyword", "Campaign", "Quality Score", "Impressions", "Classification"])
+        row += 1
+
+        from engine.normalization.brand_classifier import _classify_campaign
+        brand_name = raw_data.get("_brand_name", "")
+
+        for r in qs_data[:100]:
+            criterion = r.get("adGroupCriterion", r.get("ad_group_criterion", {}))
+            if not isinstance(criterion, dict):
+                continue
+            qi = criterion.get("qualityInfo", criterion.get("quality_info", {}))
+            kw_info = criterion.get("keyword", {})
+            campaign = r.get("campaign", {})
+            metrics = r.get("metrics", {})
+
+            qs_val = qi.get("qualityScore", qi.get("quality_score"))
+            if qs_val is None:
+                continue
+
+            kw_text = kw_info.get("text", "")
+            camp_name = campaign.get("name", "")
+            impressions = int(metrics.get("impressions", 0) or 0)
+
+            try:
+                classification = _classify_campaign(camp_name, brand_name)
+            except Exception:
+                classification = "unknown"
+
+            ws.cell(row=row, column=1, value=kw_text).font = DARK_FONT
+            ws.cell(row=row, column=1).alignment = LEFT_WRAP
+            ws.cell(row=row, column=2, value=camp_name).font = DARK_FONT
+            ws.cell(row=row, column=2).alignment = LEFT_WRAP
+            c = ws.cell(row=row, column=3, value=int(qs_val))
+            c.font = DARK_FONT_BOLD
+            c.alignment = CENTER
+            if int(qs_val) >= 7:
+                c.fill = PASS_BG
+            elif int(qs_val) <= 4:
+                c.fill = FAIL_BG
+            ws.cell(row=row, column=4, value=impressions).font = DARK_FONT
+            ws.cell(row=row, column=4).alignment = CENTER
+            ws.cell(row=row, column=4).number_format = '#,##0'
+            ws.cell(row=row, column=5, value=classification.title()).font = DARK_FONT
+            ws.cell(row=row, column=5).alignment = CENTER
+            _apply_row_border(ws, row, 1, 5)
+            row += 1
+
+        row += 1
+
+    # ── Negative Keywords Summary ────────────────────────────────
+    nk_data = raw_data.get("negative_keywords", [])
+    if nk_data:
+        inner = nk_data[0] if nk_data and isinstance(nk_data[0], dict) else {}
+        camp_negatives = inner.get("campaign_negatives", [])
+
+        _title_row(ws, row, "Negative Keywords Summary", 5, font=SUBTITLE_FONT, fill=DOMAIN_BG)
+        row += 1
+        _header_row(ws, row, ["Campaign", "Channel", "Negative Keyword", "Match Type", ""])
+        row += 1
+
+        for r in camp_negatives[:100]:
+            campaign = r.get("campaign", {}) if isinstance(r.get("campaign"), dict) else {}
+            criterion = r.get("campaign_criterion", r.get("campaignCriterion", {}))
+            if isinstance(criterion, dict):
+                kw_info = criterion.get("keyword", {})
+            else:
+                kw_info = {}
+
+            ws.cell(row=row, column=1, value=campaign.get("name", "")).font = DARK_FONT
+            ws.cell(row=row, column=1).alignment = LEFT_WRAP
+            ws.cell(row=row, column=2, value=campaign.get("advertising_channel_type", "")).font = DARK_FONT
+            ws.cell(row=row, column=2).alignment = CENTER
+            ws.cell(row=row, column=3, value=kw_info.get("text", "")).font = DARK_FONT
+            ws.cell(row=row, column=3).alignment = LEFT_WRAP
+            ws.cell(row=row, column=4, value=kw_info.get("matchType", kw_info.get("match_type", ""))).font = DARK_FONT
+            ws.cell(row=row, column=4).alignment = CENTER
+            _apply_row_border(ws, row, 1, 5)
+            row += 1
+
+        row += 1
+
+    # ── Shopping Structure ───────────────────────────────────────
+    ss_data = raw_data.get("shopping_structure", [])
+    if ss_data:
+        inner = ss_data[0] if ss_data and isinstance(ss_data[0], dict) else {}
+        product_groups = inner.get("product_groups", [])
+        campaign_audiences = inner.get("campaign_audiences", [])
+
+        if product_groups or campaign_audiences:
+            _title_row(ws, row, "Shopping Structure", 5, font=SUBTITLE_FONT, fill=DOMAIN_BG)
+            row += 1
+
+            # Summary metrics
+            from engine.normalization.shopping_structure import compute_shopping_structure_metrics
+            ss_metrics = compute_shopping_structure_metrics(ss_data)
+
+            summary_items = [
+                ("Product Overlap %", f"{ss_metrics['shopping_campaign_product_overlap_pct'] * 100:.1f}%"),
+                ("Shopping RLSA Campaigns", str(ss_metrics['shopping_rlsa_campaign_count'])),
+                ("Product Groups Analyzed", str(len(product_groups))),
+                ("Campaign Audiences", str(len(campaign_audiences))),
+            ]
+            for label, val in summary_items:
+                ws.cell(row=row, column=1, value=label).font = DARK_FONT_BOLD
+                ws.cell(row=row, column=1).alignment = LEFT_WRAP
+                ws.cell(row=row, column=2, value=val).font = DARK_FONT_BOLD
+                ws.cell(row=row, column=2).alignment = CENTER
+                _apply_row_border(ws, row, 1, 2)
+                row += 1
+
+            row += 1
+
+    # ── PMax Audience Signals ────────────────────────────────────
+    pmax_data = raw_data.get("pmax_audience_signals", [])
+    if pmax_data:
+        from engine.normalization.pmax_audiences import compute_pmax_audience_metrics
+        pmax_metrics = compute_pmax_audience_metrics(pmax_data)
+
+        _title_row(ws, row, "PMax Audience Signals", 5, font=SUBTITLE_FONT, fill=DOMAIN_BG)
+        row += 1
+        summary_items = [
+            ("Prospecting Campaigns", str(pmax_metrics['pmax_prospecting_campaign_count'])),
+            ("Retargeting Campaigns", str(pmax_metrics['pmax_retargeting_campaign_count'])),
+        ]
+        split_ok = pmax_metrics['pmax_prospecting_campaign_count'] > 0 and pmax_metrics['pmax_retargeting_campaign_count'] > 0
+        summary_items.append(("Pro/Ret Split", "Yes" if split_ok else "No — Missing split"))
+
+        for label, val in summary_items:
+            ws.cell(row=row, column=1, value=label).font = DARK_FONT_BOLD
+            ws.cell(row=row, column=1).alignment = LEFT_WRAP
+            c = ws.cell(row=row, column=2, value=val)
+            c.font = DARK_FONT_BOLD
+            c.alignment = CENTER
+            if "Missing" in val:
+                c.fill = FAIL_BG
+            elif val in ("Yes",):
+                c.fill = PASS_BG
+            _apply_row_border(ws, row, 1, 2)
+            row += 1
+
+        row += 1
+
+    # ── Customer Lists ───────────────────────────────────────────
+    cl_data = raw_data.get("customer_lists", [])
+    if cl_data:
+        from engine.normalization.customer_lists import compute_customer_list_metrics
+        cl_metrics = compute_customer_list_metrics(cl_data, raw_data.get("change_history", []))
+
+        _title_row(ws, row, "Customer Lists Health", 5, font=SUBTITLE_FONT, fill=DOMAIN_BG)
+        row += 1
+
+        days = cl_metrics['days_since_customer_list_refresh']
+        match_rate = cl_metrics['customer_list_match_rate']
+
+        summary_items = [
+            ("Days Since Last Refresh", str(days)),
+            ("Average Match Rate", f"{match_rate * 100:.1f}%"),
+            ("CRM-Based Lists Found", str(len([r for r in cl_data if isinstance(r.get("userList"), dict) and "CRM" in str(r.get("userList", {}).get("type", ""))]))),
+        ]
+        for label, val in summary_items:
+            ws.cell(row=row, column=1, value=label).font = DARK_FONT_BOLD
+            ws.cell(row=row, column=1).alignment = LEFT_WRAP
+            c = ws.cell(row=row, column=2, value=val)
+            c.font = DARK_FONT_BOLD
+            c.alignment = CENTER
+            if "days" in label.lower() and days > 90:
+                c.fill = FAIL_BG
+            elif "rate" in label.lower() and match_rate < 0.30:
+                c.fill = FAIL_BG
+            _apply_row_border(ws, row, 1, 2)
+            row += 1
+
+        row += 1
+
+    # ── NCA Settings ─────────────────────────────────────────────
+    nca_data = raw_data.get("nca_settings", [])
+    if nca_data:
+        from engine.normalization.nca_settings import compute_nca_metrics
+        nca_metrics = compute_nca_metrics(nca_data)
+
+        _title_row(ws, row, "New Customer Acquisition Settings", 5, font=SUBTITLE_FONT, fill=DOMAIN_BG)
+        row += 1
+
+        bid_adj = nca_metrics['nca_bid_adjustment']
+        validated = nca_metrics['nca_bid_validation']
+
+        summary_items = [
+            ("NCA Bid Adjustment", f"${bid_adj:.0f}" if bid_adj > 0 else "Not Set"),
+            ("Bid Validated", "Yes" if validated else "No — Unverified"),
+        ]
+        for label, val in summary_items:
+            ws.cell(row=row, column=1, value=label).font = DARK_FONT_BOLD
+            ws.cell(row=row, column=1).alignment = LEFT_WRAP
+            c = ws.cell(row=row, column=2, value=val)
+            c.font = DARK_FONT_BOLD
+            c.alignment = CENTER
+            if "Unverified" in val:
+                c.fill = FAIL_BG
+            _apply_row_border(ws, row, 1, 2)
+            row += 1
+
+
 def generate_audit_excel(audit_data: dict) -> bytes:
     """Generate an Excel workbook from audit data and return as bytes.
 
@@ -1187,6 +1417,11 @@ def generate_audit_excel(audit_data: dict) -> bytes:
             c.alignment = CENTER
             _apply_row_border(ws_attr, row, 1, 2)
             row += 1
+
+    # ═════════════════════════════════════════════════════════════════════════
+    # SHEET: ADVANCED HEALTH (Phase 3 metrics)
+    # ═════════════════════════════════════════════════════════════════════════
+    _build_advanced_health_sheet(wb, raw_data, account_name, date_str)
 
     # ═════════════════════════════════════════════════════════════════════════
     # LAST SHEET: EXECUTION LOG (always last)
