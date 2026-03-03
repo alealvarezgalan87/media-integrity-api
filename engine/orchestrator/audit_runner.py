@@ -75,6 +75,7 @@ def run_audit(
     date_range = {"start": start_date, "end": end_date}
     domain_data = None
     ga4_raw_data = {}
+    raw_data = {}
 
     if is_live:
         try:
@@ -163,6 +164,8 @@ def run_audit(
                 date_range=date_range,
                 scoring_results=scoring_results,
                 output_dir=output_dir,
+                raw_data=raw_data or None,
+                ga4_raw_data=ga4_raw_data or None,
             )
         except Exception as e:
             errors.append(f"Report generation failed: {e}")

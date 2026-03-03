@@ -521,6 +521,8 @@ def report_stage(
     date_range: dict,
     scoring_results: dict,
     output_dir: str,
+    raw_data: dict | None = None,
+    ga4_raw_data: dict | None = None,
 ) -> dict:
     """Stage 4: Generate report, evidence pack, and run manifest.
 
@@ -554,6 +556,15 @@ def report_stage(
         red_flags=scoring_results["red_flags"],
         confidence_report=confidence_report,
     )
+
+    # Inject raw extractor data for HTML/PDF template rendering
+    if raw_data:
+        scorecard["_raw_data"] = {
+            k: v for k, v in raw_data.items()
+            if k not in ("extraction_stats", "_brand_name")
+        }
+    if ga4_raw_data:
+        scorecard["_ga4_raw_data"] = ga4_raw_data
 
     scorecard_path = save_scorecard(scorecard, os.path.join(run_dir, "scorecard.json"))
 

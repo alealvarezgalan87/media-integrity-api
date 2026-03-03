@@ -1,0 +1,239 @@
+<!-- Page: Advanced Health (Phase 3 Diagnostics) -->
+<div class="page">
+  <div class="page-title">ADVANCED HEALTH ANALYSIS</div>
+  <p class="secondary-text" style="margin-bottom: 16px;">
+    Deep diagnostic metrics from Quality Score, Shopping structure, PMax audiences, customer lists, and NCA settings.
+  </p>
+
+  {% set qs_data = raw_data.get("keyword_quality_score", []) %}
+  {% set nk_data = raw_data.get("negative_keywords", []) %}
+  {% set ss_data = raw_data.get("shopping_structure", []) %}
+  {% set pmax_data = raw_data.get("pmax_audience_signals", []) %}
+  {% set cl_data = raw_data.get("customer_lists", []) %}
+  {% set nca_data = raw_data.get("nca_settings", []) %}
+
+  <!-- Quality Score Analysis -->
+  {% if qs_data %}
+  <div class="card">
+    <div class="section-title">QUALITY SCORE ANALYSIS</div>
+    <table style="width: 100%; border-collapse: collapse; font-size: 9px;">
+      <thead>
+        <tr style="border-bottom: 1px solid #1A2E4A;">
+          <th style="text-align: left; padding: 5px 4px; color: #4A6480; font-weight: 500;">Keyword</th>
+          <th style="text-align: left; padding: 5px 4px; color: #4A6480; font-weight: 500;">Campaign</th>
+          <th style="text-align: center; padding: 5px 4px; color: #4A6480; font-weight: 500;">QS</th>
+          <th style="text-align: right; padding: 5px 4px; color: #4A6480; font-weight: 500;">Impressions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in qs_data[:20] %}
+        {% set criterion = r.get("adGroupCriterion", r.get("ad_group_criterion", {})) %}
+        {% if criterion is mapping %}
+        {% set qi = criterion.get("qualityInfo", criterion.get("quality_info", {})) %}
+        {% set kw_info = criterion.get("keyword", {}) %}
+        {% set campaign = r.get("campaign", {}) %}
+        {% set metrics = r.get("metrics", {}) %}
+        {% set qs_val = qi.get("qualityScore", qi.get("quality_score")) %}
+        {% if qs_val is not none %}
+        <tr style="border-bottom: 1px solid #0D1B2E;">
+          <td style="padding: 4px;">{{ kw_info.get("text", "—") }}</td>
+          <td style="padding: 4px;">
+            <span class="secondary-text">{{ campaign.get("name", "") }}</span>
+          </td>
+          <td style="text-align: center; padding: 4px; font-weight: 700;">
+            {% if qs_val | int >= 7 %}
+            <span class="excellent">{{ qs_val }}</span>
+            {% elif qs_val | int <= 4 %}
+            <span class="critical">{{ qs_val }}</span>
+            {% else %}
+            <span class="moderate">{{ qs_val }}</span>
+            {% endif %}
+          </td>
+          <td style="text-align: right; padding: 4px;">{{ "{:,}".format(metrics.get("impressions", 0) | int) }}</td>
+        </tr>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+    {% if qs_data | length > 20 %}
+    <p class="secondary-text" style="font-size: 7px; margin-top: 4px;">
+      Showing top 20 of {{ qs_data | length }} keywords. Full data in Excel report.
+    </p>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <!-- Shopping & Negative Keywords Summary -->
+  {% if ss_data or nk_data %}
+  <div class="card">
+    <div class="section-title">SHOPPING &amp; KEYWORD HEALTH</div>
+    <div style="display: flex; gap: 10px;">
+
+      {% if ss_data %}
+      {% set ss_inner = ss_data[0] if ss_data and ss_data[0] is mapping else {} %}
+      {% set product_groups = ss_inner.get("product_groups", []) %}
+      {% set campaign_audiences = ss_inner.get("campaign_audiences", []) %}
+      <div style="flex: 1; background: #0D1B2E; border-radius: 8px; padding: 14px;">
+        <div class="label">SHOPPING STRUCTURE</div>
+        <div style="margin-top: 8px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+            <span class="secondary-text">Product Groups</span>
+            <span style="font-weight: 600;">{{ product_groups | length }}</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+            <span class="secondary-text">Campaign Audiences</span>
+            <span style="font-weight: 600;">{{ campaign_audiences | length }}</span>
+          </div>
+          {% set rlsa_count = campaign_audiences | selectattr("campaignAudience", "defined") | list | length %}
+          <div style="display: flex; justify-content: space-between;">
+            <span class="secondary-text">RLSA Status</span>
+            {% if campaign_audiences | length > 0 %}
+            <span class="excellent" style="font-weight: 600;">Active</span>
+            {% else %}
+            <span class="critical" style="font-weight: 600;">Missing</span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if nk_data %}
+      {% set nk_inner = nk_data[0] if nk_data and nk_data[0] is mapping else {} %}
+      {% set camp_negatives = nk_inner.get("campaign_negatives", []) %}
+      {% set shared_sets = nk_inner.get("shared_sets", []) %}
+      <div style="flex: 1; background: #0D1B2E; border-radius: 8px; padding: 14px;">
+        <div class="label">NEGATIVE KEYWORDS</div>
+        <div style="margin-top: 8px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+            <span class="secondary-text">Campaign Negatives</span>
+            <span style="font-weight: 600;">{{ camp_negatives | length }}</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+            <span class="secondary-text">Shared Sets</span>
+            <span style="font-weight: 600;">{{ shared_sets | length }}</span>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span class="secondary-text">Coverage</span>
+            {% if camp_negatives | length > 20 %}
+            <span class="excellent" style="font-weight: 600;">Good</span>
+            {% elif camp_negatives | length > 0 %}
+            <span class="moderate" style="font-weight: 600;">Partial</span>
+            {% else %}
+            <span class="critical" style="font-weight: 600;">None</span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- PMax Audience Signals + Customer Lists + NCA -->
+  {% if pmax_data or cl_data or nca_data %}
+  <div class="card">
+    <div class="section-title">AUTOMATION &amp; AUDIENCE HEALTH</div>
+    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+
+      {% if pmax_data %}
+      <div style="flex: 1; min-width: 140px; background: #0D1B2E; border-radius: 8px; padding: 14px;">
+        <div class="label">PMAX AUDIENCE SPLIT</div>
+        <div style="margin-top: 8px;">
+          {% set has_prospecting = [] %}
+          {% set has_retargeting = [] %}
+          {% for r in pmax_data %}
+            {% set signals = r.get("asset_group_signal", r.get("assetGroupSignal", {})) %}
+            {% if signals is mapping %}
+              {% set audience = signals.get("audience_signal", signals.get("audienceSignal", {})) %}
+              {% if audience is mapping %}
+                {% set user_interests = audience.get("user_interest", audience.get("userInterest", [])) %}
+                {% set custom_audiences = audience.get("custom_audience", audience.get("customAudience", [])) %}
+                {% if user_interests or custom_audiences %}
+                  {% if has_prospecting.append(1) %}{% endif %}
+                {% endif %}
+                {% set user_lists = audience.get("user_list", audience.get("userList", [])) %}
+                {% if user_lists %}
+                  {% if has_retargeting.append(1) %}{% endif %}
+                {% endif %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+          <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+            <span class="secondary-text">Prospecting</span>
+            {% if has_prospecting | length > 0 %}
+            <span class="excellent" style="font-weight: 600;">Yes</span>
+            {% else %}
+            <span class="critical" style="font-weight: 600;">Missing</span>
+            {% endif %}
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span class="secondary-text">Retargeting</span>
+            {% if has_retargeting | length > 0 %}
+            <span class="excellent" style="font-weight: 600;">Yes</span>
+            {% else %}
+            <span class="critical" style="font-weight: 600;">Missing</span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if cl_data %}
+      <div style="flex: 1; min-width: 140px; background: #0D1B2E; border-radius: 8px; padding: 14px;">
+        <div class="label">CUSTOMER LISTS</div>
+        <div style="margin-top: 8px;">
+          {% set list_count = cl_data | length %}
+          <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+            <span class="secondary-text">CRM Lists</span>
+            <span style="font-weight: 600;">{{ list_count }}</span>
+          </div>
+          {% for r in cl_data[:3] %}
+          {% set ul = r.get("userList", r.get("user_list", {})) %}
+          {% if ul is mapping %}
+          <div class="secondary-text" style="font-size: 8px; margin-top: 2px;">
+            • {{ ul.get("name", "List") }}
+            {% set size = ul.get("sizeForSearch", ul.get("size_for_search", 0)) %}
+            {% if size %}<span style="color: #4A6480;">({{ "{:,}".format(size | int) }} users)</span>{% endif %}
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if nca_data %}
+      <div style="flex: 1; min-width: 140px; background: #0D1B2E; border-radius: 8px; padding: 14px;">
+        <div class="label">NCA SETTINGS</div>
+        <div style="margin-top: 8px;">
+          {% set has_nca = false %}
+          {% for r in nca_data %}
+            {% set campaign = r.get("campaign", {}) %}
+            {% set nca_opt = campaign.get("newCustomerAcquisitionGoal", campaign.get("new_customer_acquisition_goal", {})) %}
+            {% if nca_opt is mapping and nca_opt %}
+              {% set has_nca = true %}
+              <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                <span class="secondary-text" style="font-size: 8px;">{{ campaign.get("name", "Campaign") | truncate(20) }}</span>
+                <span class="excellent" style="font-weight: 600; font-size: 8px;">Active</span>
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% if not has_nca %}
+          <div style="display: flex; justify-content: space-between;">
+            <span class="secondary-text">NCA Goal</span>
+            <span class="moderate" style="font-weight: 600;">Not Set</span>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+  {% endif %}
+
+  <p class="confidential">
+    Advanced health metrics powered by Phase 3 extractors. Full granular data available in Excel report.
+  </p>
+</div>

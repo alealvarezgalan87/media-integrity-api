@@ -128,5 +128,10 @@
     {% include 'ga4_measurement_findings.html' %}
   </div>
   {% endif %}
+
+  {% if has_advanced %}
+  <!-- Page 7: Advanced Health (Phase 3) -->
+  {% include 'advanced_health.html' %}
+  {% endif %}
 </body>
 </html>
